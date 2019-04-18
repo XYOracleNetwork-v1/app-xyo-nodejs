@@ -1,0 +1,26 @@
+/*
+ * File: tslint.json
+ * Project: app-xyo-nodejs
+ * File Created: Tuesday, 16th April 2019 9:19:05 am
+ * Author: XYO Development Team (support@xyo.network)
+ * -----
+ * Last Modified: Tuesday, 16th April 2019 6:06:12 pm
+ * Modified By: XYO Development Team (support@xyo.network>)
+ * -----
+ * Copyright 2017 - 2019 XY - The Persistent Company
+ */
+
+
+
+
+ {
+  "extends": ["tslint:latest", "@xyo-network/config-tslint"],
+  "rules": {
+    "object-shorthand-properties-first": true,
+    "align": true,
+    "max-line-length": [true, {"limit": 120, "ignore-pattern": "^import |^export {(.*?)}"}],
+    "no-implicit-dependencies": [true, "dev"],
+    "interface-name":true,
+    "quotemark": false
+  }
+}

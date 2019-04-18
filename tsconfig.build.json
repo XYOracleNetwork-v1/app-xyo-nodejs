@@ -1,0 +1,19 @@
+/*
+ * @Author: XY | The Findables Company <ryanxyo>
+ * @Date:   Tuesday, 28th August 2018 10:13:14 am
+ * @Email:  developer@xyfindables.com
+ * @Filename: tsconfig.build.json
+ * @Last modified by: ryanxyo
+ * @Last modified time: Tuesday, 28th August 2018 10:13:59 am
+ * @License: All Rights Reserved
+ * @Copyright: Copyright XY | The Findables Company
+ */
+{
+  "extends": "./tsconfig.base.json",
+  "include": [
+    "src/**/*.json",
+  ],
+  "exclude": [
+    "src/test/**/*"
+  ]
+}

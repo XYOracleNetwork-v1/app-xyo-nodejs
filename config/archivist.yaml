@@ -1,0 +1,28 @@
+ip: 0.0.0.0
+p2pPort: 11500
+apis:
+  - about
+  - blockByHash
+  - blockList
+  - intersections
+  - blocksByPublicKey
+  - entities
+bootstrapNodes: []
+serverPort: 11000
+graphqlPort: 11001
+data: ./node-data
+name: archivist
+archivist:
+  repository:
+    name: "MySql"
+    platform: "sql"
+    host: 127.0.0.1
+    user: admin
+    password: password
+    database: Xyo
+    port: 3306
+diviner: null
+ipfs:
+  host: ipfs.xyo.network
+  port: '5002'
+  protocol: https

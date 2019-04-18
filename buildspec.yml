@@ -1,0 +1,35 @@
+version: 0.2
+
+env:
+  parameter-store:
+    NPM_TOKEN: npmjs_publish
+ 
+phases:
+  install:
+    commands:
+      - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+      - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+      - apt-get update -y
+      - apt-get install -y yarn
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - 'echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc'
+      - yarn install
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Compiling the Node.js code
+      - yarn build
+      - yarn test
+      - echo Build completed on `date`
+  post_build:
+    commands:
+      - yarn publish
+      - echo Publish completed on `date`
+
+artifacts:
+  files:
+    - dist/*
+    - package.json
+    - node_modules/*
