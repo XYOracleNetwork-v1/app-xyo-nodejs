@@ -1,4 +1,4 @@
-import { Wizard } from "./base"
+import { Wizard } from './base'
 import { validateHexString } from '../validator'
 
 export interface IContractConfig {

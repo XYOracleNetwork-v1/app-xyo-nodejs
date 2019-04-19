@@ -1,4 +1,4 @@
-import { Wizard } from "./base"
+import { Wizard } from './base'
 
 export enum XyoRepository {
   MYSQL = 'mysql',
@@ -19,7 +19,7 @@ export class RepositoryWizard extends Wizard {
         XyoRepository.NEO4J,
         XyoRepository.DYNAMO,
       ],
-      message: `What type of repository?`,
+      message: 'What type of repository?',
       name: 'repository',
     })
 

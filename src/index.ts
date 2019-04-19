@@ -31,11 +31,11 @@ export async function main() {
 
   program
     .version(getVersion())
-    .option("-c, --config [config]", "specify config file")
-    .option("-f, --forever [forever]", "run forever")
-    .option("-p, --preflight [preflight]", "generates preflight report")
-    .option("-d, --database [database]", "type of database to use", /^(mysql|level|neo4j|dynamo)$/i)
-    .arguments("[cmd] [target]")
+    .option('-c, --config [config]', 'specify config file')
+    .option('-f, --forever [forever]', 'run forever')
+    .option('-p, --preflight [preflight]', 'generates preflight report')
+    .option('-d, --database [database]', 'type of database to use', /^(mysql|level|neo4j|dynamo)$/i)
+    .arguments('[cmd] [target]')
     .action(async (cmd, target) => {
       const appLauncher = new XyoAppLauncher()
       try {
@@ -45,13 +45,13 @@ export async function main() {
 
         await appLauncher.initialize({ configName: target || program.config, database: program.database })
       } catch (err) {
-        console.error(`There was an error during initialization. Will exit`, err)
+        console.error('There was an error during initialization. Will exit', err)
         process.exit(1)
         return
       }
 
       if (!appLauncher.startNode) {
-        console.log(`Exiting process after configuration`)
+        console.log('Exiting process after configuration')
         process.exit(0)
         return
       }
@@ -59,7 +59,7 @@ export async function main() {
       try {
         await appLauncher.start()
       } catch (err) {
-        console.error(`There was an error during start. Will exit`, err)
+        console.error('There was an error during start. Will exit', err)
         process.exit(1)
         return
       }

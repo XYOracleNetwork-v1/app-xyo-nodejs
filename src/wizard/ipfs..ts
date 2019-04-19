@@ -25,7 +25,7 @@ export class IpfsWizard extends Wizard {
       initial: 'https',
       type: 'select',
       choices: ['https', 'http'],
-      message: `What is the IPFS protocol?`,
+      message: 'What is the IPFS protocol?',
       name: 'protocol',
     })
 

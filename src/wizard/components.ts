@@ -1,4 +1,4 @@
-import { Wizard } from "./base"
+import { Wizard } from './base'
 
 export enum XyoComponent {
   ARCHIVIST = 'archivist',
@@ -16,7 +16,7 @@ export class ComponentsWizard extends Wizard {
         XyoComponent.DIVINER,
         `${XyoComponent.ARCHIVIST} and ${XyoComponent.DIVINER}`,
       ],
-      message: `Which component features do you want your Xyo Node to support?`,
+      message: 'Which component features do you want your Xyo Node to support?',
       name: 'components',
     })
 

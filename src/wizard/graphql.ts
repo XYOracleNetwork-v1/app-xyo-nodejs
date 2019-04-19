@@ -1,6 +1,6 @@
-import { Wizard } from "./base"
+import { Wizard } from './base'
 import { validatePort } from '../validator'
-import { PortWizard } from "./port"
+import { PortWizard } from './port'
 
 export class GraphqlWizard extends Wizard {
 
@@ -9,7 +9,7 @@ export class GraphqlWizard extends Wizard {
     const { confirmGraphQL } = await this.prompt<{ confirmGraphQL: boolean }>({
       initial: true,
       type: 'confirm',
-      message: `Do you want your node to have a GraphQL server`,
+      message: 'Do you want your node to have a GraphQL server',
       name: 'confirmGraphQL',
     })
 

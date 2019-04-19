@@ -1,5 +1,5 @@
-import { Wizard } from "./base"
-import { validateURL } from "../validator"
+import { Wizard } from './base'
+import { validateURL } from '../validator'
 
 export class EthereumNodeAddressWizard extends Wizard {
 

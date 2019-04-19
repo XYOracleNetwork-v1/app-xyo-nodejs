@@ -1,6 +1,6 @@
-import { Wizard } from "./base"
+import { Wizard } from './base'
 import dns from 'dns'
-import { validateMultiAddress } from "../validator"
+import { validateMultiAddress } from '../validator'
 
 export class BootstrapWizard extends Wizard {
 
@@ -46,10 +46,12 @@ export class BootstrapWizard extends Wizard {
 
     // Returns the unique keys
     return Object.keys(
-      bootstrapNodes.reduce((memo: { [s: string]: boolean }, k) => {
-        memo[k] = true
-        return memo
-      }, {}),
+      bootstrapNodes.reduce(
+        (memo: { [s: string]: boolean }, k) => {
+          memo[k] = true
+          return memo
+        },
+        {}),
     )
   }
 
@@ -70,7 +72,7 @@ export class BootstrapWizard extends Wizard {
     // @ts-ignore
     const { ipAddress } = await this.prompt<{ ipAddress: string }>({
       type: 'input',
-      message: `What is the address value of the bootstrap node? Should look something like /ip4/127.0.0.1/tcp/11500`,
+      message: 'What is the address value of the bootstrap node? Should look something like /ip4/127.0.0.1/tcp/11500',
       name: 'ipAddress',
       validate: this.validate(validateMultiAddress),
     })

@@ -1,5 +1,5 @@
-import { Wizard } from "./base"
-import { validateDataPath } from "../validator"
+import { Wizard } from './base'
+import { validateDataPath } from '../validator'
 
 export class DataPathWizard extends Wizard {
 
