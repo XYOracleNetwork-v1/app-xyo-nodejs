@@ -4,7 +4,7 @@
  * File Created: Tuesday, 16th April 2019 9:19:05 am
  * Author: XYO Development Team (support@xyo.network)
  * -----
- * Last Modified: Thursday, 18th April 2019 3:48:24 pm
+ * Last Modified: Friday, 19th April 2019 1:27:03 pm
  * Modified By: XYO Development Team (support@xyo.network>)
  * -----
  * Copyright 2017 - 2019 XY - The Persistent Company
@@ -46,7 +46,7 @@ export class XyoAppLauncher extends XyoBase {
   private isArchivist = false
   private origins = 1
 
-  private rootPath = path.resolve(__dirname, '..')
+  private rootPath = path.resolve(__dirname, '.')
   private configFolder = path.resolve(this.rootPath, 'config')
 
   public setForeverPass(pass: string) {
