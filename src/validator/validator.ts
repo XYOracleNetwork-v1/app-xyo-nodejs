@@ -10,7 +10,7 @@
  * Copyright 2017 - 2019 XY - The Persistent Company
  */
 
-import Joi from 'joi'
+import joi from 'joi'
 import path from 'path'
 import { fileExists } from '@xyo-network/utils'
 import { IAppConfig } from '../@types'
@@ -23,8 +23,8 @@ export function promptValidator<T>(validator: (val: T) => Promise<IValidationRes
   }
 }
 
-function validateAgainstSchema<T>(val: T, schema: Joi.Schema) {
-  const result = Joi.validate<T>(val, schema)
+function validateAgainstSchema<T>(val: T, schema: joi.Schema) {
+  const result = joi.validate<T>(val, schema)
   if (result.error === null) {
     return {
       validates: true,
@@ -40,7 +40,7 @@ function validateAgainstSchema<T>(val: T, schema: Joi.Schema) {
 export async function validateNodeName(
   nodeName: string,
 ): Promise<IValidationResult> {
-  const schema = Joi.string()
+  const schema = joi.string()
     .regex(/[\w\_\-]+/)
     .min(1)
     .max(20)
@@ -51,7 +51,7 @@ export async function validateNodeName(
 export async function validateIpAddress(
   ip: string,
 ): Promise<IValidationResult> {
-  const schema = Joi.string()
+  const schema = joi.string()
     .regex(
       /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/,
     )
@@ -86,7 +86,7 @@ export async function validateDataPath(
 export async function validatePort(val: string) {
   try {
     const v = parseInt(val, 10)
-    const schema = Joi.number()
+    const schema = joi.number()
       .integer()
       .min(1)
       .max(65535)
@@ -102,7 +102,7 @@ export async function validatePort(val: string) {
 
 export async function validateURL(url: string) {
   try {
-    const schema = Joi.string()
+    const schema = joi.string()
       .required()
       .uri()
     return validateAgainstSchema<string>(url, schema)
@@ -125,7 +125,7 @@ export async function validatePassword(
       }
     }
 
-    const schema = Joi.string()
+    const schema = joi.string()
       .regex(/[\w\_\-\s]+/)
       .min(7)
       .max(20)
@@ -148,7 +148,7 @@ export async function validateHexString(hexString: string) {
       }
     }
 
-    const schema = Joi.string()
+    const schema = joi.string()
       .min(1)
       .required()
       .hex()

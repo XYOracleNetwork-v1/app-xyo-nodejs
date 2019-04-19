@@ -4,7 +4,7 @@
  * File Created: Tuesday, 16th April 2019 9:19:05 am
  * Author: XYO Development Team (support@xyo.network)
  * -----
- * Last Modified: Tuesday, 16th April 2019 9:54:47 am
+ * Last Modified: Thursday, 18th April 2019 3:48:24 pm
  * Modified By: XYO Development Team (support@xyo.network>)
  * -----
  * Copyright 2017 - 2019 XY - The Persistent Company
@@ -31,9 +31,9 @@ import { prompt } from 'enquirer'
 
 import { XyoError } from '@xyo-network/errors'
 import { CatalogueItem } from '@xyo-network/network'
-import { IXyoComponentFeatureResponse } from '@xyo-network/node-network'
-import { XyoNode } from '@xyo-network/base-node'
+import { XyoNode } from '@xyo-network/sdk-archivist-nodejs'
 import { XyoCryptoProvider } from '@xyo-network/crypto'
+import { IXyoComponentFeatureResponse } from '@xyo-network/node-network'
 
 export class XyoAppLauncher extends XyoBase {
   public config: IAppConfig | undefined
@@ -53,7 +53,7 @@ export class XyoAppLauncher extends XyoBase {
     this.password = pass
     this.isForever = true
   }
-  public async initialize({ configName, database = "mysql" }: {configName?: string, database: string}) {
+  public async initialize({ configName, database = 'mysql' }: {configName?: string, database: string}) {
     let writeConfigFile = false
 
     if (configName) {
@@ -63,18 +63,18 @@ export class XyoAppLauncher extends XyoBase {
       const exists = await this.loadConfigFile(configPath)
       if (!exists) {
         if (this.isForever) {
-          throw new XyoError(`Config file not found running forever`)
+          throw new XyoError('Config file not found running forever')
         }
         this.logInfo(`Could not find a configuration file at ${configPath}`)
         writeConfigFile = await this.showWizard(configName)
       }
     } else {
-      this.logInfo(`No configuration passed in`)
+      this.logInfo('No configuration passed in')
       writeConfigFile = await this.showWizard()
     }
 
     if (!this.config) {
-      this.logInfo(`Config not set`)
+      this.logInfo('Config not set')
       return
     }
 
@@ -91,7 +91,7 @@ export class XyoAppLauncher extends XyoBase {
   }
 
   public async start() {
-    if (!this.config) throw new XyoError(`Config not initialized`)
+    if (!this.config) throw new XyoError('Config not initialized')
 
     const nodeData = path.resolve(this.config.data, this.config.name)
     this.isArchivist = Boolean(this.config.archivist)
@@ -99,7 +99,7 @@ export class XyoAppLauncher extends XyoBase {
 
     if (!this.isArchivist && !this.isDiviner) {
       throw new XyoError(
-        `Must support at least archivist or diviner functionality`,
+        'Must support at least archivist or diviner functionality',
       )
     }
 
@@ -310,7 +310,7 @@ export class XyoAppLauncher extends XyoBase {
       )
       return privateKey
     } catch (e) {
-      this.logError(`Incorrect password,  try again.`, e)
+      this.logError('Incorrect password,  try again.', e)
       if (!tryAgain) {
         process.exit(1)
       }
@@ -328,7 +328,7 @@ export class XyoAppLauncher extends XyoBase {
         { encoding: 'utf8' },
       )
     } catch (e) {
-      this.logError(`There was an updating the pids folder`, e)
+      this.logError('There was an updating the pids folder', e)
       throw e
     }
   }

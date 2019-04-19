@@ -1,4 +1,4 @@
-import { Wizard } from "./base"
+import { Wizard } from './base'
 import { validatePort } from '../validator'
 
 export class PortWizard extends Wizard {

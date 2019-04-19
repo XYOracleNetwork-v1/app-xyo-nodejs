@@ -1,0 +1,35 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "tslint.autoFixOnSave": true,
+  "psi-header.changes-tracking": {
+    "isActive": true,
+    "autoHeader": "manualSave"
+  },
+  "psi-header.config": {
+    "forceToTop": true,
+    "blankLinesAfter": 1,
+    "author": "XYO Development Team",
+    "authorEmail": "support@xyo.network",
+    "copyrightHolder": "XY - The Persistent Company"
+  },
+  "psi-header.variables": [
+    ["projectCreationYear", "2017"]
+  ],
+  "psi-header.templates": [
+    {
+      "language": "*",
+      "template": [
+        "File: <<filename>>",
+        "Project: <<projectname>>",
+        "File Created: <<filecreated('dddd, Do MMMM YYYY h:mm:ss a')>>",
+        "Author: <<author>> (<<authoremail>>)",
+        "-----",
+        "Last Modified: <<dateformat('dddd, Do MMMM YYYY h:mm:ss a')>>",
+        "Modified By: <<author>> (<<authoremail>>>)",
+        "-----",
+        "Copyright <<projectCreationYear>> - <<year>> <<copyrightholder>>"
+      ]
+    }
+  ]
+
+}

@@ -1,4 +1,4 @@
-import { Wizard } from "./base"
+import { Wizard } from './base'
 
 export class ApiWizard extends Wizard {
 

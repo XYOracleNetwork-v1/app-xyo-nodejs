@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-// tslint:disable
-
 var path = require('path')
 var fs = require('fs')
 var enquirer = require('enquirer')

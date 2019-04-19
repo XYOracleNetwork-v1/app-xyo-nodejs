@@ -1,4 +1,4 @@
-import { Wizard } from "./base"
+import { Wizard } from './base'
 
 export class CreateConfigWizard extends Wizard {
 
@@ -7,7 +7,7 @@ export class CreateConfigWizard extends Wizard {
     const { confirmWizard } = await this.prompt<{ confirmWizard: boolean }>({
       initial: true,
       type: 'confirm',
-      message: `No config found, would you like to create one now?`,
+      message: 'No config found, would you like to create one now?',
       name: 'confirmWizard',
     })
 

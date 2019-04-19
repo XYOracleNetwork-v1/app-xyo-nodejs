@@ -1,4 +1,4 @@
-import { Wizard } from "./base"
+import { Wizard } from './base'
 import { ISqlArchivistRepositoryConfig } from '@xyo-network/sdk-archivist-nodejs'
 
 export class SqlWizard extends Wizard {
@@ -41,8 +41,8 @@ export class SqlWizard extends Wizard {
       user,
       password,
       database,
-      name: "MySql",
-      platform: "mysql",
+      name: 'MySql',
+      platform: 'mysql',
       port: parseInt(port, 10),
     }
   }

@@ -1,4 +1,4 @@
-import { Wizard } from "./base"
+import { Wizard } from './base'
 
 export class ActAsServerWizard extends Wizard {
 
@@ -7,7 +7,7 @@ export class ActAsServerWizard extends Wizard {
     const { actAsServer } = await this.prompt<{ actAsServer: boolean }>({
       initial: true,
       type: 'confirm',
-      message: `Do you want your node to act as a server for doing bound-witnesses?`,
+      message: 'Do you want your node to act as a server for doing bound-witnesses?',
       name: 'actAsServer',
     })
 

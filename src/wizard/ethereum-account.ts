@@ -1,9 +1,9 @@
-import { Wizard } from "./base"
-import { IEthCryptoKeys } from "../@types"
-import { validateHexString, validatePassword } from "../validator"
+import { Wizard } from './base'
+import { IEthCryptoKeys } from '../@types'
+import { validateHexString, validatePassword } from '../validator'
 import path from 'path'
-import { createDirectoryIfNotExists, writeFile } from "@xyo-network/utils"
-import { XyoCryptoProvider } from "@xyo-network/crypto"
+import { createDirectoryIfNotExists, writeFile } from '@xyo-network/utils'
+import { XyoCryptoProvider } from '@xyo-network/crypto'
 
 export class EthereumAccountWizard extends Wizard {
 

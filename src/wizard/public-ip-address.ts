@@ -1,5 +1,5 @@
-import { Wizard } from "./base"
-import { validateIpAddress } from "../validator"
+import { Wizard } from './base'
+import { validateIpAddress } from '../validator'
 
 export class PublicIpAddressWizard extends Wizard {
 
@@ -8,7 +8,7 @@ export class PublicIpAddressWizard extends Wizard {
     const { ipAddress } = await this.prompt<{ ipAddress: string }>({
       initial: '0.0.0.0',
       type: 'input',
-      message: `What is your public ip address?`,
+      message: 'What is your public ip address?',
       name: 'ipAddress',
       validate: this.validate(validateIpAddress),
     })

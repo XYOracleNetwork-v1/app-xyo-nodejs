@@ -7,7 +7,7 @@ export class Wizard {
 
   public async start(): Promise<any> {
     return {
-      name: "Unknown"
+      name: 'Unknown'
     }
   }
 

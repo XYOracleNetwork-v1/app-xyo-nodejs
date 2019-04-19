@@ -2,8 +2,6 @@
 const fs = require('fs')
 const path = require('path')
 
-// tslint:disable
-
 var passFolder = path.resolve(__dirname, '..', 'config')
 var files = fs.readdirSync(passFolder)
 const config = process.argv[process.argv.length - 1]

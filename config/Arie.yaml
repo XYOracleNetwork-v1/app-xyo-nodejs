@@ -1,0 +1,28 @@
+ip: 0.0.0.0
+p2pPort: 11500
+apis:
+  - about
+  - blockByHash
+  - blockList
+  - intersections
+  - blocksByPublicKey
+  - entities
+bootstrapNodes:
+  - /ip4/54.157.153.94/tcp/11500
+serverPort: 11000
+archivist:
+  repository:
+    host: 127.0.0.1
+    user: admin
+    password: password
+    database: Xyo
+    name: MySql
+    platform: mysql
+    port: 3306
+ipfs:
+  host: ipfs.xyo.network
+  port: 5002
+  protocol: https
+graphqlPort: 11001
+data: /Users/arietrouw/GitHub/app-xyo-nodejs/node-data
+name: Arie
