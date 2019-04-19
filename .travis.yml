@@ -1,0 +1,27 @@
+/*
+ * File: .travis.yml
+ * Project: @xyo-network/app-xyo-nodejs
+ * File Created: Friday, 19th April 2019 12:31:31 pm
+ * Author: XYO Development Team (support@xyo.network)
+ * -----
+ * Last Modified: Friday, 19th April 2019 12:31:35 pm
+ * Modified By: XYO Development Team (support@xyo.network>)
+ * -----
+ * Copyright 2017 - 2019 XY - The Persistent Company
+ */
+
+language: node_js
+node_js:
+- 10
+cache:
+  yarn: true
+  directories:
+  - node_modules
+addons:
+  sonarcloud:
+    organization: xyo-network
+install:
+- yarn install
+script:
+- yarn build
+- sonar-scanner
