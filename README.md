@@ -9,7 +9,7 @@ The XYO application for running components on the XYO network
 
 ## Install
 
-Using yarn
+Using yarn 
 
 ```sh
   yarn add @xyo-network/app
