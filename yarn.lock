@@ -553,87 +553,87 @@
   resolved "https://registry.yarnpkg.com/@types/zen-observable/-/zen-observable-0.8.0.tgz#8b63ab7f1aa5321248aad5ac890a485656dcea4d"
   integrity sha512-te5lMAWii1uEJ4FwLjzdlbw3+n0FZNOvFXHxQDKeT0dilh7HOzdMzV2TrJVUzq8ep7J4Na8OUYPRLSQkJHAlrg==
 
-"@xyo-network/about-me@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/about-me/-/about-me-0.55.8-alpha.0.tgz#bdded46b7b58ba89bd3ebc6179f5de86d2772d9c"
-  integrity sha512-LML6Hb3mzAT0oR7cco3DL7QLlbFw8M7qP32XHYRtru/ZB+Ha9YF6VxUoUUxtFGC5SLaJQamjhLhrdYzjCp/UYQ==
+"@xyo-network/about-me@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/about-me/-/about-me-0.55.9-alpha.0.tgz#e353a29ccefa4636c3c90cffb88428154ef0684c"
+  integrity sha512-z4wj5AG/wvpDX0baqsCYPZficQGNXg9YTDpvBwzS0p83yoL7CaLBEFaQTeMKXS+NlIs6//whjqusB1HngDVuCQ==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/peer-discovery" "^0.55.8-alpha.0"
-    "@xyo-network/signing" "^0.55.8-alpha.0"
-    "@xyo-network/utils" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/peer-discovery" "^0.55.9-alpha.0"
+    "@xyo-network/signing" "^0.55.9-alpha.0"
+    "@xyo-network/utils" "^0.55.9-alpha.0"
     lodash "^4.17.11"
 
-"@xyo-network/attribution-request.node-network@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/attribution-request.node-network/-/attribution-request.node-network-0.55.8-alpha.0.tgz#2f713f6549055f2fa51781aa02a86195a79c4fca"
-  integrity sha512-AzltRRp6E76tXBnZjHiK44rnO+9sRw0IegJc+BvW+GB6oVolMSx2yNpq5Ne8SRxzHDMuf4P4+baJAIlDP/4+2Q==
+"@xyo-network/attribution-request.node-network@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/attribution-request.node-network/-/attribution-request.node-network-0.55.9-alpha.0.tgz#b76fdf664d3f88c53e7902fe10832541fad7ba1b"
+  integrity sha512-TfaxoLHcOOrKqi0LSDm9ZkuAUcjU0zAs7w1XVaB2NAc1MHOlGEETCC9kFbIJnGB3XKSVtryJcilhVfQnrw/y5w==
   dependencies:
-    "@xyo-network/attribution-request" "^0.55.8-alpha.0"
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/bound-witness" "^0.55.8-alpha.0"
-    "@xyo-network/hashing" "^0.55.8-alpha.0"
-    "@xyo-network/node-network" "^0.55.8-alpha.0"
-    "@xyo-network/signing" "^0.55.8-alpha.0"
+    "@xyo-network/attribution-request" "^0.55.9-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/bound-witness" "^0.55.9-alpha.0"
+    "@xyo-network/hashing" "^0.55.9-alpha.0"
+    "@xyo-network/node-network" "^0.55.9-alpha.0"
+    "@xyo-network/signing" "^0.55.9-alpha.0"
 
-"@xyo-network/attribution-request@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/attribution-request/-/attribution-request-0.55.8-alpha.0.tgz#a058e9db640a11d6dfe5eecdb65b09c60b3fbfd4"
-  integrity sha512-cBI6CDTRwkKbjkS7BHnNQhOXPBCz6fsepMSvqWn/2WSd872Fv6heXI9lp3kz3/dHdvyP10/V3r2NB1nPx43esg==
+"@xyo-network/attribution-request@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/attribution-request/-/attribution-request-0.55.9-alpha.0.tgz#04dee2c8cbc0aa838dd10abfc5a4ac46b1371882"
+  integrity sha512-x/R0ZDCFLhPNiRlsEbVsSX3be0hFCIqIQUeh3+K9VHPU9oTDegZoay8TNS6lQ+H1NnoTmG7HpgrFS1zJFx4Qkw==
   dependencies:
-    "@xyo-network/bound-witness" "^0.55.8-alpha.0"
-    "@xyo-network/hashing" "^0.55.8-alpha.0"
-    "@xyo-network/signing" "^0.55.8-alpha.0"
+    "@xyo-network/bound-witness" "^0.55.9-alpha.0"
+    "@xyo-network/hashing" "^0.55.9-alpha.0"
+    "@xyo-network/signing" "^0.55.9-alpha.0"
 
-"@xyo-network/base@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/base/-/base-0.55.8-alpha.0.tgz#9b13fe3194e8bedfb2d9f556bda42c28679e6637"
-  integrity sha512-pSLwCiPQSmamT1Klvwmkv29IHsloauEm1WqW2pxVJWIlLIniw93rYsPhlT6TKaUfjczo2dzQ/Zo+R1k5ZJJVNA==
+"@xyo-network/base@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/base/-/base-0.55.9-alpha.0.tgz#d05c412bd2424294f2aad877d9dd7ecccc39f7a9"
+  integrity sha512-K8WPTRgVxBQ282jzRomBrMcxtD8Hevp5VdUTmusiOF7y8aamFg/dd2mIlwNBhQJlU2nYGMMTekHvIiWXhkPu7g==
   dependencies:
-    "@xyo-network/logger" "^0.55.8-alpha.0"
+    "@xyo-network/logger" "^0.55.9-alpha.0"
     fast-safe-stringify "^2.0.6"
 
-"@xyo-network/block-witness@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/block-witness/-/block-witness-0.55.8-alpha.0.tgz#fe0880a79542ce66cac7b82e203ec7ca205f575c"
-  integrity sha512-7oImt18ecAydE8mU2vdY2BrBzcymW/ORFnKwhVv8sCVvlPM+kdp2slswGieExS6UkkjGbKqFjGxM4Iy57L3JKA==
+"@xyo-network/block-witness@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/block-witness/-/block-witness-0.55.9-alpha.0.tgz#a27030f322ee12370fb44935f81e2524d09bdb08"
+  integrity sha512-6vByofp8TGB3rz7lDRe3Zfg7bKXsK5CU91Un5jXwu2o9gYrl4rrp6QBlJMOEUHRcrHR8ce2Ea0glrLimdL+n+g==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/bound-witness" "^0.55.8-alpha.0"
-    "@xyo-network/consensus" "^0.55.8-alpha.0"
-    "@xyo-network/content-addressable-service" "^0.55.8-alpha.0"
-    "@xyo-network/errors" "^0.55.8-alpha.0"
-    "@xyo-network/hashing" "^0.55.8-alpha.0"
-    "@xyo-network/node-network" "^0.55.8-alpha.0"
-    "@xyo-network/origin-chain" "^0.55.8-alpha.0"
-    "@xyo-network/serialization" "^0.55.8-alpha.0"
-    "@xyo-network/serialization-schema" "^0.55.8-alpha.0"
-    "@xyo-network/serializer" "^0.55.8-alpha.0"
-    "@xyo-network/signing" "^0.55.8-alpha.0"
-    "@xyo-network/signing.ecdsa" "^0.55.8-alpha.0"
-    "@xyo-network/storage" "^0.55.8-alpha.0"
-    "@xyo-network/utils" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/bound-witness" "^0.55.9-alpha.0"
+    "@xyo-network/consensus" "^0.55.9-alpha.0"
+    "@xyo-network/content-addressable-service" "^0.55.9-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
+    "@xyo-network/hashing" "^0.55.9-alpha.0"
+    "@xyo-network/node-network" "^0.55.9-alpha.0"
+    "@xyo-network/origin-chain" "^0.55.9-alpha.0"
+    "@xyo-network/serialization" "^0.55.9-alpha.0"
+    "@xyo-network/serialization-schema" "^0.55.9-alpha.0"
+    "@xyo-network/serializer" "^0.55.9-alpha.0"
+    "@xyo-network/signing" "^0.55.9-alpha.0"
+    "@xyo-network/signing.ecdsa" "^0.55.9-alpha.0"
+    "@xyo-network/storage" "^0.55.9-alpha.0"
+    "@xyo-network/utils" "^0.55.9-alpha.0"
 
-"@xyo-network/bound-witness@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/bound-witness/-/bound-witness-0.55.8-alpha.0.tgz#1f4677c1363daf457ca6d514efdbfc524586e262"
-  integrity sha512-O7xwsnSgdikXk1wMOvvVsVeyUfJxbcmZMBdOezUKjkIYx+HOy9orhHgcorXYjrl9n2xNf7ROZtMkv0iSeVDUsg==
+"@xyo-network/bound-witness@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/bound-witness/-/bound-witness-0.55.9-alpha.0.tgz#736ae7bda2bf3a357d2aa230cd45ade1bace3335"
+  integrity sha512-IpfqKQj5SgKFu5AwoeE+gDuuL2z5BcVGWJTwcLBk+lSeeytwthY+ELJ+Dbopo++oMgIPSl8nZbcWGfLentVMZw==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/buffer-utils" "^0.55.8-alpha.0"
-    "@xyo-network/errors" "^0.55.8-alpha.0"
-    "@xyo-network/hashing" "^0.55.8-alpha.0"
-    "@xyo-network/serialization" "^0.55.8-alpha.0"
-    "@xyo-network/serialization-schema" "^0.55.8-alpha.0"
-    "@xyo-network/signing" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/buffer-utils" "^0.55.9-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
+    "@xyo-network/hashing" "^0.55.9-alpha.0"
+    "@xyo-network/serialization" "^0.55.9-alpha.0"
+    "@xyo-network/serialization-schema" "^0.55.9-alpha.0"
+    "@xyo-network/signing" "^0.55.9-alpha.0"
 
-"@xyo-network/buffer-utils@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/buffer-utils/-/buffer-utils-0.55.8-alpha.0.tgz#8326a32460d5960bcf19a54b607bea2e364de47f"
-  integrity sha512-+I2Oe1i52siGXtjzSUBPryPdwHqXv/5IaZ2cEzrsLyy64Qx9qtNoTD2WYFw1LgAHYdRSp3SohzKIifnyTdj22Q==
+"@xyo-network/buffer-utils@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/buffer-utils/-/buffer-utils-0.55.9-alpha.0.tgz#95e39038e5cf78754952c4b6e9428f6f4b0283d0"
+  integrity sha512-bXy1OAsrC/bZLs1R6Kpje/uNRDKcmmm9YGJS4P/ancnJflt1pgu9NhBkCRAiqMgRWpRG+Mwc3jJWvDUYq9YIBg==
   dependencies:
-    "@xyo-network/errors" "^0.55.8-alpha.0"
-    "@xyo-network/utils" "^0.55.8-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
+    "@xyo-network/utils" "^0.55.9-alpha.0"
     bn.js "^4.11.8"
 
 "@xyo-network/config-tslint@^0.1.12":
@@ -645,46 +645,46 @@
     tslint-react "^3.6.0"
     tsutils "^3.5.0"
 
-"@xyo-network/consensus@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/consensus/-/consensus-0.55.8-alpha.0.tgz#845637ef7f12504e62d412b0ba2cffed55b29507"
-  integrity sha512-64T6W3jPt1wussZGIpluZBouqzk5N+z8kAFbxVp/ZtpCN3MiDEza+ojFBDjWzcsDaS719NuivUt8afJLPKrlGA==
+"@xyo-network/consensus@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/consensus/-/consensus-0.55.9-alpha.0.tgz#e855d652c33638d3d3707cd4ac766897dd3a6247"
+  integrity sha512-0zfIz2KCZ8s7M3HKcLk5ifnnKN7kfWvjUUyKsfBtZT56bfvu3CzUMcI0hDM1bjpu3DqKJKICYUviIIGEN2PHBg==
   dependencies:
     "@types/js-yaml" "^3.12.1"
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/errors" "^0.55.8-alpha.0"
-    "@xyo-network/ipfs-client" "^0.55.8-alpha.0"
-    "@xyo-network/utils" "^0.55.8-alpha.0"
-    "@xyo-network/web3-service" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
+    "@xyo-network/ipfs-client" "^0.55.9-alpha.0"
+    "@xyo-network/utils" "^0.55.9-alpha.0"
+    "@xyo-network/web3-service" "^0.55.9-alpha.0"
     ethereumjs-abi "0.6.7"
 
-"@xyo-network/content-addressable-service@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/content-addressable-service/-/content-addressable-service-0.55.8-alpha.0.tgz#9bfbb1c94e82c5893774e85c3182eb74a44d57f6"
-  integrity sha512-GJs5C8MhrOVq2ZLkcsriMhgrt+8UOLT2BnXMZoVD6w1D6VesNTEnRs6s81isf25+7SiVdq4IWLw2iu4lB1DV7Q==
+"@xyo-network/content-addressable-service@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/content-addressable-service/-/content-addressable-service-0.55.9-alpha.0.tgz#3382993579150e673511195fa058cfc84b270d00"
+  integrity sha512-QE4Jsjxe8w1sFT0ki+TbUQSnSv7RvIeNVmWavMwnMTn8OeuYDmlL+ooQZXTdbFv8+j+y+Nkb2vXdVMypMEmkMQ==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/errors" "^0.55.8-alpha.0"
-    "@xyo-network/hashing" "^0.55.8-alpha.0"
-    "@xyo-network/serialization" "^0.55.8-alpha.0"
-    "@xyo-network/storage" "^0.55.8-alpha.0"
-    "@xyo-network/utils" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
+    "@xyo-network/hashing" "^0.55.9-alpha.0"
+    "@xyo-network/serialization" "^0.55.9-alpha.0"
+    "@xyo-network/storage" "^0.55.9-alpha.0"
+    "@xyo-network/utils" "^0.55.9-alpha.0"
 
-"@xyo-network/crypto@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/crypto/-/crypto-0.55.8-alpha.0.tgz#0cf7dfb3f0bf462fc15124c7d8de7e1c36956593"
-  integrity sha512-f5FFqR7ZG/w/FoL4EuqepXWScuufPoQAchg4tOrDewQLrUvswWax1++mquDcthQ7d3Lew5gXf8o+geXNTeUYag==
+"@xyo-network/crypto@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/crypto/-/crypto-0.55.9-alpha.0.tgz#cad9917fa903998e9f4ca63e377eb3e748ad2fcc"
+  integrity sha512-yZAlBWU05jWYZGJRSeRhmfoxbyvbohzdUNhkj2vZ4dv8+3pYlGCkXzAXM0V+7wymvzgjLrYx8+qzlRrqIAFWqQ==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
 
-"@xyo-network/diviner-archivist-client.graphql@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/diviner-archivist-client.graphql/-/diviner-archivist-client.graphql-0.55.8-alpha.0.tgz#c91db60d001ab32e36033dd214426b849a40c1cd"
-  integrity sha512-WhehccGxBh0vf0wQIMZggmeV0RVBleyD6heyReadOVWmNSHSl+EBXnQbZXXL2jfTaGlFLu2pQ44V3eifZ5Ttdg==
+"@xyo-network/diviner-archivist-client.graphql@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/diviner-archivist-client.graphql/-/diviner-archivist-client.graphql-0.55.9-alpha.0.tgz#e1c0dfc06730523a67fc5e2a99ccfab54260f28e"
+  integrity sha512-DnQxtvii9jiHWUmTaReTgaEBon7JMWbPzc7Exvbg/j8qlkmD6Vfq0P9crFFehSH/DAmqLTtEizMJmKKXmnrzZA==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/diviner-archivist-client" "^0.55.8-alpha.0"
-    "@xyo-network/meta-list" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/diviner-archivist-client" "^0.55.9-alpha.0"
+    "@xyo-network/meta-list" "^0.55.9-alpha.0"
     apollo-cache-inmemory "^1.3.10"
     apollo-client "^2.4.6"
     apollo-link "^1.2.3"
@@ -693,267 +693,267 @@
     graphql "^14.2.1"
     graphql-tag "^2.10.0"
 
-"@xyo-network/diviner-archivist-client@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/diviner-archivist-client/-/diviner-archivist-client-0.55.8-alpha.0.tgz#ad3703d5bbb39ed43797c6439fda71d129f4d620"
-  integrity sha512-Ons74Uhbk5mj+x2GqN3RBhRHFKREfBjZWPUXc1NhVoqth/WY/yf5g/xw43k5ck451trKpENZj69YqbBgNazAvw==
+"@xyo-network/diviner-archivist-client@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/diviner-archivist-client/-/diviner-archivist-client-0.55.9-alpha.0.tgz#2f75448e84eaf87d18926c6896d41c83713a7c09"
+  integrity sha512-DPta7Fpx83/Y4+2wVB4nyhkpXn6EO+8oP23T/AZxdHCuAbc7DaL96QJ1qjkDAHdz0hPyBk+hJA4BS6r8lT2SOw==
   dependencies:
-    "@xyo-network/meta-list" "^0.55.8-alpha.0"
+    "@xyo-network/meta-list" "^0.55.9-alpha.0"
 
-"@xyo-network/errors@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/errors/-/errors-0.55.8-alpha.0.tgz#55807c7779a48b4b7c384c40fe9d7568c5fc4da1"
-  integrity sha512-ppqTkzNRl7eTyHouHUH1Bg/a/dl5ZQ2WCL7NfIcpSWHjn3J4ifEWiRbouDa2BpDMJNpZGko8u2iUA5lmcBl00g==
+"@xyo-network/errors@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/errors/-/errors-0.55.9-alpha.0.tgz#853f8ce9f45421fbb60357de1f612c521848bdd9"
+  integrity sha512-OKMsB4RaR53W12Hiy+42IWsoddJhPQDL1fDwTlI6DpXYhRoU1ZUWCA+C7MkFM9vnYfniiDRCmDSaAL7sSvRzbA==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
 
-"@xyo-network/graphql-server@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/graphql-server/-/graphql-server-0.55.8-alpha.0.tgz#f78c63bf2a994d357d841a45546749f82c9c6259"
-  integrity sha512-2y8EXsO8rl4T3J8g05xRf1OviqE375gHyd6P30GOJ9oItaS9A6dMKNdWqwXyJO8UoH4KWSTAj0RR6qVNZpp4EA==
+"@xyo-network/graphql-server@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/graphql-server/-/graphql-server-0.55.9-alpha.0.tgz#146f00f81b867e532b027c7f8066ede7d2e63373"
+  integrity sha512-hQKFZvVjy9NYtdHQZkeC9H2tKckm8P23XgsX7Q+65eTsMmSQ28IdJKg1s8qlGUygtu5l3LhCFKR2WztGrSuOWA==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/errors" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
     apollo-server "^2.1.0"
     graphql "^14.2.1"
     graphql-type-json "^0.3.0"
 
-"@xyo-network/hashing@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/hashing/-/hashing-0.55.8-alpha.0.tgz#e963a00946bb1f06eca8c3ad19420419fc1e349c"
-  integrity sha512-Ybyu4HSgNLTozPkk6SJi1XCm9xsp9bDMh+R2tx8z8uQnYKwTiSao9cKpfV7KkBRuHpyfY4XtAEe8iQCrYQ5IUQ==
+"@xyo-network/hashing@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/hashing/-/hashing-0.55.9-alpha.0.tgz#dd5b474b5ce23a107621ea0ffe317a934fd617d6"
+  integrity sha512-37fiVmp/mOJdop9JEiHrZL/TFyuAuBGbtWY6iD3EnesBwtRmj6W64HhwNGIkksJI8mAhfjvZ3PZJ5637wQFuFw==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/errors" "^0.55.8-alpha.0"
-    "@xyo-network/serialization" "^0.55.8-alpha.0"
-    "@xyo-network/serialization-schema" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
+    "@xyo-network/serialization" "^0.55.9-alpha.0"
+    "@xyo-network/serialization-schema" "^0.55.9-alpha.0"
     eth-lib "^0.2.8"
 
-"@xyo-network/heuristics-common@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/heuristics-common/-/heuristics-common-0.55.8-alpha.0.tgz#a5d0666899f08e1f38784b343dcb39d32a0ee9a7"
-  integrity sha512-HAEyU5AxH5eHmmGD20OSkJMJ1faPBSQSki/BKgkrjZ69olfaRl46PMY7eU4pNlGcXMBJwm4SDiNm63KwVxDEVQ==
+"@xyo-network/heuristics-common@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/heuristics-common/-/heuristics-common-0.55.9-alpha.0.tgz#467a8ed933bb5def0520c3c15cec756fff0960ca"
+  integrity sha512-m8h1uOCQ578YDu7MMKGrqPpnpnzsOtuWsMzcs37Ch9FUOeC0GdEKoLq3VSMwVkwfTsqRx9cFKABhBPGkN09JTA==
   dependencies:
-    "@xyo-network/buffer-utils" "^0.55.8-alpha.0"
-    "@xyo-network/heuristics" "^0.55.8-alpha.0"
-    "@xyo-network/serialization" "^0.55.8-alpha.0"
-    "@xyo-network/serialization-schema" "^0.55.8-alpha.0"
+    "@xyo-network/buffer-utils" "^0.55.9-alpha.0"
+    "@xyo-network/heuristics" "^0.55.9-alpha.0"
+    "@xyo-network/serialization" "^0.55.9-alpha.0"
+    "@xyo-network/serialization-schema" "^0.55.9-alpha.0"
 
-"@xyo-network/heuristics@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/heuristics/-/heuristics-0.55.8-alpha.0.tgz#e3225fe1b28dfc84be4640e544b0851318f48f63"
-  integrity sha512-UrLjQR2TwUfjdw2BwVn7jvco1yG1OmwrqGbwQ9cjNwNfR+Xn3pyT8llp73frSwCoXPWGX3XjkbKz+B1oFHw3pQ==
+"@xyo-network/heuristics@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/heuristics/-/heuristics-0.55.9-alpha.0.tgz#99cd81d7bc68914640bb3b51e5c4e1882e4072f0"
+  integrity sha512-2hhy/8TcZcCvZGl/A4jwR/j28JVtCcJ4yUE3P8LhYD+JT5BYbPU/BKgXIEfem7qXIXOLBYyM3k+RjOFF7/PIfg==
   dependencies:
-    "@xyo-network/buffer-utils" "^0.55.8-alpha.0"
-    "@xyo-network/errors" "^0.55.8-alpha.0"
-    "@xyo-network/serialization" "^0.55.8-alpha.0"
+    "@xyo-network/buffer-utils" "^0.55.9-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
+    "@xyo-network/serialization" "^0.55.9-alpha.0"
 
-"@xyo-network/ipfs-client@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/ipfs-client/-/ipfs-client-0.55.8-alpha.0.tgz#bda8534611b61d3b263c759a412a004923ecfa00"
-  integrity sha512-qP7L3ZRonWmH6C9Ck63OQVvtm7DPd9c//8S12MQU+cHAeQ2tpk0khKgyQuxmKRxB8ONDHyP2eXzbXL0/5ciJ4g==
+"@xyo-network/ipfs-client@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/ipfs-client/-/ipfs-client-0.55.9-alpha.0.tgz#18a73adec943c17e52a1fe43a440ff6f25a9217b"
+  integrity sha512-FVZVcTHtDdvi89Cj+SnJ4XUUEqZ7fvsTJlEirOZhHAnOovaNABjS7n40laD3/RvWkE3hcy3IzQ4iM+6VDFb1sQ==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/content-addressable-service" "^0.55.8-alpha.0"
-    "@xyo-network/errors" "^0.55.8-alpha.0"
-    "@xyo-network/serialization" "^0.55.8-alpha.0"
-    "@xyo-network/utils" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/content-addressable-service" "^0.55.9-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
+    "@xyo-network/serialization" "^0.55.9-alpha.0"
+    "@xyo-network/utils" "^0.55.9-alpha.0"
     ipfs-http-client "^30.1.1"
 
-"@xyo-network/logger@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/logger/-/logger-0.55.8-alpha.0.tgz#be1cd4bff425a0c8d66c9940eed19221fe4b81e2"
-  integrity sha512-8iw7GQqQ2wRH276wQSmCgG+urMSbVYQX3d+O8Thb1985hGYHHzRyvtukNRrQ8zzti6XlT7Tesx8LhgqHZFUJvA==
+"@xyo-network/logger@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/logger/-/logger-0.55.9-alpha.0.tgz#c672b0e45c7847730c4e960d9d9ea3413dc40aa1"
+  integrity sha512-V0AHhJS5YxadvYcgtbTrUSGZYHDvlwpW4L5sgIbyjrNPEz4Tl693EKvDjbTAGr4hzCqP65kuFCzAr8+jYeW/5A==
   dependencies:
     winston "^3.1.0"
     winston-daily-rotate-file "^3.4.1"
 
-"@xyo-network/meta-list@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/meta-list/-/meta-list-0.55.8-alpha.0.tgz#85f0a50cbaf3cc68cc5ac85423c6e244991c1d0e"
-  integrity sha512-UrIVukDN135RcVgtrtDI7W1zM2nSXb0QwSDhaHBUSiytVrEOwc7bvHA3zFqJN4g5z8DpznHx3nV9jD7YKK2nGA==
+"@xyo-network/meta-list@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/meta-list/-/meta-list-0.55.9-alpha.0.tgz#efaa9e3db242203a9f9410c31c4fea411006a756"
+  integrity sha512-NTwxbHDPaKv1FleakbomxAbjRU5xKbXWVe2lbu9pGj9ikcoidnSxbFQMFDqcgt5+gJMuCLYO4DFCzEF+JPp0Sg==
 
-"@xyo-network/network.tcp@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/network.tcp/-/network.tcp-0.55.8-alpha.0.tgz#7701e9f7cab49089300e4283293f5fe1a187b6fe"
-  integrity sha512-JzRs6ckegvFak6uwnKu34dcdKgXouquhOaw0lZAVkg7HS2J2xaCuRXHZk0F+JByT0sU8MSRrJutNKl3SwsqYIQ==
+"@xyo-network/network.tcp@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/network.tcp/-/network.tcp-0.55.9-alpha.0.tgz#6a4e13489144f9f9caae469c1b13f7baed029ffe"
+  integrity sha512-QX5VJtQyTMOZDQmIoMcr0KxAGsAbZtiOi+a3cpl4H2rtTffM7yZNsil9TfaOqMorfM88lJ8WlB4FnSe9UkcGmw==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/buffer-utils" "^0.55.8-alpha.0"
-    "@xyo-network/errors" "^0.55.8-alpha.0"
-    "@xyo-network/logger" "^0.55.8-alpha.0"
-    "@xyo-network/network" "^0.55.8-alpha.0"
-    "@xyo-network/serialization" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/buffer-utils" "^0.55.9-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
+    "@xyo-network/logger" "^0.55.9-alpha.0"
+    "@xyo-network/network" "^0.55.9-alpha.0"
+    "@xyo-network/serialization" "^0.55.9-alpha.0"
 
-"@xyo-network/network@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/network/-/network-0.55.8-alpha.0.tgz#3f1d5109af5bdebc811b47ba657390c537698f11"
-  integrity sha512-mgXzm/eE04/4YyDcrU3q5TSr90OMmJo3gD4Fk3C5SX1Qpf2JTfPORnjqUzycIK4RsF7Lk3ZyZ3/shEA/WV7DDA==
+"@xyo-network/network@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/network/-/network-0.55.9-alpha.0.tgz#8cee8c13430182dad30cbbb5b92ab9fd3f86f229"
+  integrity sha512-4IGY1TMod/T/YfcBmFDhin1K0QHR9Ggz1vdt5ncm9k+hA6b9gKgYRNs7KRPgw2Zut4rAP5btv1NTlJ8ochecuA==
   dependencies:
-    "@xyo-network/serialization" "^0.55.8-alpha.0"
+    "@xyo-network/serialization" "^0.55.9-alpha.0"
 
-"@xyo-network/node-network@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/node-network/-/node-network-0.55.8-alpha.0.tgz#06ba8d95c221702cbab5fd699bb3fe5279b8748d"
-  integrity sha512-IPPfbu7EmfWUb81l8luMKhaXjtANAl9uQ76yQ+uau/kQB09qNw5QfPlGneoXVjJPEZ/eCOgrmkRQJDQfB1mieA==
+"@xyo-network/node-network@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/node-network/-/node-network-0.55.9-alpha.0.tgz#81615f94c3151d0aa8152dba187ba29ee31ede03"
+  integrity sha512-TJMadjhA36ZZcg6IohoPi+lqUwiYhRTZI3o2MfnR9N4JonZWX9/PaDr5kVV6A8yM/QAd/nWVARC1PburTU58VQ==
   dependencies:
-    "@xyo-network/attribution-request" "^0.55.8-alpha.0"
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/bound-witness" "^0.55.8-alpha.0"
-    "@xyo-network/consensus" "^0.55.8-alpha.0"
-    "@xyo-network/errors" "^0.55.8-alpha.0"
-    "@xyo-network/hashing" "^0.55.8-alpha.0"
-    "@xyo-network/network" "^0.55.8-alpha.0"
-    "@xyo-network/origin-block-repository" "^0.55.8-alpha.0"
-    "@xyo-network/origin-chain" "^0.55.8-alpha.0"
-    "@xyo-network/p2p" "^0.55.8-alpha.0"
-    "@xyo-network/peer-interaction" "^0.55.8-alpha.0"
-    "@xyo-network/serialization" "^0.55.8-alpha.0"
-    "@xyo-network/serialization-schema" "^0.55.8-alpha.0"
-    "@xyo-network/signing" "^0.55.8-alpha.0"
-    "@xyo-network/transaction-pool" "^0.55.8-alpha.0"
-    "@xyo-network/utils" "^0.55.8-alpha.0"
+    "@xyo-network/attribution-request" "^0.55.9-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/bound-witness" "^0.55.9-alpha.0"
+    "@xyo-network/consensus" "^0.55.9-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
+    "@xyo-network/hashing" "^0.55.9-alpha.0"
+    "@xyo-network/network" "^0.55.9-alpha.0"
+    "@xyo-network/origin-block-repository" "^0.55.9-alpha.0"
+    "@xyo-network/origin-chain" "^0.55.9-alpha.0"
+    "@xyo-network/p2p" "^0.55.9-alpha.0"
+    "@xyo-network/peer-interaction" "^0.55.9-alpha.0"
+    "@xyo-network/serialization" "^0.55.9-alpha.0"
+    "@xyo-network/serialization-schema" "^0.55.9-alpha.0"
+    "@xyo-network/signing" "^0.55.9-alpha.0"
+    "@xyo-network/transaction-pool" "^0.55.9-alpha.0"
+    "@xyo-network/utils" "^0.55.9-alpha.0"
 
-"@xyo-network/origin-block-repository@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/origin-block-repository/-/origin-block-repository-0.55.8-alpha.0.tgz#39fa16bd94c266f89d951637a6e0283e7c7d39a4"
-  integrity sha512-J3lItQuJqeniGUyphGWtpcsAHvCAE6raz/JoaXCgBIUl3uzJ7H4wDmYWV8+cB95hSMvORjVL9Za1/1wVD/Ir8Q==
+"@xyo-network/origin-block-repository@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/origin-block-repository/-/origin-block-repository-0.55.9-alpha.0.tgz#e29add366b1f03953a973369b496dfedfae18670"
+  integrity sha512-PfYu2tJWBe4EdKQLNjC4kxDwhTD2BsCiXlK+2LIxepBKdpowA2ishBvu9k1D4RALFzd7vSWmJfair3UIhYwNSA==
   dependencies:
-    "@xyo-network/bound-witness" "^0.55.8-alpha.0"
-    "@xyo-network/hashing" "^0.55.8-alpha.0"
-    "@xyo-network/origin-chain" "^0.55.8-alpha.0"
-    "@xyo-network/serialization" "^0.55.8-alpha.0"
-    "@xyo-network/serialization-schema" "^0.55.8-alpha.0"
-    "@xyo-network/storage" "^0.55.8-alpha.0"
+    "@xyo-network/bound-witness" "^0.55.9-alpha.0"
+    "@xyo-network/hashing" "^0.55.9-alpha.0"
+    "@xyo-network/origin-chain" "^0.55.9-alpha.0"
+    "@xyo-network/serialization" "^0.55.9-alpha.0"
+    "@xyo-network/serialization-schema" "^0.55.9-alpha.0"
+    "@xyo-network/storage" "^0.55.9-alpha.0"
 
-"@xyo-network/origin-chain@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/origin-chain/-/origin-chain-0.55.8-alpha.0.tgz#449a6cc2746b9432885a7f4134188a42bf9e3315"
-  integrity sha512-VMp0GMNQZOE6udz2moiol+ZA4qdLyzBtbEyZap5vkjN9eXD1/bhhGw/P2p128+M3G7gXsN2Sb/OebUq1XNSt6w==
+"@xyo-network/origin-chain@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/origin-chain/-/origin-chain-0.55.9-alpha.0.tgz#10521cd2bbe25d9fa9d79b09c5d4e338bab10c97"
+  integrity sha512-k2LYVUfvYllNpcmrojdcn0lUdkhnNLsXXa2RSZoFDF8TV/HLH0YpzkMK2Pa0qyjGwGq/JiHZmV9dUa12/7010g==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/bound-witness" "^0.55.8-alpha.0"
-    "@xyo-network/buffer-utils" "^0.55.8-alpha.0"
-    "@xyo-network/errors" "^0.55.8-alpha.0"
-    "@xyo-network/hashing" "^0.55.8-alpha.0"
-    "@xyo-network/serialization" "^0.55.8-alpha.0"
-    "@xyo-network/serialization-schema" "^0.55.8-alpha.0"
-    "@xyo-network/signing" "^0.55.8-alpha.0"
-    "@xyo-network/storage" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/bound-witness" "^0.55.9-alpha.0"
+    "@xyo-network/buffer-utils" "^0.55.9-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
+    "@xyo-network/hashing" "^0.55.9-alpha.0"
+    "@xyo-network/serialization" "^0.55.9-alpha.0"
+    "@xyo-network/serialization-schema" "^0.55.9-alpha.0"
+    "@xyo-network/signing" "^0.55.9-alpha.0"
+    "@xyo-network/storage" "^0.55.9-alpha.0"
 
-"@xyo-network/p2p@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/p2p/-/p2p-0.55.8-alpha.0.tgz#37d079b8fde6c403bc1cf6ef96c85a2d708ab48a"
-  integrity sha512-5z6MtBgXUIZFmBjuER0QNy8cMnAOlf5eK0rrh2HRfkrIBW/v6bKBhhtZT17cZgIMjve15AQ12zDFWOhksu5/6w==
+"@xyo-network/p2p@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/p2p/-/p2p-0.55.9-alpha.0.tgz#92a824c5838d3cd621944c6cc46fba442698f7cd"
+  integrity sha512-RHeRBO839VXzhwgoj51rgM9/uPq+smg8E9LS4+fJMdacw5LU9ykOI9KEKbUSEz7Vb0BX7Zplp/X3npJ0kDzSJw==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/utils" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/utils" "^0.55.9-alpha.0"
     multiaddr "^6.0.3"
 
-"@xyo-network/peer-connections@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/peer-connections/-/peer-connections-0.55.8-alpha.0.tgz#e949448835ee1ab179a775896c33876882eabcaf"
-  integrity sha512-m5CqTR/gSvGbw/IbRX9KZ0DiSUTppBQUlEM0IYq9oyIWoftK3HZ9PyE7PyQZV/AEwo0yq2przdZnHk8C9V+V8A==
+"@xyo-network/peer-connections@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/peer-connections/-/peer-connections-0.55.9-alpha.0.tgz#a33533d709169f3237bb0cec6a9bfecc7217c47f"
+  integrity sha512-CUBko/lhWHmr5mNNhVo4nNb88IrbDb7GFECrWP4rsHBsdJjyrYISHuKGANHXaopo8gXnohQv3utm69s4Z3ttcg==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/bound-witness" "^0.55.8-alpha.0"
-    "@xyo-network/network" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/bound-witness" "^0.55.9-alpha.0"
+    "@xyo-network/network" "^0.55.9-alpha.0"
     joi "^14.3.1"
 
-"@xyo-network/peer-discovery@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/peer-discovery/-/peer-discovery-0.55.8-alpha.0.tgz#87785f00ee97a16d0437ff66c30fd46a4595a75d"
-  integrity sha512-DcAleUeU81W/IqbMqwj+8c1M1qp1aduDQDYkIohljTjYIonysCReK6R8qVEK0RKVeol89YzuYHBHgUom1oRqoA==
+"@xyo-network/peer-discovery@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/peer-discovery/-/peer-discovery-0.55.9-alpha.0.tgz#ace8664f3c60b9748401ba9d6fce37b90b2c3f36"
+  integrity sha512-IDDo50+XvhvLmP9qqXur5kV73zad40ZH2KRhl66wNYljcA4Oj42osJBMjj8a54yaKqCemDeOTwYwQFs6wfQ85w==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/errors" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
 
-"@xyo-network/peer-interaction-handlers@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/peer-interaction-handlers/-/peer-interaction-handlers-0.55.8-alpha.0.tgz#bc862dd0ad5b8375c783592d9eff5ab4d0d0a9da"
-  integrity sha512-mZfyqFUVrA74cTXCtYmKtsmya+6Lx/eNOFZlYJnJ7660Ir3fHentrVjdZKHdZ0iku7X9ujxbT1ZSQw2w4JczfQ==
+"@xyo-network/peer-interaction-handlers@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/peer-interaction-handlers/-/peer-interaction-handlers-0.55.9-alpha.0.tgz#fd4ba9830a0cde8078136991f543a4ecc404e039"
+  integrity sha512-acSVGy9FxrBqpzGaDq6T4DBmpgYbrSS+iTbtnWC1Rc3Kf3ssaB9BDzGKdhFwv2DBsefg7SY1DNFWGLINWywO9w==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/bound-witness" "^0.55.8-alpha.0"
-    "@xyo-network/errors" "^0.55.8-alpha.0"
-    "@xyo-network/network" "^0.55.8-alpha.0"
-    "@xyo-network/peer-interaction" "^0.55.8-alpha.0"
-    "@xyo-network/serialization" "^0.55.8-alpha.0"
-    "@xyo-network/serialization-schema" "^0.55.8-alpha.0"
-    "@xyo-network/signing" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/bound-witness" "^0.55.9-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
+    "@xyo-network/network" "^0.55.9-alpha.0"
+    "@xyo-network/peer-interaction" "^0.55.9-alpha.0"
+    "@xyo-network/serialization" "^0.55.9-alpha.0"
+    "@xyo-network/serialization-schema" "^0.55.9-alpha.0"
+    "@xyo-network/signing" "^0.55.9-alpha.0"
 
-"@xyo-network/peer-interaction-router@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/peer-interaction-router/-/peer-interaction-router-0.55.8-alpha.0.tgz#0f85146090f88002d16582b67439604a5330c063"
-  integrity sha512-FZthFq6amgOQHQYngLNJgrXYQYLrqXDOyNyJdgcKqH20DPTX7MjE9wKLYpJoRT8OcwYac3EisNVvCzK8PV/yjQ==
+"@xyo-network/peer-interaction-router@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/peer-interaction-router/-/peer-interaction-router-0.55.9-alpha.0.tgz#9e4b7b9dc896b5ac3ad4e20a49ae9d5c7efe77a3"
+  integrity sha512-Hpscjn/c7+G1DakDRISsh5dNroNevCtcJTvYIOf5A3GtXIGoJ2iEAnR455dX2nrjlfq26quAyOQImB73IUvBJg==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/network" "^0.55.8-alpha.0"
-    "@xyo-network/peer-connections" "^0.55.8-alpha.0"
-    "@xyo-network/peer-interaction" "^0.55.8-alpha.0"
-    "@xyo-network/peer-interaction-handlers" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/network" "^0.55.9-alpha.0"
+    "@xyo-network/peer-connections" "^0.55.9-alpha.0"
+    "@xyo-network/peer-interaction" "^0.55.9-alpha.0"
+    "@xyo-network/peer-interaction-handlers" "^0.55.9-alpha.0"
 
-"@xyo-network/peer-interaction@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/peer-interaction/-/peer-interaction-0.55.8-alpha.0.tgz#af481f00b280caca4aa2b4725fc406b185e959a2"
-  integrity sha512-uAPZyWSNs6uv3NtiJZxCV9+64lMyrfFo74kHuhEvFB/oiwQvpycgIuamLf8xAwTUaL33DjlxJo794APbLaj3ZA==
+"@xyo-network/peer-interaction@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/peer-interaction/-/peer-interaction-0.55.9-alpha.0.tgz#7c635249f71bf876cb35f16e120385a032420481"
+  integrity sha512-HNuvIQuHgb52gkS9+GmFWRvdBvgxN6Lt9HeQ6KKFEr8MblHI5ev2qnJrCt6CRtqO6/Oq/XP9qrMj433S84bKQQ==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/bound-witness" "^0.55.8-alpha.0"
-    "@xyo-network/buffer-utils" "^0.55.8-alpha.0"
-    "@xyo-network/content-addressable-service" "^0.55.8-alpha.0"
-    "@xyo-network/errors" "^0.55.8-alpha.0"
-    "@xyo-network/hashing" "^0.55.8-alpha.0"
-    "@xyo-network/network" "^0.55.8-alpha.0"
-    "@xyo-network/origin-block-repository" "^0.55.8-alpha.0"
-    "@xyo-network/origin-chain" "^0.55.8-alpha.0"
-    "@xyo-network/serialization" "^0.55.8-alpha.0"
-    "@xyo-network/serialization-schema" "^0.55.8-alpha.0"
-    "@xyo-network/signing" "^0.55.8-alpha.0"
-    "@xyo-network/utils" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/bound-witness" "^0.55.9-alpha.0"
+    "@xyo-network/buffer-utils" "^0.55.9-alpha.0"
+    "@xyo-network/content-addressable-service" "^0.55.9-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
+    "@xyo-network/hashing" "^0.55.9-alpha.0"
+    "@xyo-network/network" "^0.55.9-alpha.0"
+    "@xyo-network/origin-block-repository" "^0.55.9-alpha.0"
+    "@xyo-network/origin-chain" "^0.55.9-alpha.0"
+    "@xyo-network/serialization" "^0.55.9-alpha.0"
+    "@xyo-network/serialization-schema" "^0.55.9-alpha.0"
+    "@xyo-network/signing" "^0.55.9-alpha.0"
+    "@xyo-network/utils" "^0.55.9-alpha.0"
 
-"@xyo-network/sdk-archivist-nodejs@^0.2.47":
-  version "0.2.47"
-  resolved "https://registry.yarnpkg.com/@xyo-network/sdk-archivist-nodejs/-/sdk-archivist-nodejs-0.2.47.tgz#10b1af1000941012f8776f4bddd0557ad24459ae"
-  integrity sha512-4jAvT7P8Ut+TV3UcAMXDxHkhq9XlzWqu1axx3lpFOOxV2DQmKdUnDqjJ3hReCkrXlPavPL1hBzWpHqCO1W41/A==
+"@xyo-network/sdk-archivist-nodejs@^0.2.48":
+  version "0.2.48"
+  resolved "https://registry.yarnpkg.com/@xyo-network/sdk-archivist-nodejs/-/sdk-archivist-nodejs-0.2.48.tgz#d678bde7f79f8da7a4febece550aca776966fbd1"
+  integrity sha512-Ibwf9bU8fSvisMfSCr8d3Y69oGM8vaVUYmosiT2LI+3hF6rcDOFtGVBWWe3wkoqQIvEQNw1cOz/J8NNoFKQNAg==
   dependencies:
-    "@xyo-network/about-me" "^0.55.8-alpha.0"
-    "@xyo-network/attribution-request" "^0.55.8-alpha.0"
-    "@xyo-network/attribution-request.node-network" "^0.55.8-alpha.0"
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/block-witness" "^0.55.8-alpha.0"
-    "@xyo-network/bound-witness" "^0.55.8-alpha.0"
-    "@xyo-network/consensus" "^0.55.8-alpha.0"
-    "@xyo-network/content-addressable-service" "^0.55.8-alpha.0"
-    "@xyo-network/diviner-archivist-client" "^0.55.8-alpha.0"
-    "@xyo-network/diviner-archivist-client.graphql" "^0.55.8-alpha.0"
-    "@xyo-network/errors" "^0.55.8-alpha.0"
-    "@xyo-network/graphql-server" "^0.55.8-alpha.0"
-    "@xyo-network/hashing" "^0.55.8-alpha.0"
-    "@xyo-network/heuristics-common" "^0.55.8-alpha.0"
-    "@xyo-network/ipfs-client" "^0.55.8-alpha.0"
-    "@xyo-network/network" "^0.55.8-alpha.0"
-    "@xyo-network/network.tcp" "^0.55.8-alpha.0"
-    "@xyo-network/node-network" "^0.55.8-alpha.0"
-    "@xyo-network/origin-block-repository" "^0.55.8-alpha.0"
-    "@xyo-network/origin-chain" "^0.55.8-alpha.0"
-    "@xyo-network/p2p" "^0.55.8-alpha.0"
-    "@xyo-network/peer-connections" "^0.55.8-alpha.0"
-    "@xyo-network/peer-interaction" "^0.55.8-alpha.0"
-    "@xyo-network/peer-interaction-handlers" "^0.55.8-alpha.0"
-    "@xyo-network/peer-interaction-router" "^0.55.8-alpha.0"
-    "@xyo-network/serialization" "^0.55.8-alpha.0"
-    "@xyo-network/serialization-schema" "^0.55.8-alpha.0"
-    "@xyo-network/serializer" "^0.55.8-alpha.0"
-    "@xyo-network/signing" "^0.55.8-alpha.0"
-    "@xyo-network/signing.ecdsa" "^0.55.8-alpha.0"
-    "@xyo-network/storage" "^0.55.8-alpha.0"
-    "@xyo-network/storage.leveldb" "^0.55.8-alpha.0"
-    "@xyo-network/transaction-pool" "^0.55.8-alpha.0"
-    "@xyo-network/utils" "^0.55.8-alpha.0"
-    "@xyo-network/web3-service" "^0.55.8-alpha.0"
+    "@xyo-network/about-me" "^0.55.9-alpha.0"
+    "@xyo-network/attribution-request" "^0.55.9-alpha.0"
+    "@xyo-network/attribution-request.node-network" "^0.55.9-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/block-witness" "^0.55.9-alpha.0"
+    "@xyo-network/bound-witness" "^0.55.9-alpha.0"
+    "@xyo-network/consensus" "^0.55.9-alpha.0"
+    "@xyo-network/content-addressable-service" "^0.55.9-alpha.0"
+    "@xyo-network/diviner-archivist-client" "^0.55.9-alpha.0"
+    "@xyo-network/diviner-archivist-client.graphql" "^0.55.9-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
+    "@xyo-network/graphql-server" "^0.55.9-alpha.0"
+    "@xyo-network/hashing" "^0.55.9-alpha.0"
+    "@xyo-network/heuristics-common" "^0.55.9-alpha.0"
+    "@xyo-network/ipfs-client" "^0.55.9-alpha.0"
+    "@xyo-network/network" "^0.55.9-alpha.0"
+    "@xyo-network/network.tcp" "^0.55.9-alpha.0"
+    "@xyo-network/node-network" "^0.55.9-alpha.0"
+    "@xyo-network/origin-block-repository" "^0.55.9-alpha.0"
+    "@xyo-network/origin-chain" "^0.55.9-alpha.0"
+    "@xyo-network/p2p" "^0.55.9-alpha.0"
+    "@xyo-network/peer-connections" "^0.55.9-alpha.0"
+    "@xyo-network/peer-interaction" "^0.55.9-alpha.0"
+    "@xyo-network/peer-interaction-handlers" "^0.55.9-alpha.0"
+    "@xyo-network/peer-interaction-router" "^0.55.9-alpha.0"
+    "@xyo-network/serialization" "^0.55.9-alpha.0"
+    "@xyo-network/serialization-schema" "^0.55.9-alpha.0"
+    "@xyo-network/serializer" "^0.55.9-alpha.0"
+    "@xyo-network/signing" "^0.55.9-alpha.0"
+    "@xyo-network/signing.ecdsa" "^0.55.9-alpha.0"
+    "@xyo-network/storage" "^0.55.9-alpha.0"
+    "@xyo-network/storage.leveldb" "^0.55.9-alpha.0"
+    "@xyo-network/transaction-pool" "^0.55.9-alpha.0"
+    "@xyo-network/utils" "^0.55.9-alpha.0"
+    "@xyo-network/web3-service" "^0.55.9-alpha.0"
     abstract-leveldown "^6.0.2"
-    aws-sdk "^2.440.0"
+    aws-sdk "^2.441.0"
     ethereumjs-tx "^1.3.7"
     graphql "^14.2.1"
     leveldown "^5.0.1"
@@ -963,123 +963,123 @@
     mysql "^2.17.1"
     yargs "^13.2.2"
 
-"@xyo-network/serialization-schema@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/serialization-schema/-/serialization-schema-0.55.8-alpha.0.tgz#1db3c4253e0b722b9132a0b311c72f8f95fde6bc"
-  integrity sha512-rVBGzNYVCKQo0O810eXWcY1ZwmAAGexj4X/PP9waT5WzIAiHSPGX2e4xUfNTU3g3bw5gO5J+BZs/2JxQqDsvGQ==
+"@xyo-network/serialization-schema@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/serialization-schema/-/serialization-schema-0.55.9-alpha.0.tgz#45a93f67a572ab7cec3a6ea6be9841c6a3deb5c2"
+  integrity sha512-rKoiK4NMWcKTTIr4GHIWeh05hMva0x9QAJceKiQaysS6rIWVdodK7bWmq0t7/oSC51N9JHzJ7BH//YeyVOiYDQ==
   dependencies:
-    "@xyo-network/serialization" "^0.55.8-alpha.0"
+    "@xyo-network/serialization" "^0.55.9-alpha.0"
 
-"@xyo-network/serialization@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/serialization/-/serialization-0.55.8-alpha.0.tgz#eca454256dce783b1b6551c7031d6b6fab2fc0e0"
-  integrity sha512-0SbXTNvI04S3l6ziujoRcFhmvS8Mka8saNM0OPgcH1OiqYAXo9ZanN1sclQzaWMYx//VrqzOKIi9xJe44p5VDw==
+"@xyo-network/serialization@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/serialization/-/serialization-0.55.9-alpha.0.tgz#8f26ba567baa93a73ca0098a19669a7398aa8f58"
+  integrity sha512-FmZTmvG3tuwajvTuDAbfoC9FSMyzar8wm/2kvPvCsV80rXcqNhBrT2R2JudWC2gKuNMls7xPEIc1A1U9fpB7yA==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/errors" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
     bn.js "^4.11.8"
 
-"@xyo-network/serializer@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/serializer/-/serializer-0.55.8-alpha.0.tgz#904dd44795523319baa8215bcad91c97143a15b5"
-  integrity sha512-CDBFdjXpOoeCDaHsY+vTLb3HeO9jBNvFRmCJ1O1IwEw0HC6Tsrxs0HCMOymg+txznhrOPn513M8RsgeuFoShbA==
+"@xyo-network/serializer@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/serializer/-/serializer-0.55.9-alpha.0.tgz#d59a29aa247d960fce513eadd3af61606687e3d9"
+  integrity sha512-9AJsLqLcaxDMTouxT6ySeny93H5CybFx8PRP7BCLjFqRs0dcGC/sxVB9i2EHPZLAbSUdo5euN9yGL97Op+maEw==
   dependencies:
-    "@xyo-network/bound-witness" "^0.55.8-alpha.0"
-    "@xyo-network/hashing" "^0.55.8-alpha.0"
-    "@xyo-network/heuristics-common" "^0.55.8-alpha.0"
-    "@xyo-network/origin-chain" "^0.55.8-alpha.0"
-    "@xyo-network/serialization" "^0.55.8-alpha.0"
-    "@xyo-network/serialization-schema" "^0.55.8-alpha.0"
-    "@xyo-network/signing" "^0.55.8-alpha.0"
-    "@xyo-network/signing.ecdsa" "^0.55.8-alpha.0"
-    "@xyo-network/signing.rsa" "^0.55.8-alpha.0"
+    "@xyo-network/bound-witness" "^0.55.9-alpha.0"
+    "@xyo-network/hashing" "^0.55.9-alpha.0"
+    "@xyo-network/heuristics-common" "^0.55.9-alpha.0"
+    "@xyo-network/origin-chain" "^0.55.9-alpha.0"
+    "@xyo-network/serialization" "^0.55.9-alpha.0"
+    "@xyo-network/serialization-schema" "^0.55.9-alpha.0"
+    "@xyo-network/signing" "^0.55.9-alpha.0"
+    "@xyo-network/signing.ecdsa" "^0.55.9-alpha.0"
+    "@xyo-network/signing.rsa" "^0.55.9-alpha.0"
 
-"@xyo-network/signing.ecdsa@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/signing.ecdsa/-/signing.ecdsa-0.55.8-alpha.0.tgz#4d9679a07f1379cb20fce2cf8165a4b955fab020"
-  integrity sha512-L2H5hOobtEGaiZTAvzWYt8A2Qmkkes/r56m82bsiqIxesKmkSzTZXJf7m7D0Lf3UP4HK1gq4Fw+sV4h2y7rJwA==
+"@xyo-network/signing.ecdsa@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/signing.ecdsa/-/signing.ecdsa-0.55.9-alpha.0.tgz#55862a471f111305ec4f4f7e83ec6959c07d73ec"
+  integrity sha512-WCf15OeTw+a3WUNxV2cLA51i/SecmARxLI0RTr6uW18JGDh3Rhcqt75ulkrLGvahWR3G7aJfiyxxSrUiOENa7A==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/buffer-utils" "^0.55.8-alpha.0"
-    "@xyo-network/errors" "^0.55.8-alpha.0"
-    "@xyo-network/hashing" "^0.55.8-alpha.0"
-    "@xyo-network/serialization" "^0.55.8-alpha.0"
-    "@xyo-network/serialization-schema" "^0.55.8-alpha.0"
-    "@xyo-network/signing" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/buffer-utils" "^0.55.9-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
+    "@xyo-network/hashing" "^0.55.9-alpha.0"
+    "@xyo-network/serialization" "^0.55.9-alpha.0"
+    "@xyo-network/serialization-schema" "^0.55.9-alpha.0"
+    "@xyo-network/signing" "^0.55.9-alpha.0"
     elliptic "^6.4.1"
 
-"@xyo-network/signing.rsa@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/signing.rsa/-/signing.rsa-0.55.8-alpha.0.tgz#377d19cac403a6770cb6c1163c67c44018e9739d"
-  integrity sha512-imSmIHhCUxD8Aa0cjyHQsg3JC9xDqNn9cF5zI/XXKEoFshwejHS5R/6T870FeyWd/LADMax4sVvlBNRPhPp5ww==
+"@xyo-network/signing.rsa@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/signing.rsa/-/signing.rsa-0.55.9-alpha.0.tgz#e6176354f0000e9b33f43e70d738e04f5ed9ca82"
+  integrity sha512-cYvII4w0D7L3EfDTWJrTl+yvhULibt1SKdT6WHTZjyvQ4rS70cijWN4AoLoXsdOjzvd8mAJ/6FKXqt92i2tvUg==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/errors" "^0.55.8-alpha.0"
-    "@xyo-network/serialization" "^0.55.8-alpha.0"
-    "@xyo-network/serialization-schema" "^0.55.8-alpha.0"
-    "@xyo-network/signing" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
+    "@xyo-network/serialization" "^0.55.9-alpha.0"
+    "@xyo-network/serialization-schema" "^0.55.9-alpha.0"
+    "@xyo-network/signing" "^0.55.9-alpha.0"
     node-rsa "^1.0.1"
 
-"@xyo-network/signing@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/signing/-/signing-0.55.8-alpha.0.tgz#8990316a694c6c52c07e2847d60896b0212f8441"
-  integrity sha512-E+30Ohr49uM4YEC/zjZeqGTHlDrD3zJ8a30annHEezgRmM7283v1aGjyUUXuX4t5BEyt4zAThXdLmoQQlphDiA==
+"@xyo-network/signing@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/signing/-/signing-0.55.9-alpha.0.tgz#b892f726bad1ec306cb3c00b61a37b93edd62657"
+  integrity sha512-U7rsYzlrT9sQdpi0OAqVdrzq8UWLvfJbqsk9rG/6hGQ32V8Rg9TnwWK8GwIQLljxt5UICFxY5vyziE7u0KdFwg==
   dependencies:
-    "@xyo-network/serialization" "^0.55.8-alpha.0"
-    "@xyo-network/serialization-schema" "^0.55.8-alpha.0"
+    "@xyo-network/serialization" "^0.55.9-alpha.0"
+    "@xyo-network/serialization-schema" "^0.55.9-alpha.0"
 
-"@xyo-network/storage.leveldb@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/storage.leveldb/-/storage.leveldb-0.55.8-alpha.0.tgz#3da8aed7e2e0b5a9a9cdaf07144aaf0d104cc7f0"
-  integrity sha512-b5SlRLqj3xdNkmBmaI/VqAnC1Mz2XHdlJdX+JIDrXiYh8WH7nmmoFdIGlGY05E8/G0020OUuOv/D12aZ2XShsg==
+"@xyo-network/storage.leveldb@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/storage.leveldb/-/storage.leveldb-0.55.9-alpha.0.tgz#42057214584d5c3853a507e698d127c803ef83ac"
+  integrity sha512-hlW2CFTwZLyJCboMmGfHlBo3zIaDnqlaybWrilvrTxI+c0MoKeFVq6XZGOGt7ZaaNGus4cm7lnaAOeOzw+3fQQ==
   dependencies:
-    "@xyo-network/storage" "^0.55.8-alpha.0"
+    "@xyo-network/storage" "^0.55.9-alpha.0"
     abstract-leveldown "^6.0.2"
     leveldown "^5.0.0"
     levelup "^4.0.0"
     yargs "^13.2.2"
 
-"@xyo-network/storage@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/storage/-/storage-0.55.8-alpha.0.tgz#1b3197916e9abe07fdf31a2ee65b2b644cea57cf"
-  integrity sha512-fMCYPe9zWS+8Jjq4zp8MNeoiI9zYzo2dICA+gF7QVSXWvCOm78eqzOyTlqSUtSawD4tLmGwICwCr2oh7UDmPjw==
+"@xyo-network/storage@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/storage/-/storage-0.55.9-alpha.0.tgz#d9e420e41e949955b3718fb1b67abb81918327e8"
+  integrity sha512-rsrOmAl8hAfwe3DTYSSjCG/yttWhwTFZMi3iNkS7Xc5XxkAGHnGUFQPqqqzZykmsnYjQCtPUhz5MYQV3pLs0kg==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/errors" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
 
-"@xyo-network/transaction-pool@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/transaction-pool/-/transaction-pool-0.55.8-alpha.0.tgz#895f89299ebff3f45b2433d2f31c94f27fa50eba"
-  integrity sha512-xYNI3Q/IhhD8hbZ0VCCZ81zacGD0d086Z5B4q8AVNAPkVQWxlHitUGjnwvZ7GlwFZVOrPttrCImu362+b1Jd/Q==
+"@xyo-network/transaction-pool@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/transaction-pool/-/transaction-pool-0.55.9-alpha.0.tgz#e9e2476368fc7a26b81d653d124476a657673c9d"
+  integrity sha512-C6W+wE5FZ7R4dfgUDfZDTNsmKLYZfTVA/CmQ2pZP6xhXH2tN+FoHUgmXil6CpDpxxZ0Lzw/xvpkR0Qcz0LOK5g==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/errors" "^0.55.8-alpha.0"
-    "@xyo-network/hashing" "^0.55.8-alpha.0"
-    "@xyo-network/meta-list" "^0.55.8-alpha.0"
-    "@xyo-network/storage" "^0.55.8-alpha.0"
-    "@xyo-network/utils" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
+    "@xyo-network/hashing" "^0.55.9-alpha.0"
+    "@xyo-network/meta-list" "^0.55.9-alpha.0"
+    "@xyo-network/storage" "^0.55.9-alpha.0"
+    "@xyo-network/utils" "^0.55.9-alpha.0"
 
-"@xyo-network/utils@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/utils/-/utils-0.55.8-alpha.0.tgz#cabc2e948f14f0c51836ed98574a708e25631246"
-  integrity sha512-AT888uKYBRZZSL37wz0Mw6AjZxQeOiX2zoILmywLs7GImcbaa9MKy8PFF9Yj4MtW4USbZ2uFu1AOl0ED5RSqww==
+"@xyo-network/utils@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/utils/-/utils-0.55.9-alpha.0.tgz#716d4700200de2bf0f91c85413a8b84f5fa271bb"
+  integrity sha512-A13ltvQK5OMtM8nlM14krJtsu9yB6Xh/ML8KjDUX0wW8ceR1ULNaxK3nxpjuttYq7GkJGDYh9tOkWh5bvm14+Q==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/errors" "^0.55.8-alpha.0"
-    "@xyo-network/meta-list" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
+    "@xyo-network/meta-list" "^0.55.9-alpha.0"
     bn.js "^4.11.8"
     bs58 "^4.0.1"
 
-"@xyo-network/web3-service@^0.55.8-alpha.0":
-  version "0.55.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/web3-service/-/web3-service-0.55.8-alpha.0.tgz#2376d8f6c192f4cf278bb5813f60910c7511762c"
-  integrity sha512-/g6p/uv++140TCpqTCTqFG8fBwTatBF4yOXG7Oq6/mLiHd9rugm8xGKlerjaVSUGyX3QeXqtcf7xEnVhhHqu9w==
+"@xyo-network/web3-service@^0.55.9-alpha.0":
+  version "0.55.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/web3-service/-/web3-service-0.55.9-alpha.0.tgz#d379ab8a696d39e5e94875ff2e0d78ba3d376e47"
+  integrity sha512-gkHlCPOU8uTEKmSYTMmZZP9k7jq7JRV5A1+VboXEOxWR1ztj/q3G0TN9w1PcU3ryEBclXfiryPD3HVUywEyWMw==
   dependencies:
-    "@xyo-network/base" "^0.55.8-alpha.0"
-    "@xyo-network/content-addressable-service" "^0.55.8-alpha.0"
-    "@xyo-network/errors" "^0.55.8-alpha.0"
-    "@xyo-network/ipfs-client" "^0.55.8-alpha.0"
-    "@xyo-network/utils" "^0.55.8-alpha.0"
+    "@xyo-network/base" "^0.55.9-alpha.0"
+    "@xyo-network/content-addressable-service" "^0.55.9-alpha.0"
+    "@xyo-network/errors" "^0.55.9-alpha.0"
+    "@xyo-network/ipfs-client" "^0.55.9-alpha.0"
+    "@xyo-network/utils" "^0.55.9-alpha.0"
     ethereumjs-tx "^1.3.7"
     web3 "^1.0.0-beta.52"
     web3-eth-contract "^1.0.0-beta.52"
@@ -1584,10 +1584,10 @@ atob@^2.1.1:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-aws-sdk@^2.440.0:
-  version "2.440.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.440.0.tgz#4433b8442013f20ffebf61a988e3b823aeedb8b9"
-  integrity sha512-/sXI7pZggvFMr2J9qCpGgE2XO/4uBErRVSGoHTR3PkGWvf352w+HebnuGdRKK9D3lnGuGMnEY8w9IS44LUKsxw==
+aws-sdk@^2.441.0:
+  version "2.441.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.441.0.tgz#40d4854aae132ab7a8d42e492669ff28db79f59d"
+  integrity sha512-PnS2lih7p6sPJYUeUSxab7VNsldcHEsCJddHXnnAZRxd2nVa8pAAbPSAauJIN9E6Z4DBhvX3nuQjj+roP/KBTg==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
