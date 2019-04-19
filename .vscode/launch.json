@@ -59,7 +59,7 @@
       "name": "Launch Home",
       "type": "node",
       "request": "launch",
-      "args": ["src/index.ts", "home"],
+      "args": ["src/index.ts", "start", "home"],
       "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
       "console": "integratedTerminal"
     },
