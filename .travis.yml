@@ -9,7 +9,7 @@ addons:
   sonarcloud:
     organization: xyo-network
 install:
-- yarn install --cache-folder ./.ycache
+- yarn install
 script:
 - yarn build
 - sonar-scanner
