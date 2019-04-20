@@ -1,6 +1,6 @@
 {
   "name": "@xyo-network/app-xyo-nodejs",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "The XYO application for running components on the XYO network",
   "main": "dist/index.js",
   "bin": {
@@ -38,7 +38,7 @@
   "dependencies": {
     "@xyo-network/attribution-request.node-network": "^0.55.9-alpha.0",
     "@xyo-network/base": "^0.55.9-alpha.0",
-    "@xyo-network/crypto": "^0.55.8-alpha.0",
+    "@xyo-network/crypto": "^0.60.1",
     "@xyo-network/errors": "^0.55.9-alpha.0",
     "@xyo-network/network": "^0.55.9-alpha.0",
     "@xyo-network/network.tcp": "^0.55.9-alpha.0",
@@ -46,7 +46,7 @@
     "@xyo-network/peer-connections": "^0.55.9-alpha.0",
     "@xyo-network/peer-interaction-handlers": "^0.55.9-alpha.0",
     "@xyo-network/peer-interaction-router": "^0.55.9-alpha.0",
-    "@xyo-network/sdk-archivist-nodejs": "^0.2.48",
+    "@xyo-network/sdk-archivist-nodejs": "^0.2.49",
     "@xyo-network/storage.leveldb": "^0.55.9-alpha.0",
     "@xyo-network/utils": "^0.55.9-alpha.0",
     "commander": "^2.19.0",
