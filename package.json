@@ -1,6 +1,6 @@
 {
   "name": "@xyo-network/app-xyo-nodejs",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "description": "The XYO application for running components on the XYO network",
   "main": "dist/index.js",
   "bin": {
@@ -12,7 +12,7 @@
     "start": "node --max-old-space-size=4096 ./bin/start-node.js start",
     "stop": "./bin/stop-node.js",
     "pretest": "yarn install",
-    "lint": "tslint --config tslint.json --project tsconfig.json src/**/*.ts",
+    "lint": "tslint --config tslint.json --project tsconfig.json",
     "test": "yarn lint",
     "build": "tsc && yarn copy",
     "copy": "copyfiles -u 1 src/config/* dist/",

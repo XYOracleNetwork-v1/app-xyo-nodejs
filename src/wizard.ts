@@ -46,7 +46,7 @@ export class AppWizard extends XyoBase {
     const dataPath = await new DataPathWizard(path.resolve(this.rootPath, 'node-data')).start()
     const ip = await new PublicIpAddressWizard().start()
     const p2pPort = await new PortWizard(
-      `What port would you like to use for your peer to peer protocol?`,
+      'What port would you like to use for your peer to peer protocol?',
       11500,
     ).start()
     const bootstrapNodes = await new BootstrapWizard().start()
@@ -54,7 +54,7 @@ export class AppWizard extends XyoBase {
 
     const serverPort = await (actAsServer
       ? new PortWizard(
-          `What port would you like to use for your peer to peer protocol?`,
+          'What port would you like to use for your peer to peer protocol?',
           11000,
         ).start()
       : Promise.resolve(undefined))
