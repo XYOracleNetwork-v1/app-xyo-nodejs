@@ -9,9 +9,28 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1f31c7fa87694b8eab91a2d71f74b697)](https://www.codacy.com/app/arietrouw/app-xyo-nodejs?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=XYOracleNetwork/app-xyo-nodejs&amp;utm_campaign=Badge_Grade) [![Maintainability](https://api.codeclimate.com/v1/badges/f3dd4f4d35e1bd9eeabc/maintainability)](https://codeclimate.com/github/XYOracleNetwork/app-xyo-nodejs/maintainability) [![BCH compliance](https://bettercodehub.com/edge/badge/XYOracleNetwork/app-xyo-nodejs?branch=develop)](https://bettercodehub.com/results/XYOracleNetwork/app-xyo-nodejs)
 
-# App
+Table of Contents
 
-The XYO application for running components on the XYO network
+- [Sections](#sections)
+- [Title](#Archivist-App-Nodejs)
+- [Short Description](#short-description)
+- [Long Description](#long-description)
+- [Install](#install)
+- [Usage](#usage)
+- [Configure and Start an Archivist](#configure-and-start-an-archivist)
+- [API](#api)
+- [Maintainers](#maintainers)
+- [Contributing](#contributing)
+- [License](#license)
+- [Credits](#credits)
+
+# Archivist App Nodejs
+
+## Sections
+
+### Short Description - The XYO application for running components on the XYO network
+
+### Long Description - An archivist in the XYO network serves as the data-layer component between the bridge and the diviner. It accepts and aggregates data from bridges and makes that data available to Diviners via a GraphQL API. In essence it is the scribe node of the XYO network. This app will allow you to start up an archivist using MySQL, or if you have one configured, DynamoDB.
 
 ## Install
 
@@ -26,6 +45,8 @@ Using npm
 ```sh
   npm install @xyo-network/app --save
 ```
+
+## Usage
 
 ### Configure and Start an Archivist
 
@@ -42,7 +63,7 @@ No config found, would you like to create one now? (Y/n) · true
 ``` 
 
 ```sh
-What would you like to name your XYO Node? · <your name>
+What would you like to name your XYO Node? · <choose a name for your archivist>
 ```
 
 ```sh
@@ -59,41 +80,30 @@ What port would you like to use for your peer to peer protocol? · 11500
 *Note* Make sure that this port is different than the diviner port, or any other port that might be in use. 
 
 ```sh 
-Do you want to add bootstrap nodes? (Y/n) · true
+Do you want to add bootstrap nodes? (Y/n) · false
 ```
 
-These addresses were found on the `peers.xyo.network` DNS record.You can select and deselect each address by pressing spacebar · Hit enter and do not select items
-
-This will default to false, press `y` or `t`
-```sh
-Do you want to add any more individual bootstrap nodes? (y/N) · true
-```
-
-Go ahead and enter the example address provided
-```sh
-What is the address value of the bootstrap node? Should look something like /ip4/127.0.0.1/tcp/11500 · /ip4/127.0.0.1/tcp/11501
-``` 
-This port number should match the one that you entered for your peer to peer protocol answer **(for convention a good range is 11501 - 11510) one of the nodes needs to run 11500**
-
-This will default to false, now we hit enter
 ```sh
 Do you want to add any more individual bootstrap nodes? (y/N) · false
 ```
+
 Ensure that your archivist can do bound witness
 ```sh
 Do you want your node to act as a server for doing bound-witnesses? (Y/n) · true
 ```
 
-Select your port for peer to peer protocol 
+Select your port for peer to peer protocol - bound witness
 ```sh 
 What port would you like to use for your peer to peer protocol? · 11000
 ``` 
+
 This is your bound witness port, it should be different from the diviner port
 
 Ensure that the component features for support are *archivist*
 ```sh
 Which component features do you want your Xyo Node to support? · archivist
 ``` 
+
 If you select diviner, you won't get the correct options to set up an archivist
 
 Set up the database with the values from your bootstrapping earlier
@@ -125,3 +135,73 @@ Start the node
 ```sh
 Do you want to start the node after configuration is complete? (Y/n) · true
 ```
+
+This will run through a few lifecycle methods and then start up the `SqlService`
+
+This example is to run your archivist locally using a MySql instance
+
+## Using DynamoDB
+
+## API
+
+# Contributing
+
+## Developer Guide
+
+### Git Branch Standards
+
+**Make sure that the branch you are on is current and checked out from the most updated remote state**
+
+A key while working in a project is to ensure that you have the **latest code from the other branches**. ***especially those that you have checked out from.*** 
+
+Remember to frequently: 
+
+`git fetch --all`
+`git pull <remote name - ususally origin> <branch name>`
+
+We would recommend that you do this before pushing your committed code. 
+
+**NOTE** Related: make sure that you are in communication with your project team, and that you check GitHub for updates to the codebase, especially the branch that you are checked out from. 
+
+### Naming Your Branches
+
+When you are checkout out new branches and naming them, you should follow a solid **git flow** method as outlined below: 
+- For **feature branches** `feature/<feature you are working on>`
+- For **bug fix branches - hot** `hotfix/<hotfix you are working on>`
+- For **bug fix branches** `fix/<fix you are working on>` **NOTE** Only if this bug-fix will not interfere with dev worklflow
+- For **release branch** `release/<version number>` **NOTE** Only if your project is working off of a release before merge into master
+
+### Git Flow
+
+**NOTE: Only the Develop and Release Branch can be merged into Master**
+
+In order to ensure that production-ready software is truly ready, we need to maintain a strong git flow. This means that we should only merge our develop or release branch into master - essentially we want to lock the `master`, `release` and `develop` branches. The `develop` branch should be the home for all tested and production ready code that is ready for a final review with included checks before being brought into master, we can also use `release` for production staging. All checks would include CI/CD and code quality. 
+
+For feature branches, you should `git checkout -b feature/<what feature name you are working on>`
+**NOTE** Feature branches should always and **only** be checked out from the latest develop branch. 
+
+Bug fixes, documentation updates, and minor styling should be done through a `release` branch which would be checked out from the latest `develop` branch after all feature branches have been merged into the `develop` branch.
+
+The `develop` branch should also be where we conduct full app testing, as opposed to feature specific. To test features, you should make sure that all feature specifc tests pass in the `feature` branch that you are working on.
+
+If you feel you may need to do a `hot-fix` directly to master, please communicate when to do this. **Do Not Take Hot Fixes Lightly**
+
+### Tools
+
+- [yarn package manager](https://yarnpkg.com/en/)
+- [eslint](https://eslint.org/)
+- [tslint](https://palantir.github.io/tslint/)
+- [typescript](https://www.typescriptlang.org/)
+- Use `@storybook` dependencies 
+- Use `@type` dependencies
+
+### Maintainers
+- Carter Harrison
+- Arie Trouw
+
+### License 
+
+MIT
+
+<p align="center">Made with  ❤️  by [<b>XY - The Persistent Company</b>] (https://xy.company)</p>
+
