@@ -3,6 +3,10 @@
 
 ![logo]
 
+# Archivist App Nodejs
+
+[![NPM](https://nodei.co/npm/@xyo-network/app.png)](https://nodei.co/npm/@xyo-network/app/) 
+
 [![Build Status](https://travis-ci.com/XYOracleNetwork/app-xyo-nodejs.svg?branch=develop)](https://travis-ci.com/XYOracleNetwork/app-xyo-nodejs) [![DepShield Badge](https://depshield.sonatype.org/badges/XYOracleNetwork/app-xyo-nodejs/depshield.svg)](https://depshield.github.io)
 
 [![David Badge](https://david-dm.org/xyoraclenetwork/app-xyo-nodejs/status.svg)](https://david-dm.org/xyoraclenetwork/app-xyo-nodejs) [![David Badge](https://david-dm.org/xyoraclenetwork/app-xyo-nodejs/dev-status.svg)](https://david-dm.org/xyoraclenetwork/app-xyo-nodejs)
@@ -23,8 +27,6 @@ Table of Contents
 - [Contributing](#contributing)
 - [License](#license)
 - [Credits](#credits)
-
-# Archivist App Nodejs
 
 ## Sections
 
