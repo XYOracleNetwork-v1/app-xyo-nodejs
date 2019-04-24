@@ -4,7 +4,7 @@
  * File Created: Tuesday, 16th April 2019 9:19:05 am
  * Author: XYO Development Team (support@xyo.network)
  * -----
- * Last Modified: Wednesday, 17th April 2019 8:45:46 pm
+ * Last Modified: Tuesday, 23rd April 2019 6:24:43 pm
  * Modified By: XYO Development Team (support@xyo.network>)
  * -----
  * Copyright 2017 - 2019 XY - The Persistent Company
@@ -30,7 +30,7 @@ import { ContractWizard, IContractConfig } from './wizard/contract'
 import { GraphqlWizard } from './wizard/graphql'
 import { ApiWizard } from './wizard/api'
 import { AutostartWizard } from './wizard/autostart'
-import { ISqlArchivistRepositoryConfig } from '@xyo-network/sdk-archivist-nodejs'
+import { Repository } from '@xyo-network/sdk-archivist-nodejs'
 
 export class AppWizard extends XyoBase {
   constructor(private readonly rootPath: string) {
@@ -62,7 +62,7 @@ export class AppWizard extends XyoBase {
     const ipfs = await new IpfsWizard().start()
 
     const components = await new ComponentsWizard().start()
-    let sqlCredentials: ISqlArchivistRepositoryConfig | undefined
+    let sqlCredentials: Repository.ISqlArchivistRepositoryConfig | undefined
     let ethereumNodeAddress: string | undefined
     let ethKeys: IEthCryptoKeys | undefined
     let xyStakingConsensus: IContractConfig | undefined

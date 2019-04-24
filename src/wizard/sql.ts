@@ -1,8 +1,8 @@
 import { Wizard } from './base'
-import { ISqlArchivistRepositoryConfig } from '@xyo-network/sdk-archivist-nodejs'
+import { Repository } from '@xyo-network/sdk-archivist-nodejs'
 
 export class SqlWizard extends Wizard {
-  public async start(): Promise<ISqlArchivistRepositoryConfig> {
+  public async start(): Promise<Repository.ISqlArchivistRepositoryConfig> {
     const { host, user, password, database, port } = await this.prompt([
       {
         type: 'input',

@@ -4,7 +4,7 @@
  * File Created: Tuesday, 16th April 2019 9:19:05 am
  * Author: XYO Development Team (support@xyo.network)
  * -----
- * Last Modified: Friday, 19th April 2019 1:27:03 pm
+ * Last Modified: Tuesday, 23rd April 2019 6:25:00 pm
  * Modified By: XYO Development Team (support@xyo.network>)
  * -----
  * Copyright 2017 - 2019 XY - The Persistent Company
@@ -31,7 +31,7 @@ import { prompt } from 'enquirer'
 
 import { XyoError } from '@xyo-network/errors'
 import { CatalogueItem } from '@xyo-network/network'
-import { XyoNode } from '@xyo-network/sdk-archivist-nodejs'
+import { BaseNode } from '@xyo-network/sdk-archivist-nodejs'
 import { XyoCryptoProvider } from '@xyo-network/crypto'
 import { IXyoComponentFeatureResponse } from '@xyo-network/node-network'
 
@@ -141,7 +141,7 @@ export class XyoAppLauncher extends XyoBase {
     features: IXyoComponentFeatureResponse,
   ) {
     if (this.config) {
-      return new XyoNode({
+      return new BaseNode.XyoNode({
         config: {
           nodeRunnerDelegates: {
             enableBoundWitnessServer: Boolean(this.config.serverPort),
