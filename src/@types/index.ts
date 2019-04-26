@@ -8,7 +8,7 @@
  * @Copyright: Copyright XY | The Findables Company
  */
 
-import { Repository } from '@xyo-network/sdk-archivist-nodejs'
+import { IArchivistRepositoryConfig } from '@xyo-network/sdk-archivist-nodejs'
 
 export interface IEthCryptoKeys {
   address: string
@@ -22,7 +22,7 @@ export interface ICreateConfigResult {
 }
 
 export interface IArchivistConfig {
-  repository: Repository.IArchivistRepositoryConfig
+  repository: IArchivistRepositoryConfig
 }
 
 export interface IDivinerConfig {

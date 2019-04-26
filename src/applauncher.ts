@@ -4,7 +4,7 @@
  * File Created: Tuesday, 16th April 2019 9:19:05 am
  * Author: XYO Development Team (support@xyo.network)
  * -----
- * Last Modified: Tuesday, 23rd April 2019 6:25:00 pm
+ * Last Modified: Friday, 26th April 2019 8:07:39 am
  * Modified By: XYO Development Team (support@xyo.network>)
  * -----
  * Copyright 2017 - 2019 XY - The Persistent Company
@@ -31,7 +31,7 @@ import { prompt } from 'enquirer'
 
 import { XyoError } from '@xyo-network/errors'
 import { CatalogueItem } from '@xyo-network/network'
-import { BaseNode } from '@xyo-network/sdk-archivist-nodejs'
+import { XyoNode } from '@xyo-network/sdk-archivist-nodejs'
 import { XyoCryptoProvider } from '@xyo-network/crypto'
 import { IXyoComponentFeatureResponse } from '@xyo-network/node-network'
 
@@ -128,10 +128,7 @@ export class XyoAppLauncher extends XyoBase {
     }
     await this.addPidToPidsFolder()
     const newNode = await this.createNode(nodeData, features)
-    if (newNode) {
-      const managedProcessNode = new ProcessManager(newNode)
-      managedProcessNode.manage(process)
-    } else {
+    if (!newNode) {
       throw new XyoError('Failed to Create Node')
     }
   }
@@ -141,68 +138,47 @@ export class XyoAppLauncher extends XyoBase {
     features: IXyoComponentFeatureResponse,
   ) {
     if (this.config) {
-      return new BaseNode.XyoNode({
-        config: {
-          nodeRunnerDelegates: {
-            enableBoundWitnessServer: Boolean(this.config.serverPort),
-            enableGraphQLServer: Boolean(
+      return new XyoNode({
+        nodeRunnerDelegates: {
+          enableBoundWitnessServer: Boolean(this.config.serverPort),
+          enableGraphQLServer: Boolean(
               this.config.graphqlPort && this.config.apis.length > 0,
             ),
-            enableQuestionsWorker: this.isDiviner,
-            enableBlockProducer: this.isDiviner,
-            enableBlockWitness: this.isDiviner,
-          },
-          blockProducer: this.isDiviner
+          enableQuestionsWorker: this.isDiviner,
+          enableBlockProducer: this.isDiviner,
+          enableBlockWitness: this.isDiviner,
+        },
+        blockProducer: this.isDiviner
             ? {
               accountAddress: this.config.diviner!.ethereum.account.address,
             }
             : null,
-          data: {
-            path: nodeData,
-          },
-          discovery: {
-            bootstrapNodes: this.config.bootstrapNodes,
-            publicKey: this.config.name,
-            address: `/ip4/${this.config.ip}/tcp/${this.config.p2pPort}`,
-          },
-          peerTransport: {
-            address: `/ip4/${this.config.ip}/tcp/${this.config.p2pPort}`,
-          },
-          nodeNetworkFrom: {
-            features,
-            shouldServiceBlockPermissionRequests: this.isArchivist,
-          },
-          network: this.config.serverPort
+        data: {
+          path: nodeData,
+        },
+        discovery: {
+          bootstrapNodes: this.config.bootstrapNodes,
+          publicKey: this.config.name,
+          address: `/ip4/${this.config.ip}/tcp/${this.config.p2pPort}`,
+        },
+        peerTransport: {
+          address: `/ip4/${this.config.ip}/tcp/${this.config.p2pPort}`,
+        },
+        nodeNetworkFrom: {
+          features,
+          shouldServiceBlockPermissionRequests: this.isArchivist,
+        },
+        network: this.config.serverPort
             ? {
               port: this.config.serverPort,
             }
             : null,
-          originChainRepository: {
-            data: path.resolve(nodeData, 'origin-chain'),
-          },
-          networkProcedureCatalogue: {
-            catalogue: [
-              CatalogueItem.BOUND_WITNESS,
-              CatalogueItem.TAKE_ORIGIN_CHAIN,
-              CatalogueItem.GIVE_ORIGIN_CHAIN,
-              CatalogueItem.TAKE_REQUESTED_BLOCKS,
-              CatalogueItem.GIVE_REQUESTED_BLOCKS,
-            ],
-          },
-          archivistRepository: this.getArchivistRepositoryConfig(),
-          boundWitnessValidator: this.getBoundWitnessValidatorConfig(),
-          aboutMeService: this.getAboutMeConfig(),
-          graphql: this.getGraphQlConfig(),
-          web3Service: await this.getWeb3ServiceConfig(),
-          contentAddressableService: {
-            host: this.config.ipfs.host,
-            port: this.config.ipfs.port,
-            protocol: this.config.ipfs.protocol,
-          },
-          transactionRepository: {
-            data: path.resolve(nodeData, 'transactions'),
-          },
+        originStateRepository: {
+          data: path.resolve(nodeData, 'origin-chain'),
         },
+        archivistRepository: this.getArchivistRepositoryConfig(),
+        aboutMeService: this.getAboutMeConfig(),
+        graphql: this.getGraphQlConfig()
       })
     }
   }
