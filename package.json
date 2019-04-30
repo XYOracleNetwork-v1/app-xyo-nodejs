@@ -1,6 +1,6 @@
 {
   "name": "@xyo-network/app-xyo-nodejs",
-  "version": "0.2.19",
+  "version": "0.2.20",
   "description": "The XYO application for running components on the XYO network",
   "main": "dist/index.js",
   "bin": {
@@ -34,7 +34,7 @@
   },
   "types": "dist/index.d.ts",
   "author": "XYO Development Team",
-  "license": "MIT",
+  "license": "LGPL-3.0",
   "dependencies": {
     "@xyo-network/attribution-request.node-network": "^0.55.9-alpha.0",
     "@xyo-network/base": "^0.55.9-alpha.0",
