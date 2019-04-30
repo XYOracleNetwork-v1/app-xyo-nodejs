@@ -1,6 +1,6 @@
 {
   "name": "@xyo-network/app-xyo-nodejs",
-  "version": "0.2.20",
+  "version": "0.2.22",
   "description": "The XYO application for running components on the XYO network",
   "main": "dist/index.js",
   "bin": {
@@ -63,12 +63,12 @@
   "devDependencies": {
     "@types/elliptic": "^6.4.6",
     "@types/graphql": "^14.2.0",
-    "@types/jest": "^24.0.11",
+    "@types/jest": "^24.0.12",
     "@types/joi": "^14.3.1",
     "@types/js-yaml": "^3.12.0",
     "@types/lodash": "^4.14.123",
-    "@types/node": "^11.13.7",
-    "@xyo-network/config-tslint": "^0.1.13",
+    "@types/node": "^11.13.8",
+    "@xyo-network/config-tslint": "^0.1.15",
     "copyfiles": "^2.1.0",
     "jest": "^24.5.0",
     "license-checker": "^25.0.1",
