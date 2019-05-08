@@ -10,8 +10,7 @@
  * Copyright 2017 - 2019 XY - The Persistent Company
  */
 
-export { IAppConfig } from './@types'
-import { XyoAppLauncher } from './applauncher'
+import { XyoAppLauncher } from '../_/applauncher'
 import commander from 'commander'
 import dotenvExpand from 'dotenv-expand'
 
@@ -36,7 +35,7 @@ export async function main() {
     .option('-p, --preflight [preflight]', 'generates preflight report')
     .option('-d, --database [database]', 'type of database to use', /^(mysql|level|neo4j|dynamo)$/i)
     .arguments('[cmd] [target]')
-    .action(async (cmd, target) => {
+    .action(async(cmd, target) => {
       const appLauncher = new XyoAppLauncher()
       try {
         if (program.forever) {
