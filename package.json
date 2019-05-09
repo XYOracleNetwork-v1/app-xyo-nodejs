@@ -4,8 +4,7 @@
   "description": "The XYO application for running components on the XYO network",
   "main": "dist/index.js",
   "bin": {
-    "xyo-start": "bin/start-node.js",
-    "xyo-stop": "bin/stop-node.js"
+    "xyo-app": "bin/start-node.js",
   },
   "scripts": {
     "forever": "forever --max-old-space-size=4096 ./bin/start-forever.js",
