@@ -8,6 +8,11 @@
                 "name": "carter",
                 "ip": "10.30.10.11"
             }
+        },
+        {
+            "packageName": "ping",
+            "path": "../dist/plugins/ping",
+            "config": {}
         }
     ]
 }
