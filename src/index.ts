@@ -10,20 +10,30 @@
  * Copyright 2017 - 2019 XY - The Persistent Company
  */
 
-import { IXyoPluginWithConfig, IXyoConfig } from '@xyo-network/sdk-base-nodejs'
+import { IXyoPluginWithConfig, IXyoConfig, XyoBase } from '@xyo-network/sdk-base-nodejs'
 import { XyoGraphQlEndpoint } from './graphql/graohql-delegate'
 import { PluginResolver } from './plugin-resolver'
-import { XyoBase } from '@xyo-network/sdk-base-nodejs'
+import commander from 'commander'
 
 export class App extends XyoBase {
   public async main() {
+
+    commander.option('-c, --config <string>', 'config path')
+    commander.parse(process.argv)
+
+    if (!commander.config) {
+      this.logError('No config file specified')
+      process.exit(1)
+    }
+
     const delegate = new XyoGraphQlEndpoint()
     const resolver = new PluginResolver(delegate)
-    const config = await this.readConfigFromPath('../configs/about-me.config.json')
+    const config = await this.readConfigFromPath(commander.config)
     const plugins = await this.getPluginsFromConfig(config)
     await resolver.resolve(plugins)
     const server = delegate.start(config.port)
     server.start()
+
   }
 
   private async getPluginsFromConfig(config: IXyoConfig): Promise<IXyoPluginWithConfig[]> {
@@ -54,7 +64,13 @@ export class App extends XyoBase {
   }
 
   private async readConfigFromPath(path: string): Promise<IXyoConfig> {
-    return require(path) as IXyoConfig
+    try {
+      return require(path) as IXyoConfig
+    } catch (error) {
+      this.logError(`Can not find config at path: ${path}`)
+      process.exit(1)
+      throw new Error()
+    }
   }
 
 }
