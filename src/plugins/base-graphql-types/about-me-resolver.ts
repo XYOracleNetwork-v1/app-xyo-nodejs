@@ -5,6 +5,10 @@ export interface IXyoAboutMe {
   name: string,
   version: string,
   ip: string,
+  address: string,
+
+  // this is deprecated
+  boundWitnessServerPort: string
 }
 
 export class XyoAboutMeResolver implements IXyoDataResolver<any, any, any, any>  {

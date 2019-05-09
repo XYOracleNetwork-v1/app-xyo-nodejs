@@ -63,7 +63,7 @@ export class PluginResolver extends XyoBase {
         this.resolvedPluginCount++
       }
 
-      this.logInfo(`Using plugin: ${plugin.plugin.getName()}`)
+      this.logDebug(`Initialized plugin: ${plugin.plugin.getName()}`)
 
       this.resolvedPluginNames[plugin.plugin.getName()] = true
     }

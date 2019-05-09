@@ -4,7 +4,7 @@
   "description": "The XYO application for running components on the XYO network",
   "main": "dist/index.js",
   "bin": {
-    "xyo-app": "bin/start-node.js"
+    "xyo": "bin/start-node.js"
   },
   "scripts": {
     "forever": "forever --max-old-space-size=4096 ./bin/start-forever.js",
@@ -21,14 +21,13 @@
   "author": "XYO Development Team",
   "license": "LGPL-3.0",
   "optionalDependencies": {
-    "@xyo-network/sdk-archivist-nodejs": "^0.3.0-beta.0"
+    "@xyo-network/sdk-archivist-nodejs": "^0.3.0-beta.3"
   },
   "files": [
     "dist",
     "bin"
   ],
   "dependencies": {
-    "@types/graphql-type-json": "^0.1.3",
     "@xyo-network/sdk-base-nodejs": "^0.3.1",
     "@xyo-network/sdk-core-nodejs": "^0.61.19",
     "commander": "^2.19.0",
@@ -40,6 +39,7 @@
     "shelljs": "^0.8.3"
   },
   "devDependencies": {
+    "@types/graphql-type-json": "^0.1.3",
     "@types/elliptic": "^6.4.6",
     "@types/fs-extra": "^5.0.5",
     "@types/graphql": "^14.2.0",

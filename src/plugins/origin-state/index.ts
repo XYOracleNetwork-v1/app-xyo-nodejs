@@ -1,11 +1,12 @@
-import { IXyoPlugin } from '@xyo-network/sdk-base-nodejs'
+import { IXyoPlugin, XyoBase } from '@xyo-network/sdk-base-nodejs'
 import { XyoOriginState, XyoFileOriginStateRepository, XyoSecp2556k1 } from '@xyo-network/sdk-core-nodejs'
+import bs58 from 'bs58'
 
 interface IXyoOriginStateConfig {
   path?: string,
 }
 
-export class OriginStatePlugin implements IXyoPlugin {
+export class OriginStatePlugin extends XyoBase implements IXyoPlugin {
   public ORIGIN_STATE: XyoOriginState | undefined
 
   public getName(): string {
@@ -29,6 +30,13 @@ export class OriginStatePlugin implements IXyoPlugin {
     })
 
     this.ORIGIN_STATE = new XyoOriginState(repository)
+
+    if (this.ORIGIN_STATE.getIndexAsNumber() === 0) {
+      const signer = new XyoSecp2556k1()
+      this.ORIGIN_STATE.addSigner(signer)
+    }
+
+    this.logInfo(`Using public key:  \u001b[35m${bs58.encode(this.ORIGIN_STATE.getSigners()[0].getPublicKey().getAll().getContentsCopy())}\u001b[0m`)
 
     return true
   }

@@ -19,6 +19,8 @@ import { XyoMutexHandler } from './mutex'
 export class App extends XyoBase {
   public async main() {
 
+    this.logInfo('Starting: XYO App')
+
     commander.option('-c, --config <string>', 'config path')
     commander.parse(process.argv)
 
@@ -61,6 +63,10 @@ export class App extends XyoBase {
         process.exit(1)
       }
     }
+
+    foundPlugins.forEach((plugin) => {
+      this.logInfo(`Using plugin ✅: \u001b[36m${plugin.plugin.getName()}\u001b[0m`)
+    })
 
     return foundPlugins
   }

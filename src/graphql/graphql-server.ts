@@ -26,7 +26,7 @@ export class XyoGraphQLServer extends XyoBase {
     const { typeDefs, resolvers } = this.initialize()
     this.server = new ApolloServer({
       typeDefs,
-      resolvers
+      resolvers,
     })
 
     const { url } = await this.server.listen({ port: this.port })
@@ -54,7 +54,12 @@ export class XyoGraphQLServer extends XyoBase {
 
     const resolvers: IResolvers = {
       JSON: graphqlTypeJson,
-      Query: compiledRouter
+      Query: compiledRouter,
+      List: {
+        __resolveType: () => {
+          return null
+        }
+      }
     }
 
     const typeDefs = gql(this.schema)

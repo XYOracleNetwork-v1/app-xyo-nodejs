@@ -1,6 +1,8 @@
 import { IXyoPlugin, IXyoGraphQlDelegate } from '@xyo-network/sdk-base-nodejs'
 import { XyoAboutMeResolver } from './about-me-resolver'
 import { types } from './base-graphql-types'
+import { XyoOriginState } from '@xyo-network/sdk-core-nodejs'
+import bs58 from 'bs58'
 import dotenvExpand from 'dotenv-expand'
 
 const getVersion = (): string => {
@@ -26,7 +28,7 @@ export class XyoBaseGraphQlPlugin implements IXyoPlugin {
   }
 
   public getPluginDependencies(): string[] {
-    return []
+    return ['ORIGIN_STATE']
   }
 
   public async initialize(deps: { [key: string]: any; }, config: any, graphql?: IXyoGraphQlDelegate | undefined): Promise<boolean> {
@@ -34,13 +36,18 @@ export class XyoBaseGraphQlPlugin implements IXyoPlugin {
       throw new Error('Expecting GraphQl interface')
     }
 
+    const publicKey =  bs58.encode((deps.ORIGIN_STATE as XyoOriginState).getSigners()[0].getPublicKey().getAll().getContentsCopy())
+
     graphql.addType(types)
     graphql.addQuery('about: XyoAboutMe')
     graphql.addResolver('about', new XyoAboutMeResolver({
       version: getVersion(),
       ip: config.ip,
-      name: config.name
+      name: config.name,
+      address: publicKey,
+      boundWitnessServerPort: '' // we put this as an empty string because it is deprecated
     }))
+
     return true
   }
 }
