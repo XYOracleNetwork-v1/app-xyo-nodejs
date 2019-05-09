@@ -1,14 +1,7 @@
 import { IXyoPlugin, IXyoGraphQlDelegate } from '@xyo-network/sdk-base-nodejs'
-import { XyoAboutMeResolver, IXyoAboutMe } from './about-me-resolver'
+import { XyoAboutMeResolver } from './about-me-resolver'
+import { types } from './base-graphql-types'
 import dotenvExpand from 'dotenv-expand'
-
-const aboutMeType = `
-    type XyoAboutMe {
-        name: String,
-        version: String,
-        ip: String,
-    }
-`
 
 const getVersion = (): string => {
   dotenvExpand({
@@ -22,12 +15,14 @@ const getVersion = (): string => {
 }
 
 export class XyoBaseGraphQlPlugin implements IXyoPlugin {
+  public BASE_GRAPHQL_TYPES = types
+
   public getName(): string {
     return 'xyo-base-graphql'
   }
 
   public getProvides(): string[] {
-    return ['xyo-base-graphql']
+    return ['BASE_GRAPHQL_TYPES']
   }
 
   public getPluginDependencies(): string[] {
@@ -39,7 +34,7 @@ export class XyoBaseGraphQlPlugin implements IXyoPlugin {
       throw new Error('Expecting GraphQl interface')
     }
 
-    graphql.addType(aboutMeType)
+    graphql.addType(types)
     graphql.addQuery('about: XyoAboutMe')
     graphql.addResolver('about', new XyoAboutMeResolver({
       version: getVersion(),

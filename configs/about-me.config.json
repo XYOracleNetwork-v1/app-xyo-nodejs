@@ -13,6 +13,23 @@
             "packageName": "ping",
             "path": "../dist/plugins/ping",
             "config": {}
+        },
+        {
+            "packageName": "archivist",
+            "path": "../../sdk-archivist-nodejs/dist/",
+            "config": {            
+                
+            }
+        },
+        {
+            "packageName": "db",
+            "path": "../../sdk-archivist-nodejs/dist/repository/dynamodb/xyo-dynamo-plugin.js",
+            "config": {}
+        },
+        {
+            "packageName": "state",
+            "path": "../../sdk-archivist-nodejs/dist/xyo-state-plugin.js",
+            "config": {}
         }
     ]
 }

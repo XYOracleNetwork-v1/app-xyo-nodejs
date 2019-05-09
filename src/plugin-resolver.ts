@@ -1,15 +1,18 @@
-import { IXyoPlugin, IXyoGraphQlDelegate, IXyoPluginWithConfig } from '@xyo-network/sdk-base-nodejs'
+import { IXyoPlugin, IXyoGraphQlDelegate, IXyoPluginWithConfig, IXyoBoundWitnessMutexDelegate, XyoBase } from '@xyo-network/sdk-base-nodejs'
 
-export class PluginResolver {
+export class PluginResolver extends XyoBase {
 
   private resolvedPluginNames: {[key: string]: boolean}  = {}
   private resolvedPlugins: {[key: string]: IXyoPlugin} = {}
   private lastResolvedPluginCount = 0
   private resolvedPluginCount = -1
   private qlDelegate: IXyoGraphQlDelegate
+  private mutexDelegate: IXyoBoundWitnessMutexDelegate
 
-  constructor(graphql: IXyoGraphQlDelegate) {
+  constructor(graphql: IXyoGraphQlDelegate, mutex: IXyoBoundWitnessMutexDelegate) {
+    super()
     this.qlDelegate = graphql
+    this.mutexDelegate = mutex
   }
 
   public async resolve(plugins: IXyoPluginWithConfig[]) {
@@ -47,7 +50,7 @@ export class PluginResolver {
 
     // if the plugin has all of the dependencies, initialize it
     if (hasAllDependencies) {
-      await plugin.plugin.initialize(this.resolvedPlugins, plugin.config, this.qlDelegate)
+      await plugin.plugin.initialize(this.resolvedPlugins, plugin.config, this.qlDelegate, this.mutexDelegate)
       const provides = plugin.plugin.getProvides()
 
       // after we initialize the plugin, we add what it provides, so that other plugins can use it
@@ -56,9 +59,11 @@ export class PluginResolver {
           throw Error('stub duplicate dependency, pick one')
         }
 
-        this.resolvedPlugins[provider] = plugin[provider]
+        this.resolvedPlugins[provider] = plugin.plugin[provider]
         this.resolvedPluginCount++
       }
+
+      this.logInfo(`Using plugin: ${plugin.plugin.getName()}`)
 
       this.resolvedPluginNames[plugin.plugin.getName()] = true
     }

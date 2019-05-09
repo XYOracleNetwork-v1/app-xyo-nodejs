@@ -638,10 +638,10 @@
   dependencies:
     winston "3.2.1"
 
-"@xyo-network/sdk-base-nodejs@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/sdk-base-nodejs/-/sdk-base-nodejs-0.3.0.tgz#230dbe910c0c8e807344d1523148a0ea3baf34aa"
-  integrity sha512-vQ8z3A2H5A9ocWjUNCnIU/dUHPxdsZu2QqkceIn5RIsX613v/fu1RYrLG2g1c3JB9GQksg95RcK2LaIZ6NJTXQ==
+"@xyo-network/sdk-base-nodejs@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@xyo-network/sdk-base-nodejs/-/sdk-base-nodejs-0.3.1.tgz#5471dd527bce96cbfc75ce7aa1d3e2ee2a4fe94f"
+  integrity sha512-jPP3jHYeEIpetprkaVeNF9Ctcy14p3JV5YfdF9X1Cj5maWLfi0ISOMBz0GzoEq0Pmy5AGwtukQbP2kJetv29wg==
   dependencies:
     winston "3.2.1"
 

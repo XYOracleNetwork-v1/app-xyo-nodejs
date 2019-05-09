@@ -14,6 +14,7 @@ import { IXyoPluginWithConfig, IXyoConfig, XyoBase } from '@xyo-network/sdk-base
 import { XyoGraphQlEndpoint } from './graphql/graohql-delegate'
 import { PluginResolver } from './plugin-resolver'
 import commander from 'commander'
+import { XyoMutexHandler } from './mutex'
 
 export class App extends XyoBase {
   public async main() {
@@ -27,7 +28,8 @@ export class App extends XyoBase {
     }
 
     const delegate = new XyoGraphQlEndpoint()
-    const resolver = new PluginResolver(delegate)
+    const mutex = new XyoMutexHandler()
+    const resolver = new PluginResolver(delegate, mutex)
     const config = await this.readConfigFromPath(commander.config)
     const plugins = await this.getPluginsFromConfig(config)
     await resolver.resolve(plugins)
@@ -67,6 +69,7 @@ export class App extends XyoBase {
     try {
       return require(path) as IXyoConfig
     } catch (error) {
+      console.log(error)
       this.logError(`Can not find config at path: ${path}`)
       process.exit(1)
       throw new Error()
