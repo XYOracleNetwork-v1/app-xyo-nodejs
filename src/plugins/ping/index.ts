@@ -1,8 +1,7 @@
 import { IXyoPlugin, IXyoGraphQlDelegate } from '../../@types'
 import { IXyoDataResolver } from '../../graphql'
-import { GraphQLResolveInfo } from 'graphql'
 
-const aboutMeType = `
+const pingType = `
     type Ping {
         ping: String
     }
@@ -26,15 +25,15 @@ export class XyoPingPlugin implements IXyoPlugin {
       throw new Error('Expecting GraphQl interface')
     }
 
-    const resolver: IXyoDataResolver<any, any, any, any>  = {
-      async resolve(obj: any, args: any, context: any, info: GraphQLResolveInfo): Promise<any> {
+    const resolver = {
+      async resolve(): Promise<any> {
         return {
           ping: 'Pong'
         }
       }
     }
 
-    graphql.addType(aboutMeType)
+    graphql.addType(pingType)
     graphql.addQuery('ping: Ping')
     graphql.addResolver('ping', resolver)
     return true
