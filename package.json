@@ -1,6 +1,6 @@
 {
   "name": "@xyo-network/app-xyo-nodejs",
-  "version": "0.2.23-alpha.0",
+  "version": "0.3.0-alpha.0",
   "description": "The XYO application for running components on the XYO network",
   "main": "dist/index.js",
   "bin": {
@@ -23,6 +23,10 @@
   "optionalDependencies": {
     "@xyo-network/sdk-archivist-nodejs": "^0.3.0-beta.0"
   },
+  "files": [
+    "dist",
+    "bin"
+  ],
   "dependencies": {
     "@types/graphql-type-json": "^0.1.3",
     "@xyo-network/sdk-base-nodejs": "^0.3.1",
