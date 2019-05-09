@@ -420,7 +420,7 @@
   integrity sha512-vnqSlpsv9uFX5/z8GyKWAfWHhLGJDBkrgRRsnxlsX23DHOlNyqP/eHQiv4TwnYcZULzQIxaWA/xRWU9Dyy4qzw==
   dependencies:
     "@types/node" "*"
-
+    
 "@types/bn.js@*", "@types/bn.js@^4.11.4":
   version "4.11.5"
   resolved "https://registry.yarnpkg.com/@types/bn.js/-/bn.js-4.11.5.tgz#40e36197433f78f807524ec623afcf0169ac81dc"
@@ -636,11 +636,12 @@
     "@xyo-network/errors" "^0.55.9-alpha.0"
     "@xyo-network/utils" "^0.55.9-alpha.0"
     bn.js "^4.11.8"
-
+    
 "@xyo-network/config-tslint@^0.1.31":
   version "0.1.31"
   resolved "https://registry.yarnpkg.com/@xyo-network/config-tslint/-/config-tslint-0.1.31.tgz#c250d898536b6e5d68cfb5acb13e9ab3254ca306"
   integrity sha512-baeebNzlZNNvi+em9fwmipNt6VdDT/b67hE1nRz02T94hPUGH7yaAkWM35BVgWsrMXQla5yhesE3fCqPl0vwvA==
+
   dependencies:
     tslint-config-airbnb "^5.11.0"
     tslint-react "^4.0.0"
@@ -790,7 +791,7 @@
     "@xyo-network/base" "^0.55.9-alpha.0"
     "@xyo-network/utils" "^0.55.9-alpha.0"
     multiaddr "^6.0.3"
-
+    
 "@xyo-network/peer-interaction@^0.55.9-alpha.0":
   version "0.55.9-alpha.0"
   resolved "https://registry.yarnpkg.com/@xyo-network/peer-interaction/-/peer-interaction-0.55.9-alpha.0.tgz#7c635249f71bf876cb35f16e120385a032420481"
@@ -850,6 +851,23 @@
   dependencies:
     "@xyo-network/object-model" "^0.5.11"
     "@xyo-network/sdk-base-nodejs" "0.2.23"
+    bs58 "4.0.1"
+    elliptic "6.4.1"
+
+"@xyo-network/sdk-base-nodejs@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/sdk-base-nodejs/-/sdk-base-nodejs-0.2.0.tgz#2ac5bff5aa3007cf3062d676a6ce972b35d4f6fa"
+  integrity sha512-OA5zLOUPPk+5WocqlCioScL8ugW+RYkOdZUsz6yCGkd9Y4QBBIJOD1sdnzGbX9gKbScXcZQNbzJ66ScB8vi1cg==
+  dependencies:
+    winston "3.2.1"
+
+"@xyo-network/sdk-core-nodejs@^0.61.0-alpha.14":
+  version "0.61.12"
+  resolved "https://registry.yarnpkg.com/@xyo-network/sdk-core-nodejs/-/sdk-core-nodejs-0.61.12.tgz#19622914135fb0bd49cbff64840b8dba7901c41b"
+  integrity sha512-F6rPSkknTg9Qm5wjkbaPRFbJmqVQIo6OaN6YgL5l6lOU2qjo/sm3lvLpsQeySlmnRNgZYxAIMo0SZ8MHuCaU8A==
+  dependencies:
+    "@xyo-network/object-model" "^0.5.11"
+    "@xyo-network/sdk-base-nodejs" "0.2.0"
     bs58 "4.0.1"
     elliptic "6.4.1"
 
@@ -2836,7 +2854,7 @@ ethereum-common@^0.0.18:
   resolved "https://registry.yarnpkg.com/ethereum-common/-/ethereum-common-0.0.18.tgz#2fdc3576f232903358976eb39da783213ff9523f"
   integrity sha1-L9w1dvIykDNYl26znaeDIT/5Uj8=
 
-ethereumjs-abi@0.6.7:
+ethereumjs-abi@0.6.7, ethereumjs-abi@^0.6.7:
   version "0.6.7"
   resolved "https://registry.yarnpkg.com/ethereumjs-abi/-/ethereumjs-abi-0.6.7.tgz#d1d1c5cdb8d910a7d97645ba9e93be5d153bba2e"
   integrity sha512-EMLOA8ICO5yAaXDhjVEfYjsJIXYutY8ufTE93eEKwsVtp2usQreKwsDTJ9zvam3omYqNuffr8IONIqb2uUslGQ==
