@@ -14,7 +14,7 @@
     "pretest": "yarn install",
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "test": "yarn lint",
-    "build": "tsc && yarn copy",
+    "build": "tsc",
     "license": "yarn license-checker --onlyAllow 'MIT;BSD-2-Clause;BSD-3-Clause;Apache-2.0;ISC;Unlicense;UNKNOWN;BSD*;CC0-1.0' --excludePackages 'colors@0.6.2'",
     "develop": "ts-node ./src/index.ts"
   },
@@ -22,6 +22,7 @@
   "author": "XYO Development Team",
   "license": "LGPL-3.0",
   "dependencies": {
+    "@types/graphql-type-json": "^0.1.3",
     "@xyo-network/sdk-archivist-nodejs": "^0.2.80",
     "@xyo-network/sdk-base-nodejs": "^0.2.23",
     "@xyo-network/sdk-core-nodejs": "^0.61.19",
@@ -31,6 +32,7 @@
     "forever": "^1.0.0",
     "fs-extra": "^7.0.1",
     "graphql": "^14.2.1",
+    "graphql-type-json": "^0.3.0",
     "joi": "^14.3.1",
     "js-yaml": "^3.12.1",
     "lodash": "^4.17.11",

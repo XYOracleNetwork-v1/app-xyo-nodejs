@@ -1,0 +1,13 @@
+{
+    "port": 12000,
+    "plugins": [
+        {
+            "packageName": "base-graphql-types",
+            "path": "../dist/plugins/base-graphql-types",
+            "config": {
+                "name": "carter",
+                "ip": "10.30.10.11"
+            }
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-import { IXyoPlugin } from './@types'
+import { IXyoPlugin, IXyoGraphQlDelegate, IXyoPluginWithConfig } from './@types'
 
 export class PluginResolver {
 
@@ -6,8 +6,13 @@ export class PluginResolver {
   private resolvedPlugins: {[key: string]: IXyoPlugin} = {}
   private lastResolvedPluginCount = 0
   private resolvedPluginCount = -1
+  private qlDelegate: IXyoGraphQlDelegate
 
-  public async resolve(plugins: IXyoPlugin[]) {
+  constructor(graphql: IXyoGraphQlDelegate) {
+    this.qlDelegate = graphql
+  }
+
+  public async resolve(plugins: IXyoPluginWithConfig[]) {
 
     // while we are still resolving plugins
     while (this.lastResolvedPluginCount !== this.resolvedPluginCount) {
@@ -17,7 +22,7 @@ export class PluginResolver {
       for (const plugin of plugins) {
 
         // if we have not resolved this plugin, do not try to resolve again
-        if (!this.resolvedPluginNames[plugin.getName()]) {
+        if (!this.resolvedPluginNames[plugin.plugin.getName()]) {
           await this.resolveSinglePlugin(plugin)
         }
       }
@@ -25,8 +30,8 @@ export class PluginResolver {
     }
   }
 
-  private async resolveSinglePlugin(plugin: IXyoPlugin) {
-    const pluginDependencies = plugin.getPluginDependencies()
+  private async resolveSinglePlugin(plugin: IXyoPluginWithConfig) {
+    const pluginDependencies = plugin.plugin.getPluginDependencies()
     let hasAllDependencies = true
 
     // loop through all of the resolved dependencies, to see if it has the dependencies
@@ -42,8 +47,8 @@ export class PluginResolver {
 
     // if the plugin has all of the dependencies, initialize it
     if (hasAllDependencies) {
-      await plugin.initialize(this.resolvedPlugins)
-      const provides = plugin.getProvides()
+      await plugin.plugin.initialize(this.resolvedPlugins, plugin.config, this.qlDelegate)
+      const provides = plugin.plugin.getProvides()
 
       // after we initialize the plugin, we add what it provides, so that other plugins can use it
       for (const provider of provides) {
@@ -55,7 +60,7 @@ export class PluginResolver {
         this.resolvedPluginCount++
       }
 
-      this.resolvedPluginNames[plugin.getName()] = true
+      this.resolvedPluginNames[plugin.plugin.getName()] = true
     }
   }
 }

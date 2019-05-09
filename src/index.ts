@@ -10,62 +10,51 @@
  * Copyright 2017 - 2019 XY - The Persistent Company
  */
 
-import { XyoAppLauncher } from '../_/applauncher'
-import commander from 'commander'
-import dotenvExpand from 'dotenv-expand'
+import { IXyoPluginWithConfig, IXyoConfig } from './@types'
+import { XyoGraphQlEndpoint } from './graphql/graohql-delegate'
+import { PluginResolver } from './plugin-resolver'
+import { XyoBase } from '@xyo-network/sdk-base-nodejs'
 
-const getVersion = (): string => {
-  dotenvExpand({
-    parsed: {
-      APP_VERSION:'$npm_package_version',
-      APP_NAME:'$npm_package_name'
-    }
-  })
+export class App extends XyoBase {
+  public async main() {
+    const delegate = new XyoGraphQlEndpoint()
+    const resolver = new PluginResolver(delegate)
+    const config = await this.readConfigFromPath('../configs/about-me.config.json')
+    const plugins = await this.getPluginsFromConfig(config)
+    await resolver.resolve(plugins)
+    const server = delegate.start(config.port)
+    server.start()
+  }
 
-  return process.env.APP_VERSION || 'Unknown'
-}
+  private async getPluginsFromConfig(config: IXyoConfig): Promise<IXyoPluginWithConfig[]> {
+    const foundPlugins: IXyoPluginWithConfig[] = []
 
-export async function main() {
-  const program = commander
-
-  program
-    .version(getVersion())
-    .option('-c, --config [config]', 'specify config file')
-    .option('-f, --forever [forever]', 'run forever')
-    .option('-p, --preflight [preflight]', 'generates preflight report')
-    .option('-d, --database [database]', 'type of database to use', /^(mysql|level|neo4j|dynamo)$/i)
-    .arguments('[cmd] [target]')
-    .action(async(cmd, target) => {
-      const appLauncher = new XyoAppLauncher()
+    for (const pluginConfig of config.plugins) {
       try {
-        if (program.forever) {
-          appLauncher.setForeverPass(program.forever)
+        if (pluginConfig.path) {
+          const plugin = require(pluginConfig.path)
+          foundPlugins.push({
+            plugin,
+            config: pluginConfig.config
+          })
+        } else {
+          const plugin = require(pluginConfig.packageName)
+          foundPlugins.push({
+            plugin,
+            config: pluginConfig.config
+          })
         }
-
-        await appLauncher.initialize({ configName: target || program.config, database: program.database })
-      } catch (err) {
-        console.error('There was an error during initialization. Will exit', err)
+      } catch {
+        this.logError(`Can not find plugin: ${pluginConfig.packageName}`)
         process.exit(1)
-        return
       }
+    }
 
-      if (!appLauncher.startNode) {
-        console.log('Exiting process after configuration')
-        process.exit(0)
-        return
-      }
+    return foundPlugins
+  }
 
-      try {
-        await appLauncher.start()
-      } catch (err) {
-        console.error('There was an error during start. Will exit', err)
-        process.exit(1)
-        return
-      }
-    })
-    .parse(process.argv)
-}
+  private async readConfigFromPath(path: string): Promise<IXyoConfig> {
+    return require(path) as IXyoConfig
+  }
 
-if (require.main === module) {
-  main()
 }
