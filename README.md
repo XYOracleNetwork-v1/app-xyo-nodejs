@@ -203,9 +203,5 @@ If you feel you may need to do a `hot-fix` directly to master, please communicat
 - Carter Harrison
 - Arie Trouw
 
-### License 
-
-MIT
-
 Made with  ❤️  by [XY - The Persistent Company] (https://xy.company)
 
