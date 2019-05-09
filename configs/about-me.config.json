@@ -1,5 +1,5 @@
 {
-    "port": 12000,
+    "port": 11001,
     "plugins": [
         {
             "packageName": "base-graphql-types",
@@ -16,19 +16,17 @@
         },
         {
             "packageName": "archivist",
-            "path": "../../sdk-archivist-nodejs/dist/",
-            "config": {            
-                
-            }
-        },
-        {
-            "packageName": "db",
-            "path": "../../sdk-archivist-nodejs/dist/repository/dynamodb/xyo-dynamo-plugin.js",
+            "path": "../node_modules/@xyo-network/sdk-archivist-nodejs/",
             "config": {}
         },
         {
-            "packageName": "state",
-            "path": "../../sdk-archivist-nodejs/dist/xyo-state-plugin.js",
+            "packageName": "db",
+            "path": "../node_modules/@xyo-network/sdk-archivist-nodejs/dist/repository/dynamodb/xyo-dynamo-plugin.js",
+            "config": {}
+        },
+        {
+            "packageName": "origin-state",
+            "path": "../dist/plugins/origin-state",
             "config": {}
         }
     ]
