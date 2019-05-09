@@ -1,5 +1,4 @@
-import { IXyoPlugin, IXyoGraphQlDelegate } from '../../@types'
-import { IXyoDataResolver } from '../../graphql'
+import { IXyoPlugin, IXyoGraphQlDelegate } from '@xyo-network/sdk-base-nodejs'
 import { XyoAboutMeResolver, IXyoAboutMe } from './about-me-resolver'
 import dotenvExpand from 'dotenv-expand'
 

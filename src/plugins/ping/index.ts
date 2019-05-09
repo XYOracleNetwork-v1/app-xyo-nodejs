@@ -1,5 +1,4 @@
-import { IXyoPlugin, IXyoGraphQlDelegate } from '../../@types'
-import { IXyoDataResolver } from '../../graphql'
+import { IXyoPlugin, IXyoGraphQlDelegate } from '@xyo-network/sdk-base-nodejs'
 
 const pingType = `
     type Ping {

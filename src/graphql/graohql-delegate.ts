@@ -1,4 +1,4 @@
-import { IXyoGraphQlDelegate } from '../@types'
+import { IXyoGraphQlDelegate } from '@xyo-network/sdk-base-nodejs'
 import { XyoGraphQLServer } from './graphql-server'
 
 export class XyoGraphQlEndpoint implements IXyoGraphQlDelegate {

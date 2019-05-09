@@ -1,4 +1,4 @@
-import { IXyoPlugin, IXyoGraphQlDelegate, IXyoPluginWithConfig } from './@types'
+import { IXyoPlugin, IXyoGraphQlDelegate, IXyoPluginWithConfig } from '@xyo-network/sdk-base-nodejs'
 
 export class PluginResolver {
 

@@ -10,7 +10,7 @@
  * Copyright 2017 - 2019 XY - The Persistent Company
  */
 
-import { IXyoPluginWithConfig, IXyoConfig } from './@types'
+import { IXyoPluginWithConfig, IXyoConfig } from '@xyo-network/sdk-base-nodejs'
 import { XyoGraphQlEndpoint } from './graphql/graohql-delegate'
 import { PluginResolver } from './plugin-resolver'
 import { XyoBase } from '@xyo-network/sdk-base-nodejs'
