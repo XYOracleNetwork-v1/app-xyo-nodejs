@@ -1,6 +1,6 @@
 {
   "name": "@xyo-network/app-xyo-nodejs",
-  "version": "0.3.0-alpha.2",
+  "version": "0.3.0-alpha.3",
   "description": "The XYO application for running components on the XYO network",
   "main": "dist/index.js",
   "bin": {
@@ -27,6 +27,7 @@
   "dependencies": {
     "@xyo-network/sdk-base-nodejs": "^0.3.1",
     "@xyo-network/sdk-core-nodejs": "^0.61.19",
+    "apollo-server": "2.5.0",
     "commander": "^2.19.0",
     "dotenv-expand": "^5.1.0",
     "enquirer": "^2.3.0",
