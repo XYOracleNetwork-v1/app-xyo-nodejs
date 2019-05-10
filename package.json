@@ -1,6 +1,6 @@
 {
   "name": "@xyo-network/app-xyo-nodejs",
-  "version": "0.3.0-beta.2",
+  "version": "0.3.0",
   "description": "The XYO application for running components on the XYO network",
   "main": "dist/index.js",
   "bin": {
@@ -13,7 +13,7 @@
     "pretest": "yarn install",
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "test": "yarn lint",
-    "build": "tsc",
+    "build": "yarn xybuild",
     "license": "yarn license-checker --onlyAllow 'MIT;BSD-2-Clause;BSD-3-Clause;Apache-2.0;ISC;Unlicense;UNKNOWN;BSD*;CC0-1.0' --excludePackages 'colors@0.6.2'",
     "develop": "ts-node ./src/index.ts"
   },
@@ -25,7 +25,7 @@
     "bin"
   ],
   "dependencies": {
-    "@xyo-network/sdk-base-nodejs": "^0.3.1",
+    "@xyo-network/sdk-base-nodejs": "^0.3.10",
     "@xyo-network/sdk-core-nodejs": "^0.61.19",
     "apollo-server": "2.5.0",
     "bs58": "^4.0.1",

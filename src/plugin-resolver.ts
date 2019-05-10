@@ -3,7 +3,7 @@ import { IXyoPlugin, IXyoGraphQlDelegate, IXyoPluginWithConfig, IXyoBoundWitness
 export class PluginResolver extends XyoBase {
 
   private resolvedPluginNames: {[key: string]: boolean}  = {}
-  private resolvedPlugins: {[key: string]: IXyoPlugin} = {}
+  private resolvedPlugins: {[key: string]: any} = {}
   private lastResolvedPluginCount = 0
   private resolvedPluginCount = -1
   private qlDelegate: IXyoGraphQlDelegate
@@ -59,7 +59,7 @@ export class PluginResolver extends XyoBase {
           throw Error('stub duplicate dependency, pick one')
         }
 
-        this.resolvedPlugins[provider] = plugin.plugin[provider]
+        this.resolvedPlugins[provider] = (plugin.plugin as any)[provider]
         this.resolvedPluginCount++
       }
 

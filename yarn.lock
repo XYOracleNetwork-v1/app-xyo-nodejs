@@ -588,11 +588,13 @@
   dependencies:
     winston "3.2.1"
 
-"@xyo-network/sdk-base-nodejs@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@xyo-network/sdk-base-nodejs/-/sdk-base-nodejs-0.3.1.tgz#5471dd527bce96cbfc75ce7aa1d3e2ee2a4fe94f"
-  integrity sha512-jPP3jHYeEIpetprkaVeNF9Ctcy14p3JV5YfdF9X1Cj5maWLfi0ISOMBz0GzoEq0Pmy5AGwtukQbP2kJetv29wg==
+"@xyo-network/sdk-base-nodejs@^0.3.10":
+  version "0.3.10"
+  resolved "https://registry.yarnpkg.com/@xyo-network/sdk-base-nodejs/-/sdk-base-nodejs-0.3.10.tgz#35bce4e5ec8836163fe7b2047dd045fa4e609f74"
+  integrity sha512-+fGxwlXFT2zcSe85UllY3pHefMiRAwoaQ/RDbd0MVrUUFcleTt2SndSVNzVtBgRpNmLs291GLClnB0csrdWXkQ==
   dependencies:
+    chalk "^2.4.2"
+    fs-extra "^7.0.1"
     winston "3.2.1"
 
 "@xyo-network/sdk-core-nodejs@^0.61.19":
