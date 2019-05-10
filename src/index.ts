@@ -29,7 +29,7 @@ const defaultConfig = {
   plugins: [
     {
       packageName: 'base-graphql-types',
-      path: resolve('./dist/plugins/base-graphql-types'),
+      path: '../dist/plugins/base-graphql-types',
       config: {
         name: 'unknown',
         ip: 'localhost'
@@ -37,7 +37,7 @@ const defaultConfig = {
     },
     {
       packageName: 'file-origin-state',
-      path: resolve('./dist/plugins/origin-state'),
+      path: '../dist/plugins/origin-state',
       config: {}
     },
   ]

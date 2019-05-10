@@ -1,6 +1,8 @@
 import { IXyoPlugin, XyoBase } from '@xyo-network/sdk-base-nodejs'
 import { XyoOriginState, XyoFileOriginStateRepository, XyoSecp2556k1 } from '@xyo-network/sdk-core-nodejs'
 import bs58 from 'bs58'
+import fsExtra from 'fs-extra'
+import os from 'os'
 
 interface IXyoOriginStateConfig {
   path?: string,
@@ -23,7 +25,8 @@ export class OriginStatePlugin extends XyoBase implements IXyoPlugin {
 
   public async initialize(deps: { [key: string]: any; }, config: any): Promise<boolean> {
     const stateConfig = config as IXyoOriginStateConfig
-    const repository = new XyoFileOriginStateRepository(stateConfig.path || './state.json')
+    fsExtra.ensureDirSync(`${os.homedir()}/.config/xyo/`)
+    const repository = new XyoFileOriginStateRepository(stateConfig.path || `${os.homedir()}/.config/xyo/state.json`)
 
     await repository.restore((privateKey) => {
       return new XyoSecp2556k1(privateKey)
