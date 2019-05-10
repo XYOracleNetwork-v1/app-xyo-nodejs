@@ -16,5 +16,4 @@ export class XyoMutexHandler implements IXyoBoundWitnessMutexDelegate {
     this.someoneHasMutex = false
     return this.someoneHasMutex
   }
-
 }

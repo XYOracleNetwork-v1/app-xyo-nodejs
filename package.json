@@ -1,6 +1,6 @@
 {
   "name": "@xyo-network/app-xyo-nodejs",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "The XYO application for running components on the XYO network",
   "main": "dist/index.js",
   "bin": {
@@ -25,6 +25,9 @@
     "bin"
   ],
   "dependencies": {
+    "@types/tar": "^4.0.0",
+    "@types/tar-fs": "^1.16.1",
+    "@types/tar-stream": "^1.6.0",
     "@xyo-network/sdk-base-nodejs": "^0.3.10",
     "@xyo-network/sdk-core-nodejs": "^0.61.19",
     "apollo-server": "2.5.0",
@@ -36,7 +39,10 @@
     "fs-extra": "^7.0.1",
     "graphql": "^14.2.1",
     "graphql-type-json": "^0.3.0",
-    "shelljs": "^0.8.3"
+    "shelljs": "^0.8.3",
+    "tar": "^4.4.8",
+    "tar-fs": "^2.0.0",
+    "tar-stream": "^2.0.1"
   },
   "devDependencies": {
     "@types/elliptic": "^6.4.6",
