@@ -45,9 +45,9 @@ const defaultConfig = {
 
 export class App extends XyoBase {
   public async main() {
-    commander.option('-a, --addPlugin <string>', 'install plugin')
-    commander.option('-d, --removePlugin <string>', 'install plugin')
-    commander.option('-i, --addRepository <string>', 'install repository')
+    commander.option('-a, --addPlugin <string>', 'install plugin by path')
+    commander.option('-d, --removePlugin <string>', 'remove plugin by name')
+    commander.option('-i, --addRepository <string>', 'install repository by path')
     commander.option('-c, --config', 'config file override path')
     commander.option('-l, --list', 'lists plugin')
     commander.option('-r, --run', 'runs node')
