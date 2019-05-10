@@ -15,11 +15,14 @@ import { XyoGraphQlEndpoint } from './graphql/graohql-delegate'
 import { PluginResolver } from './plugin-resolver'
 import { XyoMutexHandler } from './mutex'
 import commander from 'commander'
-import fs from 'fs'
+import fsExtra from 'fs-extra'
 import { resolve } from 'path'
 import { PluginsWizard } from './wizard/choose-plugin-wizard'
+import os from 'os'
 
-const configPath = resolve('./xyo.json')
+const configPath = `${os.homedir()}/.config/xyo`
+const configName = 'xyo.json'
+const defaultConfigPath = `${configPath}/${configName}`
 
 const defaultConfig = {
   port: 11001,
@@ -50,11 +53,9 @@ export class App extends XyoBase {
     commander.option('-r, --run', 'runs node')
     commander.parse(process.argv)
 
-    if (!fs.existsSync(configPath) && !commander.config) {
-      fs.writeFileSync(configPath, JSON.stringify(defaultConfig))
-    }
+    await this.makeConfigIfNotExist()
 
-    this.logInfo(`Using config at path: ${commander.config || configPath}`)
+    this.logInfo(`Using config at path: ${commander.config || defaultConfigPath}`)
 
     if (commander.list) { await this.listCommand(); return }
     if (commander.addPlugin) { await this.installCommand(); return }
@@ -65,11 +66,19 @@ export class App extends XyoBase {
     commander.outputHelp()
   }
 
+  private async makeConfigIfNotExist() {
+    fsExtra.ensureDirSync(configPath)
+
+    if (!fsExtra.existsSync(defaultConfigPath) && !commander.config) {
+      fsExtra.writeFileSync(defaultConfigPath, JSON.stringify(defaultConfig))
+    }
+  }
+
   private async runCommand() {
     const delegate = new XyoGraphQlEndpoint()
     const mutex = new XyoMutexHandler()
     const resolver = new PluginResolver(delegate, mutex)
-    const config = await this.readConfigFromPath(commander.config || configPath)
+    const config = await this.readConfigFromPath(commander.config || defaultConfigPath)
     const plugins = await this.getPluginsFromConfig(config)
     await resolver.resolve(plugins)
     const server = delegate.start(config.port)
@@ -77,7 +86,7 @@ export class App extends XyoBase {
   }
 
   private async removePlugin() {
-    const config = await this.readConfigFromPath(commander.config || configPath)
+    const config = await this.readConfigFromPath(commander.config || defaultConfigPath)
     config.plugins = config.plugins.filter((plugin) => {
       const isToRemove = plugin.packageName === commander.removePlugin
 
@@ -122,7 +131,7 @@ export class App extends XyoBase {
   }
 
   private async addPlugin(plugin: IXyoPlugin, path: string) {
-    const config = await this.readConfigFromPath(commander.config || configPath)
+    const config = await this.readConfigFromPath(commander.config || defaultConfigPath)
 
     for (const installedPlugin of config.plugins) {
       if (plugin.getName() === installedPlugin.packageName) {
@@ -156,7 +165,7 @@ export class App extends XyoBase {
   }
 
   private async listPluginsInConfig() {
-    const config = await this.readConfigFromPath(commander.config || configPath)
+    const config = await this.readConfigFromPath(commander.config || defaultConfigPath)
 
     config.plugins.forEach((plugin) => {
       this.logInfo(`Using plugin ✅: \u001b[36m${plugin.packageName}\u001b[0m`)
@@ -203,7 +212,7 @@ export class App extends XyoBase {
   }
 
   private saveConfig(config: IXyoConfig) {
-    fs.writeFileSync(configPath, JSON.stringify(config))
+    fsExtra.writeFileSync(defaultConfigPath, JSON.stringify(config))
   }
 
   private async readConfigFromPath(path: string): Promise<IXyoConfig> {
