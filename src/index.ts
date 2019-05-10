@@ -10,30 +10,31 @@
  * Copyright 2017 - 2019 XY - The Persistent Company
  */
 
-import { IXyoPluginWithConfig, IXyoConfig, XyoBase } from '@xyo-network/sdk-base-nodejs'
+import { IXyoPluginWithConfig, IXyoConfig, XyoBase, IXyoPlugin } from '@xyo-network/sdk-base-nodejs'
 import { XyoGraphQlEndpoint } from './graphql/graohql-delegate'
 import { PluginResolver } from './plugin-resolver'
 import { XyoMutexHandler } from './mutex'
 import commander from 'commander'
 import fs from 'fs'
-import { exec } from 'child_process'
+import { resolve } from 'path'
+import { PluginsWizard } from './wizard/choose-plugin-wizard'
 
-const configPath =  __dirname + '/xyo.json'
+const configPath = resolve('./xyo.json')
 
-const defualtConfig = {
+const defaultConfig = {
   port: 11001,
   plugins: [
     {
       packageName: 'base-graphql-types',
-      path: '../dist/plugins/base-graphql-types',
+      path: resolve('./dist/plugins/base-graphql-types'),
       config: {
-        name: 'carter',
-        ip: '10.30.10.11'
+        name: 'unknown',
+        ip: 'localhost'
       }
     },
     {
       packageName: 'file-origin-state',
-      path: '../dist/plugins/origin-state',
+      path: resolve('./dist/plugins/origin-state'),
       config: {}
     },
   ]
@@ -41,31 +42,25 @@ const defualtConfig = {
 
 export class App extends XyoBase {
   public async main() {
-    commander.option('-i, --install <string>', 'install plugin')
+    commander.option('-a, --addPlugin <string>', 'install plugin')
+    commander.option('-d, --removePlugin <string>', 'install plugin')
+    commander.option('-i, --addRepository <string>', 'install repository')
+    commander.option('-c, --config', 'config file override path')
     commander.option('-l, --list', 'lists plugin')
     commander.option('-r, --run', 'runs node')
     commander.parse(process.argv)
 
     if (!fs.existsSync(configPath) && !commander.config) {
-      fs.writeFileSync(configPath, JSON.stringify(defualtConfig))
+      fs.writeFileSync(configPath, JSON.stringify(defaultConfig))
     }
 
     this.logInfo(`Using config at path: ${commander.config || configPath}`)
 
-    if (commander.list) {
-      this.listCommand()
-      return
-    }
-
-    if (commander.install) {
-      this.installCommand()
-      return
-    }
-
-    if (commander.run) {
-      this.runCommand()
-      return
-    }
+    if (commander.list) { await this.listCommand(); return }
+    if (commander.addPlugin) { await this.installCommand(); return }
+    if (commander.addRepository) { await this.addRepositoryCommand(); return }
+    if (commander.run) { await this.runCommand(); return }
+    if (commander.removePlugin) { await this.removePlugin(); return }
 
     commander.outputHelp()
   }
@@ -81,23 +76,78 @@ export class App extends XyoBase {
     server.start()
   }
 
-  private async installCommand() {
-    this.logInfo(`Installing plugin: ${commander.install}`)
+  private async removePlugin() {
+    const config = await this.readConfigFromPath(commander.config || configPath)
+    config.plugins = config.plugins.filter((plugin) => {
+      const isToRemove = plugin.packageName === commander.removePlugin
 
-    exec(`npm install ${commander.install} -g`, async(err) => {
-      if (err) {
-        this.logError(`Error installing plugin: ${commander.install}`)
-        return
+      if (isToRemove) {
+        this.logInfo(`Removed plugin: ${plugin.packageName}`)
       }
 
-      const config = await this.readConfigFromPath(commander.config || configPath)
-      config.plugins.push({
-        packageName: commander.install,
-        config: {}
-      })
-      this.saveConfig(config)
-      this.logInfo(`Installed plugin: ${commander.install}`)
+      return !isToRemove
     })
+    await this.saveConfig(config)
+  }
+
+  private async addRepositoryCommand() {
+    this.logInfo(`Adding repository: ${commander.addRepository}`)
+
+    try {
+      const repositoryPath = resolve(commander.addRepository)
+      const repository = require(`${repositoryPath}/package.json`)
+      const pluginPaths = repository.xyoPlugins as string[]
+      const plugins: IXyoPlugin[] = []
+
+      for (const pluginPath of pluginPaths) {
+        const plugin = this.getSinglePlugin(`${repositoryPath}/${pluginPath}`)
+        plugins.push(plugin)
+      }
+
+      const wizard = new PluginsWizard(plugins.map(plugin => plugin.getName()))
+
+      const pluginsToInstall = await wizard.start()
+
+      for (const pluginToInstall of pluginsToInstall) {
+        for (const i in plugins) {
+          if (pluginToInstall === plugins[i].getName()) {
+            await this.addPlugin(plugins[i], `${repositoryPath}/${pluginPaths[i]}`)
+          }
+        }
+      }
+
+    } catch (error) {
+      this.logError(`Can not find repository ${commander.addRepository}`)
+    }
+  }
+
+  private async addPlugin(plugin: IXyoPlugin, path: string) {
+    const config = await this.readConfigFromPath(commander.config || configPath)
+
+    for (const installedPlugin of config.plugins) {
+      if (plugin.getName() === installedPlugin.packageName) {
+        // plugin is already installed
+        return
+      }
+    }
+
+    config.plugins.push({
+      path: resolve(path),
+      packageName: plugin.getName(),
+      config: {}
+    })
+
+    await this.saveConfig(config)
+  }
+
+  private async installCommand() {
+    this.logInfo(`Installing plugin: ${commander.addPlugin}`)
+
+    const plugin = this.getSinglePlugin(commander.addPlugin)
+
+    await this.addPlugin(plugin, commander.addPlugin)
+
+    this.logInfo(`Installed plugin: ${commander.addPlugin}`)
   }
 
   private async listCommand() {
@@ -141,6 +191,15 @@ export class App extends XyoBase {
     await this.listPluginsInConfig()
 
     return foundPlugins
+  }
+
+  private getSinglePlugin(path: string): IXyoPlugin {
+    try {
+      return require(path) as IXyoPlugin
+    } catch {
+      this.logError(`Can not find plugin: ${path}`)
+      throw new Error(`Can not find plugin: ${path}`)
+    }
   }
 
   private saveConfig(config: IXyoConfig) {
