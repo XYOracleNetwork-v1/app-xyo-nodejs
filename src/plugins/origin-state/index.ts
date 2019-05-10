@@ -26,7 +26,8 @@ export class OriginStatePlugin extends XyoBase implements IXyoPlugin {
   public async initialize(deps: { [key: string]: any; }, config: any): Promise<boolean> {
     const stateConfig = config as IXyoOriginStateConfig
     fsExtra.ensureDirSync(`${os.homedir()}/.config/xyo/`)
-    const repository = new XyoFileOriginStateRepository(stateConfig.path || `${os.homedir()}/.config/xyo/state.json`)
+    const path = stateConfig.path || `${os.homedir()}/.config/xyo/state.json`
+    const repository = new XyoFileOriginStateRepository(path)
 
     await repository.restore((privateKey) => {
       return new XyoSecp2556k1(privateKey)
@@ -34,11 +35,14 @@ export class OriginStatePlugin extends XyoBase implements IXyoPlugin {
 
     this.ORIGIN_STATE = new XyoOriginState(repository)
 
-    if (this.ORIGIN_STATE.getIndexAsNumber() === 0) {
+    if (this.ORIGIN_STATE.getSigners().length === 0) {
       const signer = new XyoSecp2556k1()
       this.ORIGIN_STATE.addSigner(signer)
     }
 
+    await repository.commit()
+
+    this.logInfo(`Using state file at path: ${path}`)
     this.logInfo(`Using public key:  \u001b[35m${bs58.encode(this.ORIGIN_STATE.getSigners()[0].getPublicKey().getAll().getContentsCopy())}\u001b[0m`)
 
     return true
