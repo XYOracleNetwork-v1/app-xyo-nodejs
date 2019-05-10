@@ -2,8 +2,8 @@ import { IXyoPlugin, IXyoGraphQlDelegate } from '@xyo-network/sdk-base-nodejs'
 import { XyoAboutMeResolver } from './about-me-resolver'
 import { types } from './base-graphql-types'
 import { XyoOriginState } from '@xyo-network/sdk-core-nodejs'
-import bs58 from 'bs58'
 import dotenvExpand from 'dotenv-expand'
+import bs58 from 'bs58'
 
 const getVersion = (): string => {
   dotenvExpand({
