@@ -414,6 +414,13 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/base-x@*":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@types/base-x/-/base-x-3.0.0.tgz#a1365259d1d3fa3ff973ab543192a6bdd4cb2f90"
+  integrity sha512-vnqSlpsv9uFX5/z8GyKWAfWHhLGJDBkrgRRsnxlsX23DHOlNyqP/eHQiv4TwnYcZULzQIxaWA/xRWU9Dyy4qzw==
+  dependencies:
+    "@types/node" "*"
+    
 "@types/bn.js@*", "@types/bn.js@^4.11.4":
   version "4.11.5"
   resolved "https://registry.yarnpkg.com/@types/bn.js/-/bn.js-4.11.5.tgz#40e36197433f78f807524ec623afcf0169ac81dc"
@@ -428,6 +435,13 @@
   dependencies:
     "@types/connect" "*"
     "@types/node" "*"
+
+"@types/bs58@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@types/bs58/-/bs58-4.0.0.tgz#baec75cb007b419ede3ec6b3410d2c8f14c92fc5"
+  integrity sha512-gYX+MHD4G/R+YGYwdhG5gbJj4LsEQGr3Vg6gVDAbe7xC5Bn8dNNG2Lpo6uDX/rT5dE7VBj0rGEFuV8L0AEx4Rg==
+  dependencies:
+    "@types/base-x" "*"
 
 "@types/connect@*":
   version "3.4.32"
@@ -471,6 +485,13 @@
     "@types/body-parser" "*"
     "@types/express-serve-static-core" "*"
     "@types/serve-static" "*"
+
+"@types/fs-extra@^5.0.5":
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-5.0.5.tgz#080d90a792f3fa2c5559eb44bd8ef840aae9104b"
+  integrity sha512-w7iqhDH9mN8eLClQOYTkhdYUOSpp25eXxfc6VbFOGtzxW34JcvctH2bKjj4jD4++z4R5iO5D+pg48W2e03I65A==
+  dependencies:
+    "@types/node" "*"
 
 "@types/graphql@^14.2.0":
   version "14.2.0"
@@ -615,11 +636,12 @@
     "@xyo-network/errors" "^0.55.9-alpha.0"
     "@xyo-network/utils" "^0.55.9-alpha.0"
     bn.js "^4.11.8"
+    
+"@xyo-network/config-tslint@^0.1.31":
+  version "0.1.31"
+  resolved "https://registry.yarnpkg.com/@xyo-network/config-tslint/-/config-tslint-0.1.31.tgz#c250d898536b6e5d68cfb5acb13e9ab3254ca306"
+  integrity sha512-baeebNzlZNNvi+em9fwmipNt6VdDT/b67hE1nRz02T94hPUGH7yaAkWM35BVgWsrMXQla5yhesE3fCqPl0vwvA==
 
-"@xyo-network/config-tslint@^0.1.15":
-  version "0.1.15"
-  resolved "https://registry.yarnpkg.com/@xyo-network/config-tslint/-/config-tslint-0.1.15.tgz#cb4af30d61fed2b8a134fd1c8ff099cb1ba60766"
-  integrity sha512-1Wn0fRucKMgXFshajeSLw2JkCfKg3WMMxG7LlyZ0LeDVrWZFUrFrQh5EYrsNhdnSpWQfDW5CDwa0+GttEj57/g==
   dependencies:
     tslint-config-airbnb "^5.11.0"
     tslint-react "^4.0.0"
@@ -700,18 +722,6 @@
   resolved "https://registry.yarnpkg.com/@xyo-network/meta-list/-/meta-list-0.55.9-alpha.0.tgz#efaa9e3db242203a9f9410c31c4fea411006a756"
   integrity sha512-NTwxbHDPaKv1FleakbomxAbjRU5xKbXWVe2lbu9pGj9ikcoidnSxbFQMFDqcgt5+gJMuCLYO4DFCzEF+JPp0Sg==
 
-"@xyo-network/network.tcp@^0.55.9-alpha.0":
-  version "0.55.9-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/network.tcp/-/network.tcp-0.55.9-alpha.0.tgz#6a4e13489144f9f9caae469c1b13f7baed029ffe"
-  integrity sha512-QX5VJtQyTMOZDQmIoMcr0KxAGsAbZtiOi+a3cpl4H2rtTffM7yZNsil9TfaOqMorfM88lJ8WlB4FnSe9UkcGmw==
-  dependencies:
-    "@xyo-network/base" "^0.55.9-alpha.0"
-    "@xyo-network/buffer-utils" "^0.55.9-alpha.0"
-    "@xyo-network/errors" "^0.55.9-alpha.0"
-    "@xyo-network/logger" "^0.55.9-alpha.0"
-    "@xyo-network/network" "^0.55.9-alpha.0"
-    "@xyo-network/serialization" "^0.55.9-alpha.0"
-
 "@xyo-network/network@^0.55.9-alpha.0":
   version "0.55.9-alpha.0"
   resolved "https://registry.yarnpkg.com/@xyo-network/network/-/network-0.55.9-alpha.0.tgz#8cee8c13430182dad30cbbb5b92ab9fd3f86f229"
@@ -741,7 +751,7 @@
     "@xyo-network/transaction-pool" "^0.55.9-alpha.0"
     "@xyo-network/utils" "^0.55.9-alpha.0"
 
-"@xyo-network/object-model@^0.5.11", "@xyo-network/object-model@^0.5.9":
+"@xyo-network/object-model@^0.5.10", "@xyo-network/object-model@^0.5.11":
   version "0.5.11"
   resolved "https://registry.yarnpkg.com/@xyo-network/object-model/-/object-model-0.5.11.tgz#83fa7a7596ffdb5bac622d42b418e19b7ea1a119"
   integrity sha512-3DiKSOquRYInJKggO1nsESkbIgqcGWzoqF0bfZaiJVEF4JwQEICIk9Qcvsd0KJCyDfuYsMNNoUeEIxz4EtP5gw==
@@ -781,42 +791,7 @@
     "@xyo-network/base" "^0.55.9-alpha.0"
     "@xyo-network/utils" "^0.55.9-alpha.0"
     multiaddr "^6.0.3"
-
-"@xyo-network/peer-connections@^0.55.9-alpha.0":
-  version "0.55.9-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/peer-connections/-/peer-connections-0.55.9-alpha.0.tgz#a33533d709169f3237bb0cec6a9bfecc7217c47f"
-  integrity sha512-CUBko/lhWHmr5mNNhVo4nNb88IrbDb7GFECrWP4rsHBsdJjyrYISHuKGANHXaopo8gXnohQv3utm69s4Z3ttcg==
-  dependencies:
-    "@xyo-network/base" "^0.55.9-alpha.0"
-    "@xyo-network/bound-witness" "^0.55.9-alpha.0"
-    "@xyo-network/network" "^0.55.9-alpha.0"
-    joi "^14.3.1"
-
-"@xyo-network/peer-interaction-handlers@^0.55.9-alpha.0":
-  version "0.55.9-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/peer-interaction-handlers/-/peer-interaction-handlers-0.55.9-alpha.0.tgz#fd4ba9830a0cde8078136991f543a4ecc404e039"
-  integrity sha512-acSVGy9FxrBqpzGaDq6T4DBmpgYbrSS+iTbtnWC1Rc3Kf3ssaB9BDzGKdhFwv2DBsefg7SY1DNFWGLINWywO9w==
-  dependencies:
-    "@xyo-network/base" "^0.55.9-alpha.0"
-    "@xyo-network/bound-witness" "^0.55.9-alpha.0"
-    "@xyo-network/errors" "^0.55.9-alpha.0"
-    "@xyo-network/network" "^0.55.9-alpha.0"
-    "@xyo-network/peer-interaction" "^0.55.9-alpha.0"
-    "@xyo-network/serialization" "^0.55.9-alpha.0"
-    "@xyo-network/serialization-schema" "^0.55.9-alpha.0"
-    "@xyo-network/signing" "^0.55.9-alpha.0"
-
-"@xyo-network/peer-interaction-router@^0.55.9-alpha.0":
-  version "0.55.9-alpha.0"
-  resolved "https://registry.yarnpkg.com/@xyo-network/peer-interaction-router/-/peer-interaction-router-0.55.9-alpha.0.tgz#9e4b7b9dc896b5ac3ad4e20a49ae9d5c7efe77a3"
-  integrity sha512-Hpscjn/c7+G1DakDRISsh5dNroNevCtcJTvYIOf5A3GtXIGoJ2iEAnR455dX2nrjlfq26quAyOQImB73IUvBJg==
-  dependencies:
-    "@xyo-network/base" "^0.55.9-alpha.0"
-    "@xyo-network/network" "^0.55.9-alpha.0"
-    "@xyo-network/peer-connections" "^0.55.9-alpha.0"
-    "@xyo-network/peer-interaction" "^0.55.9-alpha.0"
-    "@xyo-network/peer-interaction-handlers" "^0.55.9-alpha.0"
-
+    
 "@xyo-network/peer-interaction@^0.55.9-alpha.0":
   version "0.55.9-alpha.0"
   resolved "https://registry.yarnpkg.com/@xyo-network/peer-interaction/-/peer-interaction-0.55.9-alpha.0.tgz#7c635249f71bf876cb35f16e120385a032420481"
@@ -836,44 +811,48 @@
     "@xyo-network/signing" "^0.55.9-alpha.0"
     "@xyo-network/utils" "^0.55.9-alpha.0"
 
-"@xyo-network/sdk-archivist-nodejs@^0.2.74":
-  version "0.2.74"
-  resolved "https://registry.yarnpkg.com/@xyo-network/sdk-archivist-nodejs/-/sdk-archivist-nodejs-0.2.74.tgz#b32ab6f309b67cdffd0be4db01f6925225b150d1"
-  integrity sha512-0UQHsXC/T4Niwy99s7yxcgRF47qp1HMwgmeOSbUgsjjz2kNUPdg0ph9K13y6J8p06jreZV47sPq2OibgvegBjg==
+"@xyo-network/sdk-archivist-nodejs@^0.2.80":
+  version "0.2.80"
+  resolved "https://registry.yarnpkg.com/@xyo-network/sdk-archivist-nodejs/-/sdk-archivist-nodejs-0.2.80.tgz#f75d0e54f02a2438c125554fba0b6f0f97936098"
+  integrity sha512-AMWu+PYL4RnjkDPuTzySNbsZd2Hbrys0YUWKzawttwYu4iUBFEQb/slK0oLma2NwbOejU3yi2O87oNRbXimi0A==
   dependencies:
-    "@xyo-network/base" "^0.55.9-alpha.0"
-    "@xyo-network/errors" "^0.55.9-alpha.0"
+    "@types/bs58" "^4.0.0"
     "@xyo-network/meta-list" "^0.55.9-alpha.0"
-    "@xyo-network/network" "^0.55.9-alpha.0"
-    "@xyo-network/node-network" "^0.55.9-alpha.0"
-    "@xyo-network/object-model" "^0.5.9"
-    "@xyo-network/p2p" "^0.55.9-alpha.0"
-    "@xyo-network/peer-connections" "^0.55.9-alpha.0"
-    "@xyo-network/peer-interaction" "^0.55.9-alpha.0"
-    "@xyo-network/sdk-core-nodejs" "^0.61.0-alpha.14"
-    "@xyo-network/storage" "^0.55.9-alpha.0"
-    "@xyo-network/utils" "^0.55.9-alpha.0"
-    abstract-leveldown "^6.0.2"
+    "@xyo-network/object-model" "^0.5.10"
+    "@xyo-network/sdk-base-nodejs" "0.2.23"
+    "@xyo-network/sdk-core-nodejs" "^0.61.19"
+    abstract-leveldown "^6.0.3"
     apollo-cache-inmemory "^1.5.1"
     apollo-client "^2.5.1"
     apollo-link-http "^1.5.14"
     apollo-server "^2.4.8"
-    aws-sdk "^2.443.0"
-    ethereumjs-abi "^0.6.7"
-    ethereumjs-tx "^1.3.7"
+    aws-sdk "^2.446.0"
+    bs58 "^4.0.1"
     graphql "^14.2.1"
     graphql-tag "^2.10.1"
     graphql-type-json "^0.3.0"
-    ipfs-http-client "^30.1.3"
-    leveldown "^5.0.2"
+    leveldown "^5.0.3"
     levelup "^4.0.1"
     lodash "^4.17.11"
     lru-cache "^5.1.1"
     mysql "^2.17.1"
-    web3 "^1.0.0-beta.52"
-    web3-eth-contract "^1.0.0-beta.52"
-    web3-providers "^1.0.0-beta.52"
-    yargs "^13.2.2"
+
+"@xyo-network/sdk-base-nodejs@0.2.23", "@xyo-network/sdk-base-nodejs@^0.2.23":
+  version "0.2.23"
+  resolved "https://registry.yarnpkg.com/@xyo-network/sdk-base-nodejs/-/sdk-base-nodejs-0.2.23.tgz#337b3f3321975e65d96081896621bc3e1c2766e0"
+  integrity sha512-jqT150Re26p7N52WgOGcvo8UjeHjs7d0XUyQBUD7ebohICCrS8ftL4h7zuXMBQTKIiDqCQwoibx8m+xVEsgIcQ==
+  dependencies:
+    winston "3.2.1"
+
+"@xyo-network/sdk-core-nodejs@^0.61.19":
+  version "0.61.19"
+  resolved "https://registry.yarnpkg.com/@xyo-network/sdk-core-nodejs/-/sdk-core-nodejs-0.61.19.tgz#b5b0cdfb180a83aa9c0f380f7b87157ae8466383"
+  integrity sha512-2AUQsxRvWDV862zfj69HLg2WZTeoIeHxFC2odLCUEd9fLJ3KOqvZ4KrjOWVTcgjkvWQsz5Nq8+hY6O8OihaYpA==
+  dependencies:
+    "@xyo-network/object-model" "^0.5.11"
+    "@xyo-network/sdk-base-nodejs" "0.2.23"
+    bs58 "4.0.1"
+    elliptic "6.4.1"
 
 "@xyo-network/sdk-base-nodejs@0.2.0":
   version "0.2.0"
@@ -983,7 +962,7 @@ abbrev@1:
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
   integrity sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==
 
-abstract-leveldown@^6.0.2, abstract-leveldown@~6.0.0, abstract-leveldown@~6.0.3:
+abstract-leveldown@^6.0.2, abstract-leveldown@^6.0.3, abstract-leveldown@~6.0.0, abstract-leveldown@~6.0.3:
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/abstract-leveldown/-/abstract-leveldown-6.0.3.tgz#b4b6159343c74b0c5197b2817854782d8f748c4a"
   integrity sha512-jzewKKpZbaYUa6HTThnrl+GrJhzjEAeuc7hTVpZdzg7kupXZFoqQDFwyOwLNbmJKJlmzw8yiipMPkDiuKkT06Q==
@@ -1482,10 +1461,10 @@ atob@^2.1.1:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-aws-sdk@^2.443.0:
-  version "2.445.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.445.0.tgz#30046be1d4b89c1ba5421514e7cfedf6b102e556"
-  integrity sha512-VontdYjQs7218Mw73IYIVhmbRlnHsbbNxuatOFgKvhFCWh4+ze4joM95ViKOUVofSWwlm1HmNasdhb2kOTg+MA==
+aws-sdk@^2.446.0:
+  version "2.446.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.446.0.tgz#91e0da0d216d0d540b34541df88d02d8605adc6d"
+  integrity sha512-xZ+KrHRrQWZLt/1NZ37pzkRbA1rDfryqvcBw5HanmHfO2d2dJJDzow/dfndd/dJyUVc3VvBLPZRW+ZVeFiLw1w==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -3400,6 +3379,15 @@ fs-extra@^4.0.2:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
+fs-extra@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-7.0.1.tgz#4f189c44aa123b895f722804f55ea23eadc348e9"
+  integrity sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==
+  dependencies:
+    graceful-fs "^4.1.2"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
+
 fs-minipass@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/fs-minipass/-/fs-minipass-1.2.5.tgz#06c277218454ec288df77ada54a03b8702aacb9d"
@@ -3913,7 +3901,7 @@ ipfs-block@~0.8.0:
     cids "~0.5.5"
     class-is "^1.1.0"
 
-ipfs-http-client@^30.1.1, ipfs-http-client@^30.1.3:
+ipfs-http-client@^30.1.1:
   version "30.1.4"
   resolved "https://registry.yarnpkg.com/ipfs-http-client/-/ipfs-http-client-30.1.4.tgz#d1b25178c9de7fee7752831893fb075dbfff8b82"
   integrity sha512-ordvoPT3lAFL5qsvdYBeDGRP03gtbL6Jl+qJ9dztyhE7NJf2yhtnU3ZNqN1JMCcUK0qpGsDzX89t8dKQvI80Pw==
@@ -5010,7 +4998,7 @@ level-iterator-stream@~4.0.0:
     readable-stream "^3.0.2"
     xtend "^4.0.0"
 
-leveldown@^5.0.0, leveldown@^5.0.2:
+leveldown@^5.0.0, leveldown@^5.0.3:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/leveldown/-/leveldown-5.0.3.tgz#66880478e956528ed35d47e30f6609e1201bf79c"
   integrity sha512-isfWtOQIXbGbQRI8nmU9FqCZM0klmqTAOFi0vF6G/D0O1ZgxLrSh6Xd4Zj9iVQfGt6+8jpYwkRbN07VLrxRM8w==
@@ -5626,9 +5614,9 @@ nice-try@^1.0.4:
   integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
 
 node-fetch@^2.1.2, node-fetch@^2.2.0:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.4.1.tgz#b2e38f1117b8acbedbe0524f041fb3177188255d"
-  integrity sha512-P9UbpFK87NyqBZzUuDBDz4f6Yiys8xm8j7ACDbi6usvFm6KItklQUKjeoqTrYS/S1k6I8oaOC2YLLDr/gg26Mw==
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.5.0.tgz#8028c49fc1191bba56a07adc6e2a954644a48501"
+  integrity sha512-YuZKluhWGJwCcUu4RlZstdAxr8bFfOVHakc1mplwHkk8J+tqM1Y5yraYvIUpeX8aY7+crCwiELJq7Vl0o0LWXw==
 
 node-forge@~0.7.6:
   version "0.7.6"

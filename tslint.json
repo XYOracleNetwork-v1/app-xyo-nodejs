@@ -1,6 +1,12 @@
  {
   "extends": ["tslint:latest", "@xyo-network/config-tslint"],
   "rules": {
+    "import-name": [
+      true, {
+        "lodash": "_",
+        "fs": "fs-extra"
+      }
+    ]
   },
   "linterOptions": {
     "exclude": ["node_modules"]

@@ -4,22 +4,14 @@
  * File Created: Tuesday, 16th April 2019 9:19:05 am
  * Author: XYO Development Team (support@xyo.network)
  * -----
- * Last Modified: Friday, 26th April 2019 8:07:39 am
+ * Last Modified: Wednesday, 1st May 2019 9:08:27 am
  * Modified By: XYO Development Team (support@xyo.network>)
  * -----
  * Copyright 2017 - 2019 XY - The Persistent Company
  */
 
-import { XyoBase } from '@xyo-network/base'
 import { IAppConfig, IEthCryptoKeys } from './@types'
 import path from 'path'
-import {
-  ProcessManager,
-  fileExists,
-  readFile,
-  writeFile,
-  createDirectoryIfNotExists,
-} from '@xyo-network/utils'
 import { AppWizard } from './wizard'
 import * as yaml from 'js-yaml'
 import {
@@ -29,11 +21,11 @@ import {
 } from './validator/validator'
 import { prompt } from 'enquirer'
 
-import { XyoError } from '@xyo-network/errors'
-import { CatalogueItem } from '@xyo-network/network'
 import { XyoNode } from '@xyo-network/sdk-archivist-nodejs'
 import { XyoCryptoProvider } from '@xyo-network/crypto'
-import { IXyoComponentFeatureResponse } from '@xyo-network/node-network'
+import { XyoBase } from '@xyo-network/sdk-base-nodejs'
+
+import * as fs from 'fs-extra'
 
 export class XyoAppLauncher extends XyoBase {
   public config: IAppConfig | undefined
@@ -63,7 +55,7 @@ export class XyoAppLauncher extends XyoBase {
       const exists = await this.loadConfigFile(configPath)
       if (!exists) {
         if (this.isForever) {
-          throw new XyoError('Config file not found running forever')
+          throw new Error('Config file not found running forever')
         }
         this.logInfo(`Could not find a configuration file at ${configPath}`)
         writeConfigFile = await this.showWizard(configName)
@@ -80,7 +72,7 @@ export class XyoAppLauncher extends XyoBase {
 
     const { validates, message } = await validateConfigFile(this.config)
     if (!validates) {
-      throw new XyoError(
+      throw new Error(
         `There was an error in your config file ${message}. Exiting`,
       )
     }
@@ -91,19 +83,19 @@ export class XyoAppLauncher extends XyoBase {
   }
 
   public async start() {
-    if (!this.config) throw new XyoError('Config not initialized')
+    if (!this.config) throw new Error('Config not initialized')
 
     const nodeData = path.resolve(this.config.data, this.config.name)
     this.isArchivist = Boolean(this.config.archivist)
     this.isDiviner = Boolean(this.config.diviner)
 
     if (!this.isArchivist && !this.isDiviner) {
-      throw new XyoError(
+      throw new Error(
         'Must support at least archivist or diviner functionality',
       )
     }
 
-    const features: IXyoComponentFeatureResponse = {}
+    const features: any = {}
 
     if (this.isArchivist && this.config.graphqlPort && this.config.serverPort) {
       features.archivist = {
@@ -127,59 +119,16 @@ export class XyoAppLauncher extends XyoBase {
       }
     }
     await this.addPidToPidsFolder()
-    const newNode = await this.createNode(nodeData, features)
+    const newNode = await this.createNode()
     if (!newNode) {
-      throw new XyoError('Failed to Create Node')
+      throw new Error('Failed to Create Node')
     }
   }
 
   private async createNode(
-    nodeData: string,
-    features: IXyoComponentFeatureResponse,
   ) {
     if (this.config) {
-      return new XyoNode({
-        nodeRunnerDelegates: {
-          enableBoundWitnessServer: Boolean(this.config.serverPort),
-          enableGraphQLServer: Boolean(
-              this.config.graphqlPort && this.config.apis.length > 0,
-            ),
-          enableQuestionsWorker: this.isDiviner,
-          enableBlockProducer: this.isDiviner,
-          enableBlockWitness: this.isDiviner,
-        },
-        blockProducer: this.isDiviner
-            ? {
-              accountAddress: this.config.diviner!.ethereum.account.address,
-            }
-            : null,
-        data: {
-          path: nodeData,
-        },
-        discovery: {
-          bootstrapNodes: this.config.bootstrapNodes,
-          publicKey: this.config.name,
-          address: `/ip4/${this.config.ip}/tcp/${this.config.p2pPort}`,
-        },
-        peerTransport: {
-          address: `/ip4/${this.config.ip}/tcp/${this.config.p2pPort}`,
-        },
-        nodeNetworkFrom: {
-          features,
-          shouldServiceBlockPermissionRequests: this.isArchivist,
-        },
-        network: this.config.serverPort
-            ? {
-              port: this.config.serverPort,
-            }
-            : null,
-        originStateRepository: {
-          data: path.resolve(nodeData, 'origin-chain'),
-        },
-        archivistRepository: this.getArchivistRepositoryConfig(),
-        aboutMeService: this.getAboutMeConfig(),
-        graphql: this.getGraphQlConfig()
-      })
+      return new XyoNode(this.config.serverPort || 4141)
     }
   }
 
@@ -286,7 +235,7 @@ export class XyoAppLauncher extends XyoBase {
       )
       return privateKey
     } catch (e) {
-      this.logError('Incorrect password,  try again.', e)
+      this.logError(`Incorrect password,  try again. ${e}`)
       if (!tryAgain) {
         process.exit(1)
       }
@@ -297,14 +246,14 @@ export class XyoAppLauncher extends XyoBase {
   private async addPidToPidsFolder() {
     try {
       const pidFolder = path.resolve(__dirname, '..', 'pids')
-      await createDirectoryIfNotExists(pidFolder)
-      await writeFile(
+      await fs.mkdir(pidFolder)
+      await fs.writeFile(
         path.resolve(pidFolder, `${this.config!.name}.pid`),
         process.pid,
         { encoding: 'utf8' },
       )
     } catch (e) {
-      this.logError('There was an updating the pids folder', e)
+      this.logError(`There was an updating the pids folder: ${e}`)
       throw e
     }
   }
@@ -314,10 +263,10 @@ export class XyoAppLauncher extends XyoBase {
   }
 
   private async loadConfigFile(configPath: string) {
-    const exists = await fileExists(configPath)
+    const exists = fs.existsSync(configPath)
     if (exists) {
       this.logInfo(`Found config file at ${configPath}`)
-      const file = await readFile(configPath, 'utf8')
+      const file = await fs.readFile(configPath, 'utf8')
       this.yamlConfig = file
       this.config = yaml.safeLoad(file) as IAppConfig
     }
@@ -328,9 +277,9 @@ export class XyoAppLauncher extends XyoBase {
     yamlStr: string,
     config: IAppConfig,
   ): Promise<void> {
-    await createDirectoryIfNotExists(this.configFolder)
+    await fs.mkdir(this.configFolder)
     const pathToWrite = path.resolve(this.configFolder, `${config.name}.yaml`)
-    await writeFile(pathToWrite, yamlStr, 'utf8')
+    await fs.writeFile(pathToWrite, yamlStr, 'utf8')
     return
   }
 }
