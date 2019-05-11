@@ -7,11 +7,15 @@
 
 [![NPM](https://nodei.co/npm/@xyo-network/app.png)](https://nodei.co/npm/@xyo-network/app/) 
 
-[![Build Status](https://travis-ci.com/XYOracleNetwork/app-xyo-nodejs.svg?branch=develop)](https://travis-ci.com/XYOracleNetwork/app-xyo-nodejs) [![DepShield Badge](https://depshield.sonatype.org/badges/XYOracleNetwork/app-xyo-nodejs/depshield.svg)](https://depshield.github.io)
+[![Build Status](https://travis-ci.com/XYOracleNetwork/app-xyo-nodejs.svg?branch=develop)](https://travis-ci.com/XYOracleNetwork/app-xyo-nodejs)
+[![Known Vulnerabilities](https://snyk.io/test/github/XYOracleNetwork/app-xyo-nodejs/badge.svg)](https://snyk.io/test/github/XYOracleNetwork/app-xyo-nodejs)
 
 [![David Badge](https://david-dm.org/xyoraclenetwork/app-xyo-nodejs/status.svg)](https://david-dm.org/xyoraclenetwork/app-xyo-nodejs) [![David Badge](https://david-dm.org/xyoraclenetwork/app-xyo-nodejs/dev-status.svg)](https://david-dm.org/xyoraclenetwork/app-xyo-nodejs)
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1f31c7fa87694b8eab91a2d71f74b697)](https://www.codacy.com/app/arietrouw/app-xyo-nodejs?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=XYOracleNetwork/app-xyo-nodejs&amp;utm_campaign=Badge_Grade) [![Maintainability](https://api.codeclimate.com/v1/badges/f3dd4f4d35e1bd9eeabc/maintainability)](https://codeclimate.com/github/XYOracleNetwork/app-xyo-nodejs/maintainability) [![BCH compliance](https://bettercodehub.com/edge/badge/XYOracleNetwork/app-xyo-nodejs?branch=develop)](https://bettercodehub.com/results/XYOracleNetwork/app-xyo-nodejs)
+[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=XYOracleNetwork_sdk-ble-android&metric=alert_status)](https://sonarcloud.io/dashboard?id=XYOracleNetwork_sdk-ble-android)
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1f31c7fa87694b8eab91a2d71f74b697)](https://www.codacy.com/app/arietrouw/app-xyo-nodejs?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=XYOracleNetwork/app-xyo-nodejs&amp;utm_campaign=Badge_Grade) [![Maintainability](https://api.codeclimate.com/v1/badges/f3dd4f4d35e1bd9eeabc/maintainability)](https://codeclimate.com/github/XYOracleNetwork/app-xyo-nodejs/maintainability)
+[![BCH compliance](https://bettercodehub.com/edge/badge/XYOracleNetwork/app-xyo-nodejs?branch=master)](https://bettercodehub.com/)
 
 Table of Contents
 
@@ -201,9 +205,5 @@ If you feel you may need to do a `hot-fix` directly to master, please communicat
 - Carter Harrison
 - Arie Trouw
 
-### License 
-
-MIT
-
-<p align="center">Made with  ❤️  by [<b>XY - The Persistent Company</b>] (https://xy.company)</p>
+Made with  ❤️  by [XY - The Persistent Company] (https://xy.company)
 
