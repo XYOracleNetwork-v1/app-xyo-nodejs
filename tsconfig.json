@@ -1,7 +1,17 @@
 {
-  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "resolveJsonModule": true,
-    "suppressImplicitAnyIndexErrors": true
+    "target": "es6",
+    "module": "commonjs",
+    "lib": [
+      "esnext", "dom"
+    ],
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "outDir": "dist"
   }
 }
