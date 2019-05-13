@@ -592,6 +592,7 @@
   version "0.1.31"
   resolved "https://registry.yarnpkg.com/@xyo-network/config-tslint/-/config-tslint-0.1.31.tgz#c250d898536b6e5d68cfb5acb13e9ab3254ca306"
   integrity sha512-baeebNzlZNNvi+em9fwmipNt6VdDT/b67hE1nRz02T94hPUGH7yaAkWM35BVgWsrMXQla5yhesE3fCqPl0vwvA==
+
   dependencies:
     tslint-config-airbnb "^5.11.0"
     tslint-react "^4.0.0"
