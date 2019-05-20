@@ -10,7 +10,7 @@
  * Copyright 2017 - 2019 XY - The Persistent Company
  */
 
-import { IXyoPluginWithConfig, IXyoConfig, XyoBase, IXyoPlugin } from '@xyo-network/sdk-base-nodejs'
+import { IXyoPluginWithConfig, IXyoConfig, XyoBase, IXyoPlugin, IXyoRemoteConfig } from '@xyo-network/sdk-base-nodejs'
 import { XyoGraphQlEndpoint } from './graphql/graohql-delegate'
 import { PluginResolver } from './plugin-resolver'
 import { XyoMutexHandler } from './mutex'
@@ -19,17 +19,16 @@ import { resolve } from 'path'
 import { PluginsWizard } from './wizard/choose-plugin-wizard'
 import { execSync } from 'child_process'
 import fsExtra from 'fs-extra'
-import https from 'https'
 import os from 'os'
-import zlib from 'zlib'
-import tarFs from 'tar-fs'
+import globalModules from 'global-modules'
 
 const configPath = `${os.homedir()}/.config/xyo`
 const configName = 'xyo.json'
 const defaultConfigPath = `${configPath}/${configName}`
 
-const defaultConfig = {
+const defaultConfig: IXyoConfig = {
   port: 11001,
+  remote: [],
   plugins: [
     {
       packageName: 'base-graphql-types',
@@ -52,8 +51,9 @@ export class App extends XyoBase {
     commander.option('-a, --addPluginPath <string>', 'install plugin by path')
     commander.option('-d, --removePluginPath <string>', 'remove plugin by name')
     commander.option('-i, --addRepositoryPath <string>', 'install repository by path')
-    commander.option('-n, --addRepository <string>', 'install repository by npm package')
     commander.option('-c, --config', 'config file override path')
+    commander.option('-m, --remoteInstall', 'installs remote plugins')
+    commander.option('-o, --remoteInstallAll', 'installs remote plugins no prompt')
     commander.option('-l, --list', 'lists plugin')
     commander.option('-r, --run', 'runs node')
     commander.parse(process.argv)
@@ -63,7 +63,8 @@ export class App extends XyoBase {
     this.logInfo(`Using config at path: ${commander.config || defaultConfigPath}`)
 
     if (commander.list) { await this.listCommand(); return }
-    if (commander.addRepository) { await this.addRemoteRepository(); return }
+    if (commander.remoteInstallAll) { await this.addRemoteRepositoriesCommand(true); return }
+    if (commander.remoteInstall) { await this.addRemoteRepositoriesCommand(false); return }
     if (commander.addPluginPath) { await this.installCommand(); return }
     if (commander.addRepositoryPath) { await this.addRepositoryCommand(); return }
     if (commander.run) { await this.runCommand(); return }
@@ -72,33 +73,21 @@ export class App extends XyoBase {
     commander.outputHelp()
   }
 
-  private async addRemoteRepository() {
-    const npmPackage = commander.addRepository
+  private async addRemoteRepositoriesCommand(installAll: boolean) {
+    const config = await this.readConfigFromPath(commander.config || defaultConfigPath)
 
-    this.logInfo(`Finding plugin repository: ${npmPackage}`)
+    for (const repo of config.remote) {
+      await this.addRemoteRepository(repo, installAll)
+    }
+  }
 
+  private async addRemoteRepository(remote: IXyoRemoteConfig, installAll: boolean = false) {
     try {
-      const remote = execSync(`npm view ${npmPackage} dist.tarball`).toString('utf8')
-      this.logInfo(`Found plugin repository: ${remote}`)
+      execSync(`npm install ${remote.name}@${remote.version} -g`).toString('utf8')
 
-      const fileName = remote.split('/')[remote.split('/').length - 1]
-
-      fsExtra.ensureDirSync(`${configPath}/plugins/${fileName}`)
-
-      const req = https.get(remote, (response) => {
-        response
-          .pipe(zlib.createGunzip())
-          .pipe(tarFs.extract(`${configPath}/plugins/${fileName}`))
-      })
-
-      req.on('finish', async() => {
-        const repositoryPath = `${configPath}/plugins/${fileName}/package`
-        await this.addRepository(repositoryPath)
-      })
-
+      await this.addRepository(`${globalModules}/${remote.name}`, installAll)
     } catch (e) {
       console.log(e)
-      this.logError(`Could not find plugin repository: ${npmPackage}`)
       process.exit(1)
     }
   }
@@ -141,7 +130,7 @@ export class App extends XyoBase {
     this.addRepository(resolve(commander.addRepositoryPath))
   }
 
-  private async addRepository(path: string) {
+  private async addRepository(path: string, installAll: boolean = false) {
     try {
       const repositoryPath = path
       const repository = require(`${repositoryPath}/package.json`)
@@ -153,9 +142,10 @@ export class App extends XyoBase {
         plugins.push(plugin)
       }
 
-      const wizard = new PluginsWizard(plugins.map(plugin => plugin.getName()))
+      const allPlugins = plugins.map(plugin => plugin.getName())
+      const wizard = new PluginsWizard(allPlugins)
 
-      const pluginsToInstall = await wizard.start()
+      const pluginsToInstall = installAll ? allPlugins : await wizard.start()
 
       for (const pluginToInstall of pluginsToInstall) {
         for (const i in plugins) {
@@ -166,7 +156,7 @@ export class App extends XyoBase {
       }
 
     } catch (error) {
-      this.logError(`Can not find repository ${commander.addRepositoryPath}`)
+      this.logError(`Can not find repository ${path}`)
     }
   }
 
@@ -245,7 +235,8 @@ export class App extends XyoBase {
   private getSinglePlugin(path: string): IXyoPlugin {
     try {
       return require(path) as IXyoPlugin
-    } catch {
+    } catch (error) {
+      console.log(error)
       this.logError(`Can not find plugin: ${path}`)
       throw new Error(`Can not find plugin: ${path}`)
     }
