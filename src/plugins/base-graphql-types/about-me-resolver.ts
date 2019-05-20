@@ -6,6 +6,7 @@ export interface IXyoAboutMe {
   version: string,
   ip: string,
   address: string,
+  getIndex: () => number,
 
   // this is deprecated
   boundWitnessServerPort: string
@@ -19,6 +20,12 @@ export class XyoAboutMeResolver implements IXyoDataResolver<any, any, any, any> 
   }
 
   public async resolve(obj: any, args: any, context: any, info: GraphQLResolveInfo): Promise<any> {
-    return this.aboutMe
+    return {
+      name: this.aboutMe.name,
+      version: this.aboutMe.version,
+      ip: this.aboutMe.ip,
+      address: this.aboutMe.address,
+      index: this.aboutMe.getIndex()
+    }
   }
 }
