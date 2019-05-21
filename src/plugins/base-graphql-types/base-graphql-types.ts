@@ -6,6 +6,7 @@ export const types = `
         ip: String,
         address: String,
         boundWitnessServerPort: String
+        index: Int
     }
 
     interface List {

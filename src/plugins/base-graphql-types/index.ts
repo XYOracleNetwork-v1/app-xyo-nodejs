@@ -36,11 +36,16 @@ export class XyoBaseGraphQlPlugin implements IXyoPlugin {
       throw new Error('Expecting GraphQl interface')
     }
 
-    const publicKey =  bs58.encode((deps.ORIGIN_STATE as XyoOriginState).getSigners()[0].getPublicKey().getAll().getContentsCopy())
+    const originState = deps.ORIGIN_STATE as XyoOriginState
+
+    const publicKey =  bs58.encode(originState.getSigners()[0].getPublicKey().getAll().getContentsCopy())
 
     graphql.addType(types)
     graphql.addQuery('about: XyoAboutMe')
     graphql.addResolver('about', new XyoAboutMeResolver({
+      getIndex: () => {
+        return originState.getIndexAsNumber()
+      },
       version: getVersion(),
       ip: config.ip,
       name: config.name,
