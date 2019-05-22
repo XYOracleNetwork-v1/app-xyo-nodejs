@@ -138,7 +138,7 @@ const installNpmRepository = (pathOfNpm: string, subPlugins: INpmRemoteSubPlugin
     const didFind = resolvedPlugins[pluginShouldBeFound.name]
 
     if (!didFind) {
-      throw new Error(`Can not find plugin with name ${pluginShouldBeFound}`)
+      throw new Error(`Can not find plugin with name ${pluginShouldBeFound.name}`)
     }
 
     pluginsWithConfig.push({
