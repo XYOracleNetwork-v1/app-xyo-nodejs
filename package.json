@@ -1,6 +1,6 @@
 {
   "name": "@xyo-network/app-xyo-nodejs",
-  "version": "0.4.1",
+  "version": "0.4.0",
   "description": "The XYO application for running components on the XYO network",
   "main": "dist/index.js",
   "bin": {
@@ -32,10 +32,12 @@
     "@xyo-network/sdk-base-nodejs": "0.4.0-beta.1",
     "@xyo-network/sdk-core-nodejs": "^0.64.2",
     "apollo-server": "2.5.0",
+    "apollo-server-express": "^2.5.0",
     "bs58": "^4.0.1",
     "commander": "^2.19.0",
     "dotenv-expand": "^5.1.0",
     "enquirer": "^2.3.0",
+    "express": "^4.17.0",
     "forever": "^1.0.0",
     "fs-extra": "^7.0.1",
     "global-modules": "^2.0.0",
