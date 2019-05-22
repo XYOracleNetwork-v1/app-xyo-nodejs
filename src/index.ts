@@ -101,10 +101,10 @@ export class App extends XyoBase {
   }
 
   private async runCommand() {
-    const delegate = new XyoGraphQlEndpoint()
+    const config = await this.readConfigFromPath(commander.config || defaultConfigPath)
+    const delegate = new XyoGraphQlEndpoint(config)
     const mutex = new XyoMutexHandler()
     const resolver = new PluginResolver(delegate, mutex)
-    const config = await this.readConfigFromPath(commander.config || defaultConfigPath)
     const plugins = await this.getPluginsFromConfig(config)
     await resolver.resolve(plugins)
     const server = delegate.start(config.port)

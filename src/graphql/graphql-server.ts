@@ -1,13 +1,17 @@
-import { ApolloServer, gql, IResolvers } from 'apollo-server'
+import { ApolloServer, gql, IResolvers } from 'apollo-server-express'
 import { XyoBase } from '@xyo-network/sdk-base-nodejs'
 import { IXyoDataResolver } from './@types'
 import graphqlTypeJson from 'graphql-type-json'
+import https from 'https'
+import http from 'http'
+import express from 'express'
+import fs from 'fs'
 
 export class XyoGraphQLServer extends XyoBase {
   public server: ApolloServer | undefined
   private readonly graphqlResolvers: IGraphQLResolvers = {}
 
-  constructor(private readonly schema: string, private readonly port: number) {
+  constructor(private readonly schema: string, private readonly port: number, private readonly config: any) {
     super()
   }
 
@@ -23,14 +27,36 @@ export class XyoGraphQLServer extends XyoBase {
   }
 
   public async start(): Promise<void> {
+    const app = express()
+
     const { typeDefs, resolvers } = this.initialize()
     this.server = new ApolloServer({
       typeDefs,
       resolvers,
     })
 
-    const { url } = await this.server.listen({ port: this.port })
-    this.logInfo(`Graphql server ready at url: ${url}`)
+    let server
+
+    if (this.config.ssl) {
+      // Assumes certificates are in .ssl folder from package root. Make sure the files
+      // are secured.
+      server = https.createServer(
+        {
+          key: fs.readFileSync(this.config.ssl.key),
+          cert: fs.readFileSync(this.config.ssl.cert)
+        },
+        app
+      )
+    } else {
+      server = http.createServer(app)
+    }
+
+    this.server.graphqlPath = '/'
+    this.server.applyMiddleware({ app, path: '/' })
+    this.server.installSubscriptionHandlers(server)
+
+    await server.listen({ port: this.port })
+    this.logInfo(`Graphql server ready at url: http://localhost:${this.config.port}`)
   }
 
   public async stop(): Promise<void> {
