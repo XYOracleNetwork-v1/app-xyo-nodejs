@@ -633,15 +633,10 @@
     tslint-react "^4.0.0"
     tsutils "^3.5.0"
 
-"@xyo-network/object-model@^0.5.11":
-  version "0.5.11"
-  resolved "https://registry.yarnpkg.com/@xyo-network/object-model/-/object-model-0.5.11.tgz#83fa7a7596ffdb5bac622d42b418e19b7ea1a119"
-  integrity sha512-3DiKSOquRYInJKggO1nsESkbIgqcGWzoqF0bfZaiJVEF4JwQEICIk9Qcvsd0KJCyDfuYsMNNoUeEIxz4EtP5gw==
-
-"@xyo-network/sdk-base-nodejs@0.4.0-beta.1":
-  version "0.4.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@xyo-network/sdk-base-nodejs/-/sdk-base-nodejs-0.4.0-beta.1.tgz#02a1ad8a31ed3f23770ada3db1037c28a4efe7d4"
-  integrity sha512-E3sATqmpejxfcYTdGS9ONb0nKoOWRJIvqepfzR2sPiWkDDndlpzykNzTY565yQKQVTxzsZ6ZFPC2MEJhzmFtLA==
+"@xyo-network/sdk-base-nodejs@0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@xyo-network/sdk-base-nodejs/-/sdk-base-nodejs-0.5.2.tgz#7b3840a86f764dcca0977894e8819cd1902f0333"
+  integrity sha512-cvzm+F7or/QnkkUqlUhyumib5RVQLokuarGNIBboppp+TRnquxN/PHg2PLGIj/O/pWhTTJgVZ0VhhRGrGy9pDw==
   dependencies:
     chalk "^2.4.2"
     fs-extra "^7.0.1"
@@ -656,12 +651,11 @@
     fs-extra "^7.0.1"
     winston "3.2.1"
 
-"@xyo-network/sdk-core-nodejs@^0.64.2":
-  version "0.64.4"
-  resolved "https://registry.yarnpkg.com/@xyo-network/sdk-core-nodejs/-/sdk-core-nodejs-0.64.4.tgz#5d1858d2e5b959ab88386a0a84e153e94cfbed92"
-  integrity sha512-5OFYtkPWk9cmBtPBIyMDOo0jZWZekC1sHT6lyMQdwA30ZS3uIJqegtkK7o54h11nNtmcuSaSMA5Os6TuBc7TJg==
+"@xyo-network/sdk-core-nodejs@0.69.0":
+  version "0.69.0"
+  resolved "https://registry.yarnpkg.com/@xyo-network/sdk-core-nodejs/-/sdk-core-nodejs-0.69.0.tgz#14d9c7edff907d37325fc72eff2c2c3000f98457"
+  integrity sha512-1/7eOIW7qIoItcY9Bm4DeLQ6K7bRsLj+g9LKMHVxmJmHlr6H5tFVX4X78xdWh0QDea6hvWzRz++6wZv9Tui21Q==
   dependencies:
-    "@xyo-network/object-model" "^0.5.11"
     "@xyo-network/sdk-base-nodejs" "^0.3.10"
     bs58 "4.0.1"
     elliptic "6.4.1"
