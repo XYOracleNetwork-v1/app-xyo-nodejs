@@ -30,7 +30,7 @@
     "@types/tar-fs": "^1.16.1",
     "@types/tar-stream": "^1.6.0",
     "@xyo-network/sdk-base-nodejs": "0.4.0-beta.1",
-    "@xyo-network/sdk-core-nodejs": "^0.64.2",
+    "@xyo-network/sdk-core-nodejs": "0.66.1",
     "apollo-server": "2.5.0",
     "apollo-server-express": "^2.5.0",
     "bs58": "^4.0.1",
