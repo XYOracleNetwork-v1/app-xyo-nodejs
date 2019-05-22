@@ -20,3 +20,11 @@ deploy:
   api_key: $NPM_TOKEN
   on:
     branch: master
+deploy:
+  provider: npm
+  skip_cleanup: true
+  tag: alpha
+  email: $NPM_EMAIL
+  api_key: $NPM_TOKEN
+  on:
+    branch: develop

@@ -1,4 +1,4 @@
-import { IXyoPlugin, XyoBase } from '@xyo-network/sdk-base-nodejs'
+import { IXyoPlugin, XyoBase, IXyoPluginDelegate } from '@xyo-network/sdk-base-nodejs'
 import { XyoOriginState, XyoFileOriginStateRepository, XyoSecp2556k1 } from '@xyo-network/sdk-core-nodejs'
 import bs58 from 'bs58'
 import fsExtra from 'fs-extra'
@@ -12,7 +12,7 @@ export class OriginStatePlugin extends XyoBase implements IXyoPlugin {
   public ORIGIN_STATE: XyoOriginState | undefined
 
   public getName(): string {
-    return 'file-origin-state'
+    return 'base-origin-state'
   }
 
   public getProvides(): string[] {
@@ -23,8 +23,8 @@ export class OriginStatePlugin extends XyoBase implements IXyoPlugin {
     return []
   }
 
-  public async initialize(deps: { [key: string]: any; }, config: any): Promise<boolean> {
-    const stateConfig = config as IXyoOriginStateConfig
+  public async initialize(delegate: IXyoPluginDelegate): Promise<boolean> {
+    const stateConfig = delegate.config as IXyoOriginStateConfig
     fsExtra.ensureDirSync(`${os.homedir()}/.config/xyo/`)
     const path = stateConfig.path || `${os.homedir()}/.config/xyo/state.json`
     const repository = new XyoFileOriginStateRepository(path)

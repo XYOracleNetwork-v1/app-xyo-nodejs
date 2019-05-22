@@ -50,7 +50,13 @@ export class PluginResolver extends XyoBase {
 
     // if the plugin has all of the dependencies, initialize it
     if (hasAllDependencies) {
-      await plugin.plugin.initialize(this.resolvedPlugins, plugin.config, this.qlDelegate, this.mutexDelegate)
+      await plugin.plugin.initialize({
+        deps: this.resolvedPlugins,
+        config: plugin.config,
+        graphql: this.qlDelegate,
+        mutex: this.mutexDelegate
+      })
+
       const provides = plugin.plugin.getProvides()
 
       // after we initialize the plugin, we add what it provides, so that other plugins can use it
