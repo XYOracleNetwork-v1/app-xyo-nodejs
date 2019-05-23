@@ -35,27 +35,28 @@ export class XyoGraphQLServer extends XyoBase {
       resolvers,
     })
 
-    let server
+    const expressServer = http.createServer(app)
 
     if (this.config.ssl) {
       // Assumes certificates are in .ssl folder from package root. Make sure the files
       // are secured.
-      server = https.createServer(
+      const sslServer = https.createServer(
         {
           key: fs.readFileSync(this.config.ssl.key),
           cert: fs.readFileSync(this.config.ssl.cert)
         },
         app
       )
-    } else {
-      server = http.createServer(app)
+
+      this.server.installSubscriptionHandlers(sslServer)
+      await sslServer.listen(this.config.ssl.port)
     }
 
     this.server.graphqlPath = '/'
     this.server.applyMiddleware({ app, path: '/' })
-    this.server.installSubscriptionHandlers(server)
+    this.server.installSubscriptionHandlers(expressServer)
 
-    await server.listen({ port: this.port })
+    await expressServer.listen({ port: this.port })
     this.logInfo(`Graphql server ready at url: http://localhost:${this.config.port}`)
   }
 
