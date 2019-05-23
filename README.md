@@ -12,26 +12,10 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1f31c7fa87694b8eab91a2d71f74b697)](https://www.codacy.com/app/arietrouw/app-xyo-nodejs?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=XYOracleNetwork/app-xyo-nodejs&amp;utm_campaign=Badge_Grade) [![Maintainability](https://api.codeclimate.com/v1/badges/f3dd4f4d35e1bd9eeabc/maintainability)](https://codeclimate.com/github/XYOracleNetwork/app-xyo-nodejs/maintainability)
 [![BCH compliance](https://bettercodehub.com/edge/badge/XYOracleNetwork/app-xyo-nodejs?branch=master)](https://bettercodehub.com/)
 
-Table of Contents
+The XYO application for running components on the XYO network
 
-- [Sections](#sections)
-- [Title](#Archivist-App-Nodejs)
-- [Short Description](#short-description)
-- [Long Description](#long-description)
-- [Install](#install)
-- [Usage](#usage)
-- [Configure and Start an Archivist](#configure-and-start-an-archivist)
-- [API](#api)
-- [Maintainers](#maintainers)
-- [Contributing](#contributing)
-- [License](#license)
-- [Credits](#credits)
-
-## Sections
-
-### Short Description - The XYO application for running components on the XYO network
-
-### Long Description - An archivist in the XYO network serves as the data-layer component between the bridge and the diviner. It accepts and aggregates data from bridges and makes that data available to Diviners via a GraphQL API. In essence it is the scribe node of the XYO network. This app will allow you to start up an archivist using MySQL, or if you have one configured, DynamoDB.
+### Description
+An archivist in the XYO network serves as the data-layer component between the bridge and the diviner. It accepts and aggregates data from bridges and makes that data available to Diviners via a GraphQL API. In essence it is the scribe node of the XYO network. This app will allow you to start up an archivist using MySQL, or if you have one configured, DynamoDB.
 
 ## Install
 
