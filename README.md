@@ -13,14 +13,13 @@
 
 -   [Title](#app-xyo-nodejs)
 -   [Description](#description)
--   [Logging](#logging)
 -   [Maintainers](#maintainers)
 -   [License](#license)
 -   [Credits](#credits)
 
 ## Description
 
-CLI for participating in the XYO Network.
+This tool is a CLI for participating in the XYO Network.
 
 ## Maintainers
 
