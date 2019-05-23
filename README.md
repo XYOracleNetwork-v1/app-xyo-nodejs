@@ -1,7 +1,5 @@
 [logo]: https://cdn.xy.company/img/brand/XY_Logo_GitHub.png
-
-# [![logo]](https://xy.company)
-
+[![logo]](https://xy.company)
 # app-xyo-nodejs
 
 ![npm](https://img.shields.io/npm/v/@xyo-network/app-xyo-nodejs.svg)
