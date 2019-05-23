@@ -3,7 +3,7 @@
 
 ![logo]
 
-# Archivist App Nodejs
+# app-xyo-nodejs
 
 ![npm](https://img.shields.io/npm/v/@xyo-network/app-xyo-nodejs.svg)
 [![Build Status](https://travis-ci.com/XYOracleNetwork/app-xyo-nodejs.svg?branch=develop)](https://travis-ci.com/XYOracleNetwork/app-xyo-nodejs)
