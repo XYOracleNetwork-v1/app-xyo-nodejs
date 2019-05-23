@@ -12,7 +12,7 @@
 
 ## Table of Contents
 
--   [Title](#sdk-base-nodejs)
+-   [Title](#app-xyo-nodejs)
 -   [Description](#description)
 -   [Logging](#logging)
 -   [Maintainers](#maintainers)
