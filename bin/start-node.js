@@ -2,6 +2,6 @@
 
 // tslint:disable
 
-var main = require('../dist/index.js').main;
-console.log(`Cmd: ${process.argv}`)
-main(process.argv);
+var App = require('../dist/index.js').App;
+const app= new App()
+app.main(process.argv);

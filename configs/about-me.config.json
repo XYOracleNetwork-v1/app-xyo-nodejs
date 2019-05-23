@@ -1,0 +1,33 @@
+{
+    "port": 11001,
+    "plugins": [
+        {
+            "packageName": "base-graphql-types",
+            "path": "../dist/plugins/base-graphql-types",
+            "config": {
+                "name": "carter",
+                "ip": "10.30.10.11"
+            }
+        },
+        {
+            "packageName": "ping",
+            "path": "../dist/plugins/ping",
+            "config": {}
+        },
+        {
+            "packageName": "archivist",
+            "path": "../node_modules/@xyo-network/sdk-archivist-nodejs/",
+            "config": {}
+        },
+        {
+            "packageName": "db",
+            "path": "../node_modules/@xyo-network/sdk-archivist-nodejs/dist/repository/dynamodb/xyo-dynamo-plugin.js",
+            "config": {}
+        },
+        {
+            "packageName": "origin-state",
+            "path": "../dist/plugins/origin-state",
+            "config": {}
+        }
+    ]
+}

@@ -10,63 +10,63 @@
  * Copyright 2017 - 2019 XY - The Persistent Company
  */
 
-export { IAppConfig } from './@types'
-import { XyoAppLauncher } from './applauncher'
+import { XyoBase, IXyoPluginConfig, IXyoPluginWithConfig } from '@xyo-network/sdk-base-nodejs'
+import { XyoGraphQlEndpoint } from './graphql/graohql-delegate'
+import { PluginResolver } from './plugin-resolver'
+import { XyoMutexHandler } from './mutex'
 import commander from 'commander'
-import dotenvExpand from 'dotenv-expand'
+import os from 'os'
+import { XyoPackageManager } from './package-manager'
 
-const getVersion = (): string => {
-  dotenvExpand({
-    parsed: {
-      APP_VERSION:'$npm_package_version',
-      APP_NAME:'$npm_package_name'
+const configPath = `${os.homedir()}/.config/xyo`
+const configName = 'xyo.json'
+const defaultConfigPath = `${configPath}/${configName}`
+
+const defaultPlugins: IXyoPluginWithConfig[] = [
+  {
+    plugin: require('./plugins/base-graphql-types/index.js'),
+    config: {
+      name: 'unknown',
+      ip: 'localhost'
     }
-  })
+  },
+  {
+    plugin: require('./plugins/origin-state/index.js'),
+    config: {}
+  }
+]
 
-  return process.env.APP_VERSION || 'Unknown'
-}
+export class App extends XyoBase {
 
-export async function main() {
-  const program = commander
+  public async main() {
+    commander.option('-i, --install', 'installs the plugins')
+    commander.option('-r, --run', 'runs node')
+    commander.parse(process.argv)
 
-  program
-    .version(getVersion())
-    .option('-c, --config [config]', 'specify config file')
-    .option('-f, --forever [forever]', 'run forever')
-    .option('-p, --preflight [preflight]', 'generates preflight report')
-    .option('-d, --database [database]', 'type of database to use', /^(mysql|level|neo4j|dynamo)$/i)
-    .arguments('[cmd] [target]')
-    .action(async (cmd, target) => {
-      const appLauncher = new XyoAppLauncher()
-      try {
-        if (program.forever) {
-          appLauncher.setForeverPass(program.forever)
-        }
+    const manager = new XyoPackageManager(commander.config || defaultConfigPath)
 
-        await appLauncher.initialize({ configName: target || program.config, database: program.database })
-      } catch (err) {
-        console.error('There was an error during initialization. Will exit', err)
-        process.exit(1)
-        return
-      }
+    await manager.makeConfigIfNotExist()
 
-      if (!appLauncher.startNode) {
-        console.log('Exiting process after configuration')
-        process.exit(0)
-        return
-      }
+    this.logInfo(`Using config at path: ${commander.config || defaultConfigPath}`)
 
-      try {
-        await appLauncher.start()
-      } catch (err) {
-        console.error('There was an error during start. Will exit', err)
-        process.exit(1)
-        return
-      }
-    })
-    .parse(process.argv)
-}
+    if (commander.install) {
+      manager.install()
+      return
+    }
 
-if (require.main === module) {
-  main()
+    if (commander.run) {
+      const config = await manager.getConfig()
+      const delegate = new XyoGraphQlEndpoint(config)
+      const mutex = new XyoMutexHandler()
+      const resolver = new PluginResolver(delegate, mutex)
+      const plugins = (await manager.resolve()).concat(defaultPlugins)
+      await resolver.resolve(plugins)
+      const server = delegate.start(config.port)
+      server.start()
+      return
+    }
+
+    commander.outputHelp()
+  }
+
 }
