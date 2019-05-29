@@ -82,33 +82,27 @@ export class App extends XyoBase {
   private async fetch() {
     console.log(`Downloading... ${commander.fetch}`)
     const url = commander.fetch as string
-    if (url.split(':')[0] === 'http') {
-      http.request(url, (response: any) => {
-        const data = new Transform()
 
-        response.on('data', (chunk: any) => {
-          data.push(chunk)
-        })
+    const handler =  (response: any) => {
+      const data = new Transform()
 
-        response.on('end', () => {
-          fs.writeFileSync(commander.config || defaultConfigPath, data.read())
-          console.log(`Saved to ${commander.config || defaultConfigPath}`)
-        })
-      }).end()
+      response.on('data', (chunk: any) => {
+        data.push(chunk)
+      })
+
+      response.on('end', () => {
+        fs.writeFileSync(commander.config || defaultConfigPath, data.read())
+        this.logInfo(`Saved to ${commander.config || defaultConfigPath}`)
+      })
     }
+
+    if (url.split(':')[0] === 'http') {
+      http.request(url, handler).end()
+      return
+    }
+
     if (url.split(':')[0] === 'https') {
-      https.request(url, (response: any) => {
-        const data = new Transform()
-
-        response.on('data', (chunk: any) => {
-          data.push(chunk)
-        })
-
-        response.on('end', () => {
-          fs.writeFileSync(commander.config || defaultConfigPath, data.read())
-          console.log(`Saved to ${commander.config || defaultConfigPath}`)
-        })
-      }).end()
+      https.request(url, handler).end()
     }
   }
 }
