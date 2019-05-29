@@ -17,6 +17,10 @@ import { XyoMutexHandler } from './mutex'
 import commander from 'commander'
 import os from 'os'
 import { XyoPackageManager } from './package-manager'
+import http from 'http'
+import https from 'https'
+import { Transform } from 'stream'
+import fs from 'fs'
 
 const configPath = `${os.homedir()}/.config/xyo`
 const configName = 'xyo.json'
@@ -41,6 +45,7 @@ export class App extends XyoBase {
   public async main() {
     commander.option('-i, --install', 'installs the plugins')
     commander.option('-r, --run', 'runs node')
+    commander.option('-f, --fetch <string>', 'fetch from url')
     commander.parse(process.argv)
 
     const manager = new XyoPackageManager(commander.config || defaultConfigPath)
@@ -66,7 +71,44 @@ export class App extends XyoBase {
       return
     }
 
+    if (commander.fetch) {
+      this.fetch()
+      return
+    }
+
     commander.outputHelp()
   }
 
+  private async fetch() {
+    console.log(`Downloading... ${commander.fetch}`)
+    const url = commander.fetch as string
+    if (url.split(':')[0] === 'http') {
+      http.request(url, (response: any) => {
+        const data = new Transform()
+
+        response.on('data', (chunk: any) => {
+          data.push(chunk)
+        })
+
+        response.on('end', () => {
+          fs.writeFileSync(commander.config || defaultConfigPath, data.read())
+          console.log(`Saved to ${commander.config || defaultConfigPath}`)
+        })
+      }).end()
+    }
+    if (url.split(':')[0] === 'https') {
+      https.request(url, (response: any) => {
+        const data = new Transform()
+
+        response.on('data', (chunk: any) => {
+          data.push(chunk)
+        })
+
+        response.on('end', () => {
+          fs.writeFileSync(commander.config || defaultConfigPath, data.read())
+          console.log(`Saved to ${commander.config || defaultConfigPath}`)
+        })
+      }).end()
+    }
+  }
 }
