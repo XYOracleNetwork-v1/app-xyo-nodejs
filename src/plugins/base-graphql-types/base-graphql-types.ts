@@ -6,7 +6,9 @@ export const types = `
         ip: String,
         address: String,
         boundWitnessServerPort: String
+        graphqlPort: Int!,
         index: Int
+        peers: [String!]
     }
 
     interface List {
