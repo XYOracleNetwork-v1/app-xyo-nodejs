@@ -15,7 +15,9 @@
     "test": "yarn lint",
     "build": "yarn xybuild",
     "license": "yarn license-checker --onlyAllow 'MIT;BSD-2-Clause;BSD-3-Clause;Apache-2.0;ISC;Unlicense;UNKNOWN;BSD*;CC0-1.0' --excludePackages 'colors@0.6.2'",
-    "develop": "ts-node ./src/index.ts"
+    "develop": "ts-node ./src/index.ts",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "types": "dist/index.d.ts",
   "author": "XYO Development Team",
@@ -42,7 +44,8 @@
     "shelljs": "^0.8.3",
     "tar": "^4.4.8",
     "tar-fs": "^2.0.0",
-    "tar-stream": "^2.0.1"
+    "tar-stream": "^2.0.1",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "@types/bs58": "^4.0.0",
@@ -67,5 +70,6 @@
     "ts-node": "^8.0.3",
     "tslint": "^5.12.1",
     "typescript": "^3.4.5"
-  }
+  },
+  "snyk": true
 }
