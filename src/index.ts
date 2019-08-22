@@ -61,6 +61,7 @@ export class App extends XyoBase {
 
     if (commander.run) {
       const config = await manager.getConfig()
+      defaultPlugins[0].config.name = (config as any).name || 'unknown'
       const delegate = new XyoGraphQlEndpoint(config)
       const mutex = new XyoMutexHandler()
       const resolver = new PluginResolver(delegate, mutex)

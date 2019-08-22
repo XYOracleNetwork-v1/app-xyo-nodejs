@@ -1,7 +1,6 @@
 import { IXyoPluginWithConfig, XyoBase, IXyoConfig, IXyoPluginConfig, IXyoPlugin } from '@xyo-network/sdk-base-nodejs'
 import globalModules from 'global-modules'
 import { execSync } from 'child_process'
-import { resolve } from 'path'
 import fsExtra from 'fs-extra'
 
 const defaultConfig = {
