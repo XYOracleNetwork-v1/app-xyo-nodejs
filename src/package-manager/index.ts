@@ -1,7 +1,6 @@
 import { IXyoPluginWithConfig, XyoBase, IXyoConfig, IXyoPluginConfig, IXyoPlugin } from '@xyo-network/sdk-base-nodejs'
 import globalModules from 'global-modules'
 import { execSync } from 'child_process'
-import { resolve } from 'path'
 import fsExtra from 'fs-extra'
 
 const defaultConfig = {
@@ -44,7 +43,10 @@ export class XyoPackageManager extends XyoBase {
 
     for (const toRun of pluginsToRun) {
       const resolver = this.pluginTypeInstallers[toRun.type]
-      plugins = plugins.concat(await resolver(toRun.config))
+
+      if (resolver) {
+        plugins = plugins.concat(await resolver(toRun.config))
+      }
     }
 
     for (const plugin of plugins) {
@@ -64,6 +66,11 @@ export class XyoPackageManager extends XyoBase {
 
   private async installPlugin(config: IXyoPluginConfig) {
     const resolver = this.pluginTypes[config.type]
+
+    if (!resolver) {
+      return undefined
+    }
+
     await resolver(config.config)
   }
 
@@ -101,7 +108,7 @@ interface IPathConfig {
 }
 
 const npmRemotePluginResolver = async(config: any) => {
-  execSync(`npm install ${config.packageName}@${config.version} -g`).toString('utf8')
+  execSync(`npm install --unsafe-perm -g ${config.packageName}@${config.version}`).toString('utf8')
   installNpmRepository(`${globalModules}/${config.packageName}`, config.subPlugins)
 }
 

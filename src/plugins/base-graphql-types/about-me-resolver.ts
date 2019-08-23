@@ -27,7 +27,7 @@ export class XyoAboutMeResolver implements IXyoDataResolver<any, any, any, any> 
       name: this.aboutMe.name,
       version: this.aboutMe.version,
       ip: this.aboutMe.ip,
-      boundWitnessServerPort: '',
+      boundWitnessServerPort: 11000,
       address: this.aboutMe.address,
       graphqlPort: 11001,
       index: this.aboutMe.getIndex(),
