@@ -5,8 +5,10 @@ export const types = `
         version: String,
         ip: String,
         address: String,
-        boundWitnessServerPort: String
+        boundWitnessServerPort: Int!
+        graphqlPort: Int!,
         index: Int
+        peers: [String!]
     }
 
     interface List {

@@ -20,12 +20,18 @@ export class XyoAboutMeResolver implements IXyoDataResolver<any, any, any, any> 
   }
 
   public async resolve(obj: any, args: any, context: any, info: GraphQLResolveInfo): Promise<any> {
+    // peers field is deprecated
+    // graphql port is deprecated
+
     return {
       name: this.aboutMe.name,
       version: this.aboutMe.version,
       ip: this.aboutMe.ip,
+      boundWitnessServerPort: 11000,
       address: this.aboutMe.address,
-      index: this.aboutMe.getIndex()
+      graphqlPort: 11001,
+      index: this.aboutMe.getIndex(),
+      peers: [],
     }
   }
 }
