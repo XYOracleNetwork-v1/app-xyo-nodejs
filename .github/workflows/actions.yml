@@ -9,7 +9,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.15.0'
     - name: install
       run: yarn install
     - name: build
-      run: yarn install
+      run: yarn build
