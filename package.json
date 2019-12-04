@@ -1,6 +1,6 @@
 {
   "name": "@xyo-network/app-xyo-nodejs",
-  "version": "0.6.9",
+  "version": "0.6.10",
   "description": "The XYO application for running components on the XYO network",
   "main": "dist/index.js",
   "bin": {
