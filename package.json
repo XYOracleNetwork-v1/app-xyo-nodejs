@@ -36,7 +36,7 @@
     "dotenv-expand": "^5.1.0",
     "enquirer": "^2.3.0",
     "express": "^4.17.0",
-    "forever": "^1.0.0",
+    "forever": "^2.0.0",
     "fs-extra": "^7.0.1",
     "global-modules": "^2.0.0",
     "graphql": "^14.3.0",
