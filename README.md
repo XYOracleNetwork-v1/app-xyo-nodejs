@@ -4,7 +4,6 @@
 
 # app-xyo-nodejs
 
-![npm](https://img.shields.io/npm/v/@xyo-network/app-xyo-nodejs.svg)
 [![Build Status](https://travis-ci.com/XYOracleNetwork/app-xyo-nodejs.svg?branch=develop)](https://travis-ci.com/XYOracleNetwork/app-xyo-nodejs)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1f31c7fa87694b8eab91a2d71f74b697)](https://www.codacy.com/app/arietrouw/app-xyo-nodejs?utm_source=github.com&utm_medium=referral&utm_content=XYOracleNetwork/app-xyo-nodejs&utm_campaign=Badge_Grade)
 
