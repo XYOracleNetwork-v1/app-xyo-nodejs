@@ -1,6 +1,6 @@
 {
   "name": "@xyo-network/app-xyo-nodejs",
-  "version": "0.6.11",
+  "version": "0.6.12",
   "description": "The XYO application for running components on the XYO network",
   "main": "dist/index.js",
   "bin": {
@@ -17,7 +17,7 @@
     "license": "yarn license-checker --onlyAllow 'MIT;BSD-2-Clause;BSD-3-Clause;Apache-2.0;ISC;Unlicense;UNKNOWN;BSD*;CC0-1.0' --excludePackages 'colors@0.6.2'",
     "develop": "ts-node ./src/index.ts",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepublish": "yarn run snyk-protect"
   },
   "types": "dist/index.d.ts",
   "author": "XYO Development Team",
@@ -36,13 +36,13 @@
     "dotenv-expand": "^5.1.0",
     "enquirer": "^2.3.0",
     "express": "^4.17.0",
-    "forever": "^1.0.0",
+    "forever": "^2.0.0",
     "fs-extra": "^7.0.1",
     "global-modules": "^2.0.0",
     "graphql": "^14.3.0",
     "graphql-type-json": "^0.3.0",
     "shelljs": "^0.8.3",
-    "snyk": "^1.189.0",
+    "snyk": "^1.274.0",
     "tar": "^4.4.8",
     "tar-fs": "^2.0.0",
     "tar-stream": "^2.0.1"
