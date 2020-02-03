@@ -42,7 +42,7 @@
     "graphql": "^14.3.0",
     "graphql-type-json": "^0.3.0",
     "shelljs": "^0.8.3",
-    "snyk": "^1.274.0",
+    "snyk": "^1.290.1",
     "tar": "^4.4.8",
     "tar-fs": "^2.0.0",
     "tar-stream": "^2.0.1"
