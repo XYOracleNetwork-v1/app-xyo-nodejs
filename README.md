@@ -19,7 +19,40 @@
 
 ## Description
 
-This tool is a CLI for participating in the XYO Network.
+This tool is a CLI for to create a node to participate in the XYO Network.
+
+## Getting Started
+
+### Install 
+
+```sh
+yarn install
+```
+
+### Running `xyolo` commands
+
+Install plugins
+
+```sh
+xyolo -i
+```
+or 
+
+```sh
+xyolo --install
+```
+
+Run a node
+
+```sh
+xyolo -r
+```
+
+or 
+
+```sh
+xyolo --run
+```
 
 ## Maintainers
 
