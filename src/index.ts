@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 /*
  * File: index.ts
  * Project: @xyo-network/app
@@ -41,7 +43,6 @@ const defaultPlugins: IXyoPluginWithConfig[] = [
 ]
 
 export class App extends XyoBase {
-
   public async main() {
     commander.option('-i, --install', 'installs the plugins')
     commander.option('-r, --run', 'runs node')
@@ -52,7 +53,9 @@ export class App extends XyoBase {
 
     await manager.makeConfigIfNotExist()
 
-    this.logInfo(`Using config at path: ${commander.config || defaultConfigPath}`)
+    this.logInfo(
+      `Using config at path: ${commander.config || defaultConfigPath}`
+    )
 
     if (commander.install) {
       manager.install()
@@ -84,7 +87,7 @@ export class App extends XyoBase {
     console.log(`Downloading... ${commander.fetch}`)
     const url = commander.fetch as string
 
-    const handler =  (response: any) => {
+    const handler = (response: any) => {
       const data = new Transform()
 
       response.on('data', (chunk: any) => {

@@ -1,4 +1,16 @@
-import { IXyoPluginWithConfig, XyoBase, IXyoConfig, IXyoPluginConfig, IXyoPlugin } from '@xyo-network/sdk-base-nodejs'
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/member-delimiter-style */
+/* eslint-disable @typescript-eslint/interface-name-prefix */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-use-before-define */
+import {
+  IXyoPluginWithConfig,
+  XyoBase,
+  IXyoConfig,
+  IXyoPluginConfig,
+  IXyoPlugin
+} from '@xyo-network/sdk-base-nodejs'
 import globalModules from 'global-modules'
 import { execSync } from 'child_process'
 import fsExtra from 'fs-extra'
@@ -10,8 +22,10 @@ const defaultConfig = {
 
 export class XyoPackageManager extends XyoBase {
   public pathToConfig: string
-  private pluginTypes: {[key: string]: (config: any) => Promise<void>} = {}
-  private pluginTypeInstallers: {[key: string]: (config: any) => Promise<IXyoPluginWithConfig[]>} = {}
+  private pluginTypes: { [key: string]: (config: any) => Promise<void> } = {}
+  private pluginTypeInstallers: {
+    [key: string]: (config: any) => Promise<IXyoPluginWithConfig[]>
+  } = {}
 
   constructor(pathToConfig: string) {
     super()
@@ -26,7 +40,8 @@ export class XyoPackageManager extends XyoBase {
   }
 
   public async install() {
-    const pluginsToInstall = (await this.readConfigFromPath(this.pathToConfig)).plugins
+    const pluginsToInstall = (await this.readConfigFromPath(this.pathToConfig))
+      .plugins
 
     for (const plugin of pluginsToInstall) {
       await this.installPlugin(plugin)
@@ -38,7 +53,8 @@ export class XyoPackageManager extends XyoBase {
   }
 
   public async resolve(): Promise<IXyoPluginWithConfig[]> {
-    const pluginsToRun = (await this.readConfigFromPath(this.pathToConfig)).plugins
+    const pluginsToRun = (await this.readConfigFromPath(this.pathToConfig))
+      .plugins
     let plugins: IXyoPluginWithConfig[] = []
 
     for (const toRun of pluginsToRun) {
@@ -57,7 +73,9 @@ export class XyoPackageManager extends XyoBase {
   }
 
   public async makeConfigIfNotExist() {
-    fsExtra.ensureDirSync(this.pathToConfig.substring(0, this.pathToConfig.lastIndexOf('/')))
+    fsExtra.ensureDirSync(
+      this.pathToConfig.substring(0, this.pathToConfig.lastIndexOf('/'))
+    )
 
     if (!fsExtra.existsSync(this.pathToConfig)) {
       fsExtra.writeFileSync(this.pathToConfig, JSON.stringify(defaultConfig))
@@ -87,36 +105,41 @@ export class XyoPackageManager extends XyoBase {
 }
 
 interface INpmRemoteConfig {
-  packageName: string,
-  version: string,
+  packageName: string
+  version: string
   subPlugins: INpmRemoteSubPluginConfig[]
 }
 
 interface INpmRemoteLocalConfig {
-  path: string,
+  path: string
   subPlugins: INpmRemoteSubPluginConfig[]
 }
 
 interface INpmRemoteSubPluginConfig {
-  name: string,
+  name: string
   config: any
 }
 
 interface IPathConfig {
-  path: string,
+  path: string
   config: any
 }
 
-const npmRemotePluginResolver = async(config: any) => {
-  execSync(`npm install --unsafe-perm -g ${config.packageName}@${config.version}`).toString('utf8')
-  installNpmRepository(`${globalModules}/${config.packageName}`, config.subPlugins)
+const npmRemotePluginResolver = async (config: any) => {
+  execSync(
+    `npm install --unsafe-perm -g ${config.packageName}@${config.version}`
+  ).toString('utf8')
+  installNpmRepository(
+    `${globalModules}/${config.packageName}`,
+    config.subPlugins
+  )
 }
 
-const npmLocalPluginResolver = async(config: any) => {
+const npmLocalPluginResolver = async (config: any) => {
   installNpmRepository(config.path, config.subPlugins)
 }
 
-const pathPluginResolver = async(config: IPathConfig) => {
+const pathPluginResolver = async (config: IPathConfig) => {
   try {
     const _ = require(config.path) as IXyoPlugin
   } catch {
@@ -124,11 +147,14 @@ const pathPluginResolver = async(config: IPathConfig) => {
   }
 }
 
-const installNpmRepository = (pathOfNpm: string, subPlugins: INpmRemoteSubPluginConfig[]) => {
-
-  const xyoPlugins: string[] = require(`${pathOfNpm}/package.json`).xyoPlugins || []
+const installNpmRepository = (
+  pathOfNpm: string,
+  subPlugins: INpmRemoteSubPluginConfig[]
+) => {
+  const xyoPlugins: string[] =
+    require(`${pathOfNpm}/package.json`).xyoPlugins || []
   const pluginsWithConfig: IXyoPluginWithConfig[] = []
-  const resolvedPlugins: {[key: string]: IXyoPlugin} = {}
+  const resolvedPlugins: { [key: string]: IXyoPlugin } = {}
 
   for (const pluginPath of xyoPlugins) {
     const absPath = `${pathOfNpm}/${pluginPath}`
@@ -145,27 +171,32 @@ const installNpmRepository = (pathOfNpm: string, subPlugins: INpmRemoteSubPlugin
     const didFind = resolvedPlugins[pluginShouldBeFound.name]
 
     if (!didFind) {
-      throw new Error(`Can not find plugin with name ${pluginShouldBeFound.name}`)
+      throw new Error(
+        `Can not find plugin with name ${pluginShouldBeFound.name}`
+      )
     }
 
     pluginsWithConfig.push({
       plugin: didFind,
-      config: pluginShouldBeFound.config,
+      config: pluginShouldBeFound.config
     })
   }
 
   return pluginsWithConfig
 }
 
-const npmRemotePluginRunner = async(config: any) => {
-  return installNpmRepository(`${globalModules}/${config.packageName}`, config.subPlugins)
+const npmRemotePluginRunner = async (config: any) => {
+  return installNpmRepository(
+    `${globalModules}/${config.packageName}`,
+    config.subPlugins
+  )
 }
 
-const npmLocalPluginRunner = async(config: any) => {
+const npmLocalPluginRunner = async (config: any) => {
   return installNpmRepository(config.path, config.subPlugins)
 }
 
-const pathPluginRunner = async(config: any) => {
+const pathPluginRunner = async (config: any) => {
   try {
     const plugin = require(config.path) as IXyoPlugin
 

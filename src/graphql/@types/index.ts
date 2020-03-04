@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/member-delimiter-style */
+/* eslint-disable @typescript-eslint/interface-name-prefix */
 /*
  * @Author: XY | The Findables Company <xyo-network>
  * @Date:   Wednesday, 19th December 2018 11:19:04 am
@@ -11,6 +13,11 @@
 
 import { GraphQLResolveInfo } from 'graphql'
 
-export interface IXyoDataResolver <TSource, TArgs, TContext, TResult> {
-  resolve(obj: TSource, args: TArgs, context: TContext, info: GraphQLResolveInfo): Promise<TResult>
+export interface IXyoDataResolver<TSource, TArgs, TContext, TResult> {
+  resolve(
+    obj: TSource,
+    args: TArgs,
+    context: TContext,
+    info: GraphQLResolveInfo
+  ): Promise<TResult>
 }

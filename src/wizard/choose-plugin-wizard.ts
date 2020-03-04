@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Wizard } from './base'
 import enquirer from 'enquirer'
 
@@ -14,13 +15,13 @@ export class PluginsWizard extends Wizard {
     const { components } = await this.prompt<{ components: string[] }>({
       initial: true,
       type: 'multiselect',
-      choices: this.chooseValues.map((name) => {
+      choices: this.chooseValues.map(name => {
         return {
-          name,
+          name
         }
       }),
       message: 'Which plugins do you want to install?',
-      name: 'components',
+      name: 'components'
     })
 
     return components

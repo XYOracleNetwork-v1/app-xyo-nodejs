@@ -1,3 +1,8 @@
+/* eslint-disable @typescript-eslint/interface-name-prefix */
+/* eslint-disable @typescript-eslint/member-delimiter-style */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/ban-ts-ignore */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { ApolloServer, gql, IResolvers } from 'apollo-server-express'
 import { XyoBase } from '@xyo-network/sdk-base-nodejs'
 import { IXyoDataResolver } from './@types'
@@ -11,7 +16,11 @@ export class XyoGraphQLServer extends XyoBase {
   public server: ApolloServer | undefined
   private readonly graphqlResolvers: IGraphQLResolvers = {}
 
-  constructor(private readonly schema: string, private readonly port: number, private readonly config: any) {
+  constructor(
+    private readonly schema: string,
+    private readonly port: number,
+    private readonly config: any
+  ) {
     super()
   }
 
@@ -32,7 +41,7 @@ export class XyoGraphQLServer extends XyoBase {
     const { typeDefs, resolvers } = this.initialize()
     this.server = new ApolloServer({
       typeDefs,
-      resolvers,
+      resolvers
     })
 
     const expressServer = http.createServer(app)
@@ -57,7 +66,9 @@ export class XyoGraphQLServer extends XyoBase {
     this.server.installSubscriptionHandlers(expressServer)
 
     await expressServer.listen({ port: this.port })
-    this.logInfo(`Graphql server ready at url: http://localhost:${this.config.port}`)
+    this.logInfo(
+      `Graphql server ready at url: http://localhost:${this.config.port}`
+    )
   }
 
   public async stop(): Promise<void> {
@@ -70,14 +81,22 @@ export class XyoGraphQLServer extends XyoBase {
 
   private initialize() {
     // Build Router
-    const compiledRouter = Object.keys(this.graphqlResolvers as object).reduce((router, route) => {
-      // @ts-ignore
-      router[route] = (obj: any, args: any, context: any, info: any) => {
+    const compiledRouter = Object.keys(this.graphqlResolvers as object).reduce(
+      (router, route) => {
         // @ts-ignore
-        return (this.graphqlResolvers[route] as IXyoDataResolver).resolve(obj, args, context, info)
-      }
-      return router
-    },                                                                         {})
+        router[route] = (obj: any, args: any, context: any, info: any) => {
+          // @ts-ignore
+          return (this.graphqlResolvers[route] as IXyoDataResolver).resolve(
+            obj,
+            args,
+            context,
+            info
+          )
+        }
+        return router
+      },
+      {}
+    )
 
     const resolvers: IResolvers = {
       JSON: graphqlTypeJson,

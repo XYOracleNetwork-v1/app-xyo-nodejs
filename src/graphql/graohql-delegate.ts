@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { IXyoGraphQlDelegate } from '@xyo-network/sdk-base-nodejs'
 import { XyoGraphQLServer } from './graphql-server'
 
@@ -7,7 +8,7 @@ export class XyoGraphQlEndpoint implements IXyoGraphQlDelegate {
   private queries: string[] = []
 
   // tslint:disable-next-line:prefer-array-literal
-  private resolvers: Array<{query: string, resolver: any}> = []
+  private resolvers: Array<{ query: string; resolver: any }> = []
 
   constructor(config: any) {
     this.config = config
@@ -29,7 +30,7 @@ export class XyoGraphQlEndpoint implements IXyoGraphQlDelegate {
     const schema = this.createSchema()
     const server = new XyoGraphQLServer(schema, port, this.config)
 
-    this.resolvers.forEach((resolver) => {
+    this.resolvers.forEach(resolver => {
       server.addQueryResolver(resolver.query, resolver.resolver)
     })
 
