@@ -989,10 +989,10 @@
   dependencies:
     tslib "^1.9.3"
 
-"@xyo-network/sdk-archivist-nodejs@^0.12.16":
-  version "0.12.16"
-  resolved "https://registry.yarnpkg.com/@xyo-network/sdk-archivist-nodejs/-/sdk-archivist-nodejs-0.12.16.tgz#2e73b583fa4c7ad73e9fa6aee72899d19f3b95f6"
-  integrity sha512-9O44C2OmmbiWHgCLJwJsacTqKpZoEtc50cOfz4QvrRcxc77LgKtagVwtTsCIMmZgVaOPv57VS5tvtoy/ATORRw==
+"@xyo-network/sdk-archivist-nodejs@^0.12.19":
+  version "0.12.19"
+  resolved "https://registry.yarnpkg.com/@xyo-network/sdk-archivist-nodejs/-/sdk-archivist-nodejs-0.12.19.tgz#57b438346b768ee5e6a5c137a9ba0bd211d563ea"
+  integrity sha512-0yct0shSFWtJgS5dpQ1tCBu0msoymFPTBRBbwvKdkIp+kDGq7adxU3nBQP/932VW7oWfRnrZkSj7LbRCVE2Vbg==
   dependencies:
     "@types/elasticsearch" "^5.0.34"
     "@types/redis" "^2.8.13"
