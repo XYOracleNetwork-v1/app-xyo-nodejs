@@ -1039,10 +1039,33 @@
     typescript "^3.7.5"
     winston "^3.2.1"
 
-"@xyo-network/sdk-core-nodejs@0.70.22", "@xyo-network/sdk-core-nodejs@^0.70.22":
+"@xyo-network/sdk-base-nodejs@^0.6.7":
+  version "0.6.7"
+  resolved "https://registry.yarnpkg.com/@xyo-network/sdk-base-nodejs/-/sdk-base-nodejs-0.6.7.tgz#9ce91380eeaf83dbbb8b2bfff7047f94f12f04a9"
+  integrity sha512-teAK/Ba4t+lcZzkAxq0PsDxsSsboluJCQH/MSzMNiqaH5mdcMgOqOcU7e5N6kmLilRA2bLG3OaFNijbfinaFwQ==
+  dependencies:
+    "@types/node" "^13.7.1"
+    chalk "^3.0.0"
+    fs-extra "^8.1.0"
+    global "^4.4.0"
+    license-checker "^25.0.1"
+    ts-node "^8.6.2"
+    typescript "^3.7.5"
+    winston "^3.2.1"
+
+"@xyo-network/sdk-core-nodejs@0.70.22":
   version "0.70.22"
   resolved "https://registry.yarnpkg.com/@xyo-network/sdk-core-nodejs/-/sdk-core-nodejs-0.70.22.tgz#f6aee1e492b543712eaf14d9875f094718386217"
   integrity sha512-+XD6+w9zLSG87jUygb6+GSOW5cIp/48nrNX+YMxZt8Uzjcx5gNcF6Ix6ZlgYSTzmz9QhFgWgO+OGgePyGYJbhg==
+  dependencies:
+    "@xyo-network/sdk-base-nodejs" "^0.6.6"
+    bs58 "4.0.1"
+    elliptic "6.5.2"
+
+"@xyo-network/sdk-core-nodejs@^0.70.23":
+  version "0.70.23"
+  resolved "https://registry.yarnpkg.com/@xyo-network/sdk-core-nodejs/-/sdk-core-nodejs-0.70.23.tgz#9ef91c5d4c5265da189bcbbb03cf6c141b8b2dfd"
+  integrity sha512-o+mjcu878qggCp0R4suzaLlJv5HIRJpfcEzRbDBo9bXLp0q1hFONWjucQviI6FKdSCgsK9qBKSzJNLVCzRUDBA==
   dependencies:
     "@xyo-network/sdk-base-nodejs" "^0.6.6"
     bs58 "4.0.1"
