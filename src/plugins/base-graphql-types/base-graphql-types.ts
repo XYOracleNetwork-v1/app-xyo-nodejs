@@ -1,4 +1,3 @@
-
 export const types = `
     type XyoAboutMe {
         name: String,

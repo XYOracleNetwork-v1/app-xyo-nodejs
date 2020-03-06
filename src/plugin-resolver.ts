@@ -1,35 +1,43 @@
-import { IXyoPlugin, IXyoGraphQlDelegate, IXyoPluginWithConfig, IXyoBoundWitnessMutexDelegate, XyoBase } from '@xyo-network/sdk-base-nodejs'
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import {
+  IXyoPlugin,
+  IXyoGraphQlDelegate,
+  IXyoPluginWithConfig,
+  IXyoBoundWitnessMutexDelegate,
+  XyoBase
+} from '@xyo-network/sdk-base-nodejs'
 
 export class PluginResolver extends XyoBase {
-
-  private resolvedPluginNames: {[key: string]: boolean}  = {}
-  private resolvedPlugins: {[key: string]: any} = {}
+  private resolvedPluginNames: { [key: string]: boolean } = {}
+  private resolvedPlugins: { [key: string]: any } = {}
   private lastResolvedPluginCount = 0
   private resolvedPluginCount = -1
   private qlDelegate: IXyoGraphQlDelegate
   private mutexDelegate: IXyoBoundWitnessMutexDelegate
 
-  constructor(graphql: IXyoGraphQlDelegate, mutex: IXyoBoundWitnessMutexDelegate) {
+  constructor(
+    graphql: IXyoGraphQlDelegate,
+    mutex: IXyoBoundWitnessMutexDelegate
+  ) {
     super()
     this.qlDelegate = graphql
     this.mutexDelegate = mutex
   }
 
   public async resolve(plugins: IXyoPluginWithConfig[]) {
-
     // while we are still resolving plugins
     while (this.lastResolvedPluginCount !== this.resolvedPluginCount) {
       this.lastResolvedPluginCount = this.resolvedPluginCount
 
       // loop through the plugins to try to resolve one
       for (const plugin of plugins) {
-
         // if we have not resolved this plugin, do not try to resolve again
         if (!this.resolvedPluginNames[plugin.plugin.getName()]) {
           await this.resolveSinglePlugin(plugin)
         }
       }
-
     }
   }
 
