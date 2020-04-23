@@ -11,10 +11,10 @@ export class PluginsWizard extends Wizard {
     this.chooseValues = chooseValues
   }
 
-  public async start(): Promise<string[]> {
-    const { components } = await this.prompt<{ components: string[] }>({
-      initial: true,
+  questions = [
+    {
       type: 'multiselect',
+      initial: true,
       choices: this.chooseValues.map(name => {
         return {
           name
@@ -22,7 +22,13 @@ export class PluginsWizard extends Wizard {
       }),
       message: 'Which plugins do you want to install?',
       name: 'components'
-    })
+    }
+  ]
+
+  public async start(): Promise<string[]> {
+    const { components } = await this.prompt<{ components: string[] }>(
+      this.questions
+    )
 
     return components
   }
