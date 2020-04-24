@@ -1,6 +1,6 @@
 {
   "name": "@xyo-network/app-xyo-nodejs",
-  "version": "0.6.25",
+  "version": "0.6.27",
   "description": "The XYO application for running components on the XYO network",
   "main": "dist/index.js",
   "bin": {
@@ -40,7 +40,7 @@
     "bs58": "^4.0.1",
     "commander": "^4.1.1",
     "dotenv-expand": "^5.1.0",
-    "enquirer": "^2.3.4",
+    "enquirer": "^2.3.5",
     "express": "^4.17.0",
     "forever": "^2.0.0",
     "fs-extra": "^8.1.0",
@@ -75,10 +75,10 @@
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-prettier": "^3.1.2",
-    "jest": "^24.9.0",
+    "jest": "^25.4.0",
     "license-checker": "^25.0.1",
     "prettier": "^1.19.1",
-    "ts-jest": "^24.0.0",
+    "ts-jest": "^25.4.0",
     "ts-node": "^8.0.3",
     "typescript": "^3.4.5"
   },

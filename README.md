@@ -3,6 +3,7 @@
 [![logo]](https://xyo.network)
 
 # app-xyo-nodejs
+[![NPM](https://img.shields.io/npm/v/@xyo-network/app-xyo-nodejs.svg?style=plastic)](https://www.npmjs.com/package/@xyo-network/app-xyo-nodejs)
 
 ![](https://github.com/XYOracleNetwork/app-xyo-nodejs/workflows/CI/badge.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1f31c7fa87694b8eab91a2d71f74b697)](https://www.codacy.com/app/arietrouw/app-xyo-nodejs?utm_source=github.com&utm_medium=referral&utm_content=XYOracleNetwork/app-xyo-nodejs&utm_campaign=Badge_Grade) [![BCH compliance](https://bettercodehub.com/edge/badge/XYOracleNetwork/app-xyo-nodejs?branch=master)](https://bettercodehub.com/)
@@ -43,6 +44,8 @@ or
 ```sh
 xyolo --install
 ```
+
+This should take you through a plugin wizard. Once you have set up your config with plugins then you can run a node. 
 
 Run a node
 
