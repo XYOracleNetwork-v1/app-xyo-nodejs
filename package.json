@@ -1,6 +1,6 @@
 {
   "name": "@xyo-network/app-xyo-nodejs",
-  "version": "0.6.30",
+  "version": "0.6.31",
   "description": "The XYO application for running components on the XYO network",
   "main": "dist/index.js",
   "bin": {
@@ -48,7 +48,7 @@
     "graphql": "^14.6.0",
     "graphql-type-json": "^0.3.1",
     "shelljs": "^0.8.3",
-    "snyk": "^1.298.0",
+    "snyk": "^1.316.1",
     "tar": "^6.0.1",
     "tar-fs": "^2.0.0",
     "tar-stream": "^2.1.0"
@@ -68,8 +68,8 @@
     "@types/tar": "^4.0.0",
     "@types/tar-fs": "^1.16.1",
     "@types/tar-stream": "^1.6.0",
-    "@typescript-eslint/eslint-plugin": "^2.19.2",
-    "@typescript-eslint/parser": "^2.19.2",
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "@typescript-eslint/parser": "^2.31.0",
     "copyfiles": "^2.1.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
