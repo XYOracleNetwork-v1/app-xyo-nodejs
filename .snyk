@@ -12,68 +12,77 @@ patch:
         patched: '2020-01-06T21:01:18.746Z'
   SNYK-JS-LODASH-567746:
     - '@xyo-network/sdk-archivist-nodejs > lodash':
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - snyk > lodash:
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - '@xyo-network/sdk-archivist-nodejs > elasticsearch > lodash':
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - '@xyo-network/sdk-archivist-nodejs > eslint > lodash':
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - snyk > graphlib > lodash:
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
+    - snyk > @snyk/dep-graph > lodash:
+        patched: '2020-06-03T17:26:49.062Z'
     - snyk > @snyk/ruby-semver > lodash:
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - snyk > inquirer > lodash:
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - snyk > snyk-config > lodash:
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - snyk > snyk-mvn-plugin > lodash:
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - snyk > snyk-nodejs-lockfile-parser > lodash:
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - snyk > snyk-nuget-plugin > lodash:
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - '@xyo-network/sdk-archivist-nodejs > @typescript-eslint/parser > @typescript-eslint/typescript-estree > lodash':
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - '@xyo-network/sdk-base-nodejs > winston > async > lodash':
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - '@xyo-network/sdk-archivist-nodejs > eslint > inquirer > lodash':
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - '@xyo-network/sdk-archivist-nodejs > eslint > table > lodash':
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - snyk > @snyk/dep-graph > graphlib > lodash:
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - snyk > snyk-go-plugin > graphlib > lodash:
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - snyk > @snyk/snyk-cocoapods-plugin > @snyk/dep-graph > lodash:
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - snyk > snyk-nodejs-lockfile-parser > snyk-config > lodash:
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - snyk > snyk-mvn-plugin > @snyk/java-call-graph-builder > lodash:
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - snyk > snyk-nuget-plugin > dotnet-deps-parser > lodash:
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - snyk > snyk-php-plugin > @snyk/composer-lockfile-parser > lodash:
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
+    - '@xyo-network/sdk-archivist-nodejs > @typescript-eslint/eslint-plugin > @typescript-eslint/experimental-utils > @typescript-eslint/typescript-estree > lodash':
+        patched: '2020-06-03T17:26:49.062Z'
     - '@xyo-network/sdk-archivist-nodejs > @typescript-eslint/parser > @typescript-eslint/experimental-utils > @typescript-eslint/typescript-estree > lodash':
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - '@xyo-network/sdk-archivist-nodejs > eslint-config-airbnb-typescript > @typescript-eslint/parser > @typescript-eslint/typescript-estree > lodash':
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
+    - '@xyo-network/sdk-archivist-nodejs > @xyo-network/sdk-base-nodejs > winston > async > lodash':
+        patched: '2020-06-03T17:26:49.062Z'
     - '@xyo-network/sdk-core-nodejs > @xyo-network/sdk-base-nodejs > winston > async > lodash':
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - snyk > @snyk/snyk-cocoapods-plugin > @snyk/dep-graph > graphlib > lodash:
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - snyk > snyk-mvn-plugin > @snyk/java-call-graph-builder > graphlib > lodash:
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
+    - snyk > @snyk/snyk-cocoapods-plugin > @snyk/cocoapods-lockfile-parser > @snyk/ruby-semver > lodash:
+        patched: '2020-06-03T17:26:49.062Z'
     - snyk > @snyk/snyk-cocoapods-plugin > @snyk/cocoapods-lockfile-parser > @snyk/dep-graph > lodash:
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - snyk > snyk-mvn-plugin > @snyk/java-call-graph-builder > snyk-config > lodash:
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - '@xyo-network/sdk-archivist-nodejs > eslint-config-airbnb-typescript > @typescript-eslint/parser > @typescript-eslint/experimental-utils > @typescript-eslint/typescript-estree > lodash':
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - '@xyo-network/sdk-archivist-nodejs > @xyo-network/sdk-core-nodejs > @xyo-network/sdk-base-nodejs > winston > async > lodash':
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
     - snyk > @snyk/snyk-cocoapods-plugin > @snyk/cocoapods-lockfile-parser > @snyk/dep-graph > graphlib > lodash:
-        patched: '2020-05-01T04:00:24.151Z'
+        patched: '2020-06-03T17:26:49.062Z'
+
