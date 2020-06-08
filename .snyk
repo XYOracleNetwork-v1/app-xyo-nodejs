@@ -85,3 +85,4 @@ patch:
         patched: '2020-06-03T17:26:49.062Z'
     - snyk > @snyk/snyk-cocoapods-plugin > @snyk/cocoapods-lockfile-parser > @snyk/dep-graph > graphlib > lodash:
         patched: '2020-06-03T17:26:49.062Z'
+
