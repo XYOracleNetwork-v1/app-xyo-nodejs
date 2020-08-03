@@ -1,6 +1,7 @@
 {
   "version": "0.2.0",
   "configurations": [
+
     
     {
       "type": "node",
@@ -70,6 +71,18 @@
       "args": ["src/index.ts"],
       "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
       "console": "integratedTerminal"
+    },
+    {
+      "command": "yarn install",
+      "name": "Develop mode",
+      "request": "launch",
+      "type": "node-terminal"        
+    },
+    {
+      "command": "yarn run develop",
+      "name": "Develop mode",
+      "request": "launch",
+      "type": "node-terminal"
     }
   ]
 }
