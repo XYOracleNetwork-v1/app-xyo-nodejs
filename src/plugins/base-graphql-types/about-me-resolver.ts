@@ -1,9 +1,6 @@
-/* eslint-disable @typescript-eslint/interface-name-prefix */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/member-delimiter-style */
-import { IXyoDataResolver } from '../../graphql'
 import { GraphQLResolveInfo } from 'graphql'
+
+import { IXyoDataResolver } from '../../graphql'
 
 export interface IXyoAboutMe {
   name: string
@@ -16,32 +13,27 @@ export interface IXyoAboutMe {
   boundWitnessServerPort: string
 }
 
-export class XyoAboutMeResolver
-  implements IXyoDataResolver<any, any, any, any> {
+export class XyoAboutMeResolver implements IXyoDataResolver<any, any, any, any> {
   private aboutMe: IXyoAboutMe
 
   constructor(aboutMe: IXyoAboutMe) {
     this.aboutMe = aboutMe
   }
 
-  public async resolve(
-    obj: any,
-    args: any,
-    context: any,
-    info: GraphQLResolveInfo
-  ): Promise<any> {
+  // eslint-disable-next-line require-await
+  public async resolve(_obj: any, _args: any, _context: any, _info: GraphQLResolveInfo): Promise<any> {
     // peers field is deprecated
     // graphql port is deprecated
 
     return {
-      name: this.aboutMe.name,
-      version: this.aboutMe.version,
-      ip: this.aboutMe.ip,
-      boundWitnessServerPort: 11000,
       address: this.aboutMe.address,
+      boundWitnessServerPort: 11000,
       graphqlPort: 11001,
       index: this.aboutMe.getIndex(),
-      peers: []
+      ip: this.aboutMe.ip,
+      name: this.aboutMe.name,
+      peers: [],
+      version: this.aboutMe.version,
     }
   }
 }

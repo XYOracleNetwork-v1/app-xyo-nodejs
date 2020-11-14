@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Wizard } from './base'
-import enquirer from 'enquirer'
 
 export class PluginsWizard extends Wizard {
   private chooseValues: string[]
@@ -11,24 +9,24 @@ export class PluginsWizard extends Wizard {
     this.chooseValues = chooseValues
   }
 
-  questions = [
-    {
-      type: 'multiselect',
-      initial: true,
-      choices: this.chooseValues.map(name => {
-        return {
-          name
-        }
-      }),
-      message: 'Which plugins do you want to install?',
-      name: 'components'
-    }
-  ]
+  public getQuestions() {
+    return [
+      {
+        choices: this.chooseValues.map((name) => {
+          return {
+            name,
+          }
+        }),
+        initial: true,
+        message: 'Which plugins do you want to install?',
+        name: 'components',
+        type: 'multiselect',
+      },
+    ]
+  }
 
   public async start(): Promise<string[]> {
-    const { components } = await this.prompt<{ components: string[] }>(
-      this.questions
-    )
+    const { components } = await this.prompt<{ components: string[] }>(this.getQuestions())
 
     return components
   }

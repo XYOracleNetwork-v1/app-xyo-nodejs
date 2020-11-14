@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { IXyoGraphQlDelegate } from '@xyo-network/sdk-base-nodejs'
+
 import { XyoGraphQLServer } from './graphql-server'
 
 export class XyoGraphQlEndpoint implements IXyoGraphQlDelegate {
@@ -30,7 +30,7 @@ export class XyoGraphQlEndpoint implements IXyoGraphQlDelegate {
     const schema = this.createSchema()
     const server = new XyoGraphQLServer(schema, port, this.config)
 
-    this.resolvers.forEach(resolver => {
+    this.resolvers.forEach((resolver) => {
       server.addQueryResolver(resolver.query, resolver.resolver)
     })
 

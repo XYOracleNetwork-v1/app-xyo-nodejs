@@ -1,12 +1,8 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
-  IXyoPlugin,
+  IXyoBoundWitnessMutexDelegate,
   IXyoGraphQlDelegate,
   IXyoPluginWithConfig,
-  IXyoBoundWitnessMutexDelegate,
-  XyoBase
+  XyoBase,
 } from '@xyo-network/sdk-base-nodejs'
 
 export class PluginResolver extends XyoBase {
@@ -17,10 +13,7 @@ export class PluginResolver extends XyoBase {
   private qlDelegate: IXyoGraphQlDelegate
   private mutexDelegate: IXyoBoundWitnessMutexDelegate
 
-  constructor(
-    graphql: IXyoGraphQlDelegate,
-    mutex: IXyoBoundWitnessMutexDelegate
-  ) {
+  constructor(graphql: IXyoGraphQlDelegate, mutex: IXyoBoundWitnessMutexDelegate) {
     super()
     this.qlDelegate = graphql
     this.mutexDelegate = mutex
@@ -59,10 +52,10 @@ export class PluginResolver extends XyoBase {
     // if the plugin has all of the dependencies, initialize it
     if (hasAllDependencies) {
       await plugin.plugin.initialize({
-        deps: this.resolvedPlugins,
         config: plugin.config,
+        deps: this.resolvedPlugins,
         graphql: this.qlDelegate,
-        mutex: this.mutexDelegate
+        mutex: this.mutexDelegate,
       })
 
       const provides = plugin.plugin.getProvides()

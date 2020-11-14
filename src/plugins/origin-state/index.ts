@@ -1,15 +1,5 @@
-/* eslint-disable @typescript-eslint/member-delimiter-style */
-/* eslint-disable @typescript-eslint/interface-name-prefix */
-import {
-  IXyoPlugin,
-  XyoBase,
-  IXyoPluginDelegate
-} from '@xyo-network/sdk-base-nodejs'
-import {
-  XyoOriginState,
-  XyoFileOriginStateRepository,
-  XyoSecp2556k1
-} from '@xyo-network/sdk-core-nodejs'
+import { IXyoPlugin, IXyoPluginDelegate, XyoBase } from '@xyo-network/sdk-base-nodejs'
+import { XyoFileOriginStateRepository, XyoOriginState, XyoSecp2556k1 } from '@xyo-network/sdk-core-nodejs'
 import bs58 from 'bs58'
 import fsExtra from 'fs-extra'
 import os from 'os'
@@ -39,7 +29,7 @@ export class OriginStatePlugin extends XyoBase implements IXyoPlugin {
     const path = stateConfig.path || `${os.homedir()}/.config/xyo/state.json`
     const repository = new XyoFileOriginStateRepository(path)
 
-    await repository.restore(privateKey => {
+    await repository.restore((privateKey) => {
       return new XyoSecp2556k1(privateKey)
     })
 
@@ -55,10 +45,7 @@ export class OriginStatePlugin extends XyoBase implements IXyoPlugin {
     this.logInfo(`Using state file at path: ${path}`)
     this.logInfo(
       `Using public key:  \u001b[35m${bs58.encode(
-        this.ORIGIN_STATE.getSigners()[0]
-          .getPublicKey()
-          .getAll()
-          .getContentsCopy()
+        this.ORIGIN_STATE.getSigners()[0].getPublicKey().getAll().getContentsCopy()
       )}\u001b[0m`
     )
 

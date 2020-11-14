@@ -1,27 +1,20 @@
-/* eslint-disable @typescript-eslint/interface-name-prefix */
-/* eslint-disable @typescript-eslint/member-delimiter-style */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/ban-ts-ignore */
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-import { ApolloServer, gql, IResolvers } from 'apollo-server-express'
 import { XyoBase } from '@xyo-network/sdk-base-nodejs'
-import { IXyoDataResolver } from './@types'
-import graphqlTypeJson from 'graphql-type-json'
-import https from 'https'
-import http from 'http'
+import { ApolloServer, gql, IResolvers } from 'apollo-server-express'
 import express from 'express'
 import fs from 'fs'
+import graphqlTypeJson from 'graphql-type-json'
+import http from 'http'
+import https from 'https'
+
+import { IXyoDataResolver } from './@types'
 
 export class XyoGraphQLServer extends XyoBase {
   public server: ApolloServer | undefined
-  private readonly graphqlResolvers: IGraphQLResolvers = {}
+  private graphqlResolvers: Record<string, IXyoDataResolver<any, any, any, any>>
 
-  constructor(
-    private readonly schema: string,
-    private readonly port: number,
-    private readonly config: any
-  ) {
+  constructor(private readonly schema: string, private readonly port: number, private readonly config: any) {
     super()
+    this.graphqlResolvers = {}
   }
 
   public addQueryResolver<TSource, TArgs, TContext, TResult>(
@@ -35,13 +28,13 @@ export class XyoGraphQLServer extends XyoBase {
     this.graphqlResolvers[route] = resolver
   }
 
-  public async start(): Promise<void> {
+  public start() {
     const app = express()
 
     const { typeDefs, resolvers } = this.initialize()
     this.server = new ApolloServer({
+      resolvers,
       typeDefs,
-      resolvers
     })
 
     const expressServer = http.createServer(app)
@@ -51,24 +44,22 @@ export class XyoGraphQLServer extends XyoBase {
       // are secured.
       const sslServer = https.createServer(
         {
+          cert: fs.readFileSync(this.config.ssl.cert),
           key: fs.readFileSync(this.config.ssl.key),
-          cert: fs.readFileSync(this.config.ssl.cert)
         },
         app
       )
 
       this.server.installSubscriptionHandlers(sslServer)
-      await sslServer.listen(this.config.ssl.port)
+      sslServer.listen(this.config.ssl.port)
     }
 
     this.server.graphqlPath = '/'
     this.server.applyMiddleware({ app, path: '/' })
     this.server.installSubscriptionHandlers(expressServer)
 
-    await expressServer.listen({ port: this.port })
-    this.logInfo(
-      `Graphql server ready at url: http://localhost:${this.config.port}`
-    )
+    expressServer.listen({ port: this.port })
+    this.logInfo(`Graphql server ready at url: http://localhost:${this.config.port}`)
   }
 
   public async stop(): Promise<void> {
@@ -81,38 +72,24 @@ export class XyoGraphQLServer extends XyoBase {
 
   private initialize() {
     // Build Router
-    const compiledRouter = Object.keys(this.graphqlResolvers as object).reduce(
-      (router, route) => {
-        // @ts-ignore
-        router[route] = (obj: any, args: any, context: any, info: any) => {
-          // @ts-ignore
-          return (this.graphqlResolvers[route] as IXyoDataResolver).resolve(
-            obj,
-            args,
-            context,
-            info
-          )
-        }
-        return router
-      },
-      {}
-    )
+    const compiledRouter = Object.keys(this.graphqlResolvers).reduce<Record<string, any>>((router, route) => {
+      router[route] = (obj: any, args: any, context: any, info: any) => {
+        return (this.graphqlResolvers[route] as IXyoDataResolver<any, any, any, any>).resolve(obj, args, context, info)
+      }
+      return router
+    }, {})
 
     const resolvers: IResolvers = {
       JSON: graphqlTypeJson,
-      Query: compiledRouter,
       List: {
         __resolveType: () => {
           return null
-        }
-      }
+        },
+      },
+      Query: compiledRouter,
     }
 
     const typeDefs = gql(this.schema)
-    return { typeDefs, resolvers }
+    return { resolvers, typeDefs }
   }
-}
-
-export interface IGraphQLResolvers {
-  [s: string]: IXyoDataResolver<any, any, any, any>
 }

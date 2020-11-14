@@ -64,3 +64,5 @@ dist/
 .DS_Store
 
 \.scannerwork/
+
+.config
