@@ -32,7 +32,7 @@
     "jsxSingleQuote": true
   },
   "dependencies": {
-    "@xyo-network/sdk-archivist-nodejs": "^0.12.22",
+    "@xyo-network/sdk-archivist-nodejs": "^0.13.3",
     "@xyo-network/sdk-base-nodejs": "^0.6.10",
     "@xyo-network/sdk-core-nodejs": "^0.70.26",
     "apollo-server": "2.14.2",
