@@ -35,7 +35,7 @@
     "@xyo-network/sdk-archivist-nodejs": "^0.12.22",
     "@xyo-network/sdk-base-nodejs": "^0.6.10",
     "@xyo-network/sdk-core-nodejs": "^0.70.26",
-    "apollo-server": "2.14.2",
+    "apollo-server": "2.25.3",
     "apollo-server-express": "^2.5.0",
     "bs58": "^4.0.1",
     "commander": "^4.1.1",
